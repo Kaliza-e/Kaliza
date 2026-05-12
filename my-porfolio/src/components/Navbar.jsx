@@ -19,7 +19,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40)
+      setScrolled(window.scrollY > 20)
 
       const sections = navLinks.map(link => document.getElementById(link.to))
       const scrollPosition = window.scrollY + 100 
@@ -38,41 +38,37 @@ export default function Navbar() {
   }, [])
 
   return (
-    <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-navy-900/85 backdrop-blur-[20px] border-b border-cyan-400/10 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.4)]' 
-          : 'py-5'
-      }`}
+    <motion.div
+      className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="home" smooth duration={600} className="font-display text-xl font-extrabold cursor-pointer flex-shrink-0 text-white">
-          <span className="text-cyan-400 font-light">&lt;</span>
-          Dev
-          <span className="text-gradient">Portfolio</span>
-          <span className="text-cyan-400 font-light">/&gt;</span>
+      <nav className={`w-full max-w-5xl rounded-full transition-all duration-300 flex items-center justify-between px-6 py-3 ${
+        scrolled ? 'bg-navy-900/90 backdrop-blur-md shadow-2xl border border-white/5' : 'bg-navy-800/50 backdrop-blur-sm border border-white/5'
+      }`}>
+        
+        {/* Logo Icon */}
+        <Link to="home" smooth duration={600} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center cursor-pointer flex-shrink-0 text-white border border-white/10 hover:bg-white/10 transition-colors">
+          <span className="font-display font-bold text-lg leading-none mt-0.5">S</span>
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden lg:flex items-center gap-1 mx-auto">
+        <ul className="hidden md:flex items-center gap-2">
           {navLinks.map(({ label, to }) => (
             <li key={to}>
               <Link
                 to={to}
                 smooth
                 duration={600}
-                className={`relative font-display text-sm font-medium px-4 py-2 rounded-full cursor-pointer transition-colors duration-300 ${
-                  active === to ? 'text-cyan-400' : 'text-slate-300 hover:text-white'
+                className={`relative font-display text-sm font-medium px-5 py-2 rounded-full cursor-pointer transition-colors duration-300 z-10 block ${
+                  active === to ? 'text-white' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 {label}
                 {active === to && (
                   <motion.span
-                    className="absolute inset-0 bg-cyan-400/10 border border-cyan-400/25 rounded-full -z-10"
+                    className="absolute inset-0 bg-white/10 border border-white/5 rounded-full -z-10"
                     layoutId="nav-indicator"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
@@ -82,30 +78,30 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Desktop */}
-        <a href="#contact" className="hidden lg:inline-flex btn-primary px-6 py-2.5 text-sm pointer-events-auto">
-          Hire Me
+        {/* CTA Button */}
+        <a href="#contact" className="hidden md:inline-flex bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 text-white px-6 py-2 rounded-full font-medium text-sm transition-all shadow-[0_0_15px_rgba(217,70,239,0.3)]">
+          Contact
         </a>
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden p-2 text-cyan-400 border border-glass-border rounded-lg hover:bg-cyan-400/10 transition-colors pointer-events-auto"
+          className="md:hidden p-2 text-white/80 hover:text-white transition-colors pointer-events-auto"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="lg:hidden bg-navy-900/95 backdrop-blur-[20px] border-t border-glass-border px-6 py-5 overflow-hidden flex flex-col pointer-events-auto"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            className="absolute top-20 left-4 right-4 bg-navy-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col md:hidden"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
           >
             <ul className="flex flex-col gap-2">
               {navLinks.map(({ label, to }) => (
@@ -114,7 +110,7 @@ export default function Navbar() {
                     to={to}
                     smooth
                     duration={600}
-                    className="block font-display text-base font-medium text-slate-300 px-4 py-3 rounded-xl cursor-pointer hover:text-cyan-400 hover:bg-cyan-400/10 transition-colors"
+                    className="block font-display text-base font-medium text-slate-300 px-4 py-3 rounded-xl cursor-pointer hover:text-white hover:bg-white/5 transition-colors"
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}
@@ -122,12 +118,12 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a href="#contact" className="btn-primary mt-4 justify-center" onClick={() => setMenuOpen(false)}>
-              Hire Me
+            <a href="#contact" className="mt-4 bg-gradient-to-r from-cyan-400 to-teal-400 text-white text-center py-3 rounded-xl font-medium" onClick={() => setMenuOpen(false)}>
+              Contact
             </a>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </motion.div>
   )
 }

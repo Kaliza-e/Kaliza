@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="relative bg-navy-900 min-h-screen">
+    <div className="relative bg-grad-hero min-h-screen">
       <CustomCursor />
       <Navbar />
       <main>

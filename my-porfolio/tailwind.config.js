@@ -8,19 +8,16 @@ export default {
     extend: {
       colors: {
         navy: {
-          900: '#020b1a',
-          800: '#030f26',
-          700: '#051630',
-          800: '#1e0f33',
-          900: '#0a0514',
+          800: '#2d0a42',
+          900: '#150321',
         },
         cyan: {
-          300: '#d8b4fe', // Actually purple now, keeping name for compatibility
-          400: '#c084fc',
-          500: '#a855f7',
+          300: '#e879f9',
+          400: '#d946ef',
+          500: '#c026d3',
         },
         teal: {
-          400: '#e879f9', // Actually fuchsia now
+          400: '#a855f7',
         },
         glass: {
           bg: 'rgba(255, 255, 255, 0.04)',
@@ -32,12 +29,12 @@ export default {
         body: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       backgroundImage: {
-        'grad-cyan': 'linear-gradient(135deg, #c084fc 0%, #e879f9 100%)',
-        'grad-hero': 'radial-gradient(circle at 50% 50%, rgba(192, 132, 252, 0.1) 0%, rgba(10, 5, 20, 1) 100%)',
-        'grad-card': 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
+        'grad-cyan': 'linear-gradient(90deg, #d946ef 0%, #a855f7 100%)', // Magenta to Purple
+        'grad-hero': 'linear-gradient(135deg, #150321 0%, #2d0a42 50%, #4c116a 100%)', // Deep background gradient
+        'grad-card': 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%)',
       },
       boxShadow: {
-        glow: '0 0 30px -5px rgba(192, 132, 252, 0.4)',
+        glow: '0 0 30px -5px rgba(217, 70, 239, 0.4)', // Magenta glow
         card: '0 8px 32px rgba(0, 0, 0, 0.4)',
       }
     },
