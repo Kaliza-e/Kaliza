@@ -7,7 +7,7 @@ const skillCategories = [
       { name: 'React/Next.js', level: 90 },
       { name: 'JavaScript/TS', level: 85 },
       { name: 'Tailwind CSS', level: 95 },
-      { name: 'Vue.js', level: 75 },
+      { name:''}
     ]
   },
   {
@@ -17,6 +17,8 @@ const skillCategories = [
       { name: 'Python/Django', level: 70 },
       { name: 'PostgreSQL', level: 85 },
       { name: 'MongoDB', level: 75 },
+      {name:"Express.js",level:"90"},
+      {name:"MySQL",level:"85"}
     ]
   }
 ]

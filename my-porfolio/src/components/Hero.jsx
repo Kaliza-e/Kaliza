@@ -16,10 +16,10 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="font-display text-xs md:text-sm font-bold tracking-widest text-white uppercase mb-4">
-            WELCOME TO MY WORLD 👋
+            WELCOME  👋
           </span>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-            Hi, I'm <span className="font-normal">John Doe</span>
+            Hi, I'm <span className="font-normal">Esther Kaliza</span>
           </h2>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
             <span className="text-cyan-400">Full-Stack</span> Developer
@@ -32,9 +32,6 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
             <a href="#projects" className="bg-white text-navy-900 hover:bg-slate-200 px-8 py-3 rounded-full font-bold text-sm transition-all shadow-lg pointer-events-auto">
               My Projects
-            </a>
-            <a href="#contact" className="bg-transparent border border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-bold text-sm transition-all pointer-events-auto">
-              Download CV
             </a>
           </div>
 
