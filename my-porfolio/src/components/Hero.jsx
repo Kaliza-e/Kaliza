@@ -4,7 +4,7 @@ import WaveBackground from './WaveBackground'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-screen h-screen flex-shrink-0 flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       <WaveBackground />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -18,7 +18,7 @@ export default function Hero() {
           <span className="font-display text-xl md:text-2xl font-light text-slate-300 mb-2">
             Explore my creative
           </span>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold text-white mb-6 leading-none">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 leading-tight">
             <span className="text-gradient">Portfolio</span>
           </h1>
           
@@ -34,16 +34,16 @@ export default function Hero() {
               ]}
               wrapper="span"
               speed={50}
-              className="text-2xl md:text-3xl text-cyan-400 font-display font-medium"
+              className="text-xl md:text-2xl text-cyan-400 font-display font-medium"
               repeat={Infinity}
             />
           </div>
 
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <a href="#projects" className="btn-primary pointer-events-auto">
+            <a href="#projects" className="btn-primary">
               View Work
             </a>
-            <a href="#contact" className="btn-outline pointer-events-auto">
+            <a href="#contact" className="btn-outline">
               Contact Me
             </a>
           </div>
@@ -56,15 +56,15 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, type: "spring" }}
         >
-          <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px]">
+          <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
             {/* Glowing ring behind */}
             <div className="absolute inset-0 rounded-full border border-dashed border-cyan-400/40 animate-[spin_20s_linear_infinite]"></div>
-            <div className="absolute inset-4 rounded-full border border-cyan-500/20 shadow-[0_0_50px_rgba(0,212,255,0.2)]"></div>
+            <div className="absolute inset-4 rounded-full border border-cyan-500/20 shadow-[0_0_50px_rgba(192,132,252,0.2)]"></div>
             
             {/* Avatar image container */}
             <div className="absolute inset-0 rounded-full overflow-hidden flex items-end justify-center bg-gradient-to-b from-transparent to-navy-800/50">
               <img 
-                src="/src/assets/avatar.png" 
+                src="/src/assets/avatar.jpg" 
                 alt="Creative Developer" 
                 className="w-[85%] object-cover object-bottom"
               />

@@ -64,7 +64,7 @@ function ProjectCard({ project, index }) {
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${useTransform(mouseX, val => val + 200)}px ${useTransform(mouseY, val => val + 200)}px,
-              rgba(0, 212, 255, 0.15),
+              rgba(192, 132, 252, 0.15),
               transparent 80%
             )
           `,
@@ -77,7 +77,7 @@ function ProjectCard({ project, index }) {
           <div className="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-500"></div>
           {/* Overlay Links */}
           <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm bg-navy-900/40">
-            <a href="#" className="w-14 h-14 rounded-full bg-cyan-400 text-navy-900 flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,212,255,0.5)]">
+            <a href="#" className="w-14 h-14 rounded-full bg-cyan-400 text-navy-900 flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_20px_rgba(192,132,252,0.5)]">
               <FiExternalLink size={24} />
             </a>
             <a href="#" className="w-14 h-14 rounded-full bg-white text-navy-900 flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.5)]">
@@ -115,35 +115,27 @@ import { useTransform } from 'framer-motion'
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative w-screen h-screen flex-shrink-0 flex flex-col justify-center overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12 h-full flex flex-col justify-center">
-        <div className="flex justify-between items-end mb-16">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="section-label">Portfolio</span>
-            <h2 className="section-title">Featured <span className="text-gradient">Projects</span></h2>
-          </motion.div>
+    <section id="projects" className="py-24 relative bg-navy-800/30">
+      <div className="container mx-auto px-6 lg:px-12">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-label">Portfolio</span>
+          <h2 className="section-title">Featured <span className="text-gradient">Projects</span></h2>
+        </motion.div>
 
-          <motion.a 
-            href="#" 
-            className="hidden md:inline-flex btn-outline pointer-events-auto"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            View All Projects
-          </motion.a>
-        </div>
-
-        <div className="flex gap-8 overflow-visible pb-12 items-center pointer-events-auto">
+        <div className="grid md:grid-cols-2 gap-8 pointer-events-auto">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
+        </div>
+        
+        <div className="mt-16 text-center pointer-events-auto">
+          <a href="#" className="btn-outline">View All Projects</a>
         </div>
       </div>
     </section>

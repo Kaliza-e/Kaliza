@@ -23,12 +23,12 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative w-screen h-screen flex-shrink-0 flex items-center justify-center overflow-hidden bg-navy-800/30">
+    <section id="skills" className="py-24 relative overflow-hidden bg-navy-800/30">
       {/* Decorative Orbs */}
       <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           
           <motion.div 
             className="lg:col-span-5"
@@ -38,8 +38,8 @@ export default function Skills() {
             transition={{ duration: 0.6 }}
           >
             <span className="section-label">Expertise</span>
-            <h2 className="section-title text-5xl md:text-6xl mb-8">My <span className="text-gradient">Skills</span></h2>
-            <p className="text-slate-300 text-lg leading-relaxed mb-8">
+            <h2 className="section-title mb-6">My <span className="text-gradient">Skills</span></h2>
+            <p className="text-slate-300 leading-relaxed mb-8">
               I've spent years mastering the tools needed to build incredible digital experiences. I focus on modern stacks that ensure high performance and seamless developer experience.
             </p>
             <div className="flex flex-wrap gap-3">

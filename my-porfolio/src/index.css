@@ -16,9 +16,15 @@
     cursor: auto;
   }
 
-  /* Scrollbar - hide it for a cleaner horizontal look or keep it minimal */
+  /* Scrollbar */
   ::-webkit-scrollbar {
-    display: none; /* Hide for horizontal scroll architecture */
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-cyan-400 to-teal-400 rounded-full;
   }
 
   /* Selection */

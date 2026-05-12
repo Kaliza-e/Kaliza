@@ -27,7 +27,7 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="relative w-screen h-screen flex-shrink-0 flex items-center justify-center overflow-hidden bg-navy-900">
+    <section id="blog" className="py-24 relative bg-navy-900">
       <div className="container mx-auto px-6 lg:px-12">
         <motion.div 
           className="text-center mb-16"
@@ -37,21 +37,21 @@ export default function Blog() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">Insights</span>
-          <h2 className="section-title text-5xl md:text-6xl">Latest <span className="text-gradient">Articles</span></h2>
+          <h2 className="section-title">Latest <span className="text-gradient">Articles</span></h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <motion.article 
               key={index}
-              className="glass-card group flex flex-col h-[450px] cursor-pointer hover:border-cyan-400/50 transition-colors duration-500"
-              initial={{ opacity: 0, y: 50 }}
+              className="glass-card group flex flex-col h-full cursor-pointer hover:border-cyan-400/50 transition-colors duration-500"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Image Placeholder */}
-              <div className={`h-56 w-full ${post.image} relative overflow-hidden shrink-0`}>
+              <div className={`h-48 w-full ${post.image} relative overflow-hidden shrink-0`}>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
                 <motion.div 
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-grad-card mix-blend-overlay transition-opacity duration-500"
@@ -63,19 +63,19 @@ export default function Blog() {
               </div>
 
               {/* Content */}
-              <div className="p-8 flex-grow flex flex-col justify-between">
+              <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
-                  <p className="text-slate-400 text-sm mb-3 font-medium tracking-wide">{post.date}</p>
-                  <h3 className="text-2xl font-display font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors line-clamp-2 leading-tight">
+                  <p className="text-slate-400 text-sm mb-2">{post.date}</p>
+                  <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="text-slate-300 text-base leading-relaxed mb-6 line-clamp-2">
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6 line-clamp-3">
                     {post.excerpt}
                   </p>
                 </div>
                 
-                <div className="flex items-center text-cyan-400 text-sm font-bold uppercase tracking-widest group-hover:translate-x-4 transition-transform duration-300">
-                  Read More <FiArrowRight className="ml-3" size={18} />
+                <div className="flex items-center text-cyan-400 text-sm font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform duration-300">
+                  Read More <FiArrowRight className="ml-2" />
                 </div>
               </div>
             </motion.article>
