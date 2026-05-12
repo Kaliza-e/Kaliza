@@ -64,7 +64,7 @@ function ProjectCard({ project, index }) {
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${useTransform(mouseX, val => val + 200)}px ${useTransform(mouseY, val => val + 200)}px,
-              rgba(192, 132, 252, 0.15),
+              rgba(251, 191, 36, 0.15),
               transparent 80%
             )
           `,
@@ -77,7 +77,7 @@ function ProjectCard({ project, index }) {
           <div className="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-500"></div>
           {/* Overlay Links */}
           <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm bg-navy-900/40">
-            <a href="#" className="w-14 h-14 rounded-full bg-cyan-400 text-navy-900 flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_20px_rgba(192,132,252,0.5)]">
+            <a href="#" className="w-14 h-14 rounded-full bg-cyan-400 text-navy-900 flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_20px_rgba(251,191,36,0.5)]">
               <FiExternalLink size={24} />
             </a>
             <a href="#" className="w-14 h-14 rounded-full bg-white text-navy-900 flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.5)]">

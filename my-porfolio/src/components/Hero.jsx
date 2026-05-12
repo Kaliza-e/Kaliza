@@ -61,7 +61,7 @@ export default function Hero() {
         >
           <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
             {/* The distinctive rounded glowing frame from the image */}
-            <div className="absolute inset-4 rounded-[40px] border-[12px] border-cyan-400/80 shadow-[0_0_40px_rgba(217,70,239,0.5)] transform rotate-6"></div>
+            <div className="absolute inset-4 rounded-[40px] border-[12px] border-cyan-400/80 shadow-[0_0_40px_rgba(251,191,36,0.5)] transform rotate-6"></div>
             
             {/* Floating elements */}
             <motion.div 

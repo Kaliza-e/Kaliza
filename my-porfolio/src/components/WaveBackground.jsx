@@ -42,19 +42,19 @@ export default function WaveBackground() {
 
         <defs>
           <linearGradient id="gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#e879f9" stopOpacity="1" />
-            <stop offset="100%" stopColor="#c084fc" stopOpacity="0.2" />
+            <stop offset="0%" stopColor="#fbbf24" stopOpacity="1" />
+            <stop offset="100%" stopColor="#059669" stopOpacity="0.2" />
           </linearGradient>
           <linearGradient id="gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#c084fc" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#e879f9" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#059669" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#fbbf24" stopOpacity="0.4" />
           </linearGradient>
         </defs>
       </motion.svg>
       
       {/* Shiny background glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] mix-blend-screen animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-fuchsia-500/10 rounded-full blur-[150px] mix-blend-screen" style={{ animation: 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-[120px] mix-blend-screen animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-amber-500/10 rounded-full blur-[150px] mix-blend-screen" style={{ animation: 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}></div>
     </div>
   )
 }

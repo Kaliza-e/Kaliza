@@ -47,12 +47,12 @@ export default function CustomCursor() {
         transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 border border-cyan-400 rounded-full pointer-events-none z-[9998] mix-blend-screen shadow-[0_0_10px_rgba(192,132,252,0.5)]"
+        className="fixed top-0 left-0 w-12 h-12 border border-cyan-400 rounded-full pointer-events-none z-[9998] mix-blend-screen shadow-[0_0_10px_rgba(251,191,36,0.5)]"
         animate={{
           x: mousePosition.x - 24,
           y: mousePosition.y - 24,
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? 'rgba(192, 132, 252, 0.1)' : 'rgba(192, 132, 252, 0)'
+          backgroundColor: isHovering ? 'rgba(251, 191, 36, 0.1)' : 'rgba(251, 191, 36, 0)'
         }}
         transition={{ type: "tween", ease: "easeOut", duration: 0.2 }}
       />
