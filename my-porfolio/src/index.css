@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body bg-navy-900 text-slate-100 overflow-x-hidden antialiased cursor-none;
+  }
+
+  /* Keep default cursor for iframes or specific elements if needed */
+  iframe {
+    cursor: auto;
+  }
+
+  /* Scrollbar - hide it for a cleaner horizontal look or keep it minimal */
+  ::-webkit-scrollbar {
+    display: none; /* Hide for horizontal scroll architecture */
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-cyan-400/30 text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass-bg border border-glass-border backdrop-blur-[18px] rounded-2xl shadow-card relative overflow-hidden;
+  }
+  
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 bg-grad-card pointer-events-none;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 font-display font-semibold text-sm px-8 py-3.5 rounded-full cursor-pointer transition-all duration-300 relative overflow-hidden;
+  }
+  
+  .btn::after {
+    content: '';
+    @apply absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn:hover::after {
+    @apply opacity-100;
+  }
+
+  .btn-primary {
+    @apply btn bg-grad-cyan text-navy-900 shadow-[0_4px_24px_rgba(0,212,255,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,212,255,0.6)];
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent text-cyan-400 border border-glass-border backdrop-blur-[18px] hover:border-cyan-400 hover:bg-cyan-400/10 hover:-translate-y-0.5;
+  }
+  
+  .section-label {
+    @apply font-display text-xs font-bold tracking-[0.3em] uppercase text-cyan-400 mb-3 block;
+  }
+  
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-extrabold leading-tight text-white mb-5;
+  }
+  
+  .text-gradient {
+    @apply bg-grad-cyan bg-clip-text text-transparent;
+  }
+  
+  .section-subtitle {
+    @apply text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed;
+  }
+}
+
+/* Background grid pattern */
+.dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,212,255,0.12) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
