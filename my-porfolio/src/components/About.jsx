@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import avatarImg from '../assets/avatar.jpg'
 
 const stats = [
   { label: 'Years Experience', value: 2, suffix: '+' },
@@ -49,14 +50,17 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring" }}
           >
-            <div className="glass-card p-10 aspect-square max-w-md mx-auto flex items-center justify-center border-cyan-400/20 group hover:-translate-y-4 transition-transform duration-500">
-              <div className="absolute inset-0 bg-grad-hero opacity-50 rounded-2xl transition-opacity group-hover:opacity-80"></div>
-              <div className="relative z-10 text-center">
-                <div className="w-24 h-24 rounded-full bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center mx-auto mb-6 shadow-glow group-hover:scale-110 transition-transform duration-500">
-                  <span className="text-4xl">💻</span>
-                </div>
-                <h3 className="text-2xl font-display font-bold text-white mb-2">Code meets Design</h3>
-                <p className="text-cyan-400 text-sm">Building digital experiences</p>
+            <div className="glass-card aspect-square max-w-md mx-auto relative overflow-hidden border-cyan-400/20 group hover:-translate-y-4 transition-transform duration-500 rounded-3xl">
+              <div className="absolute inset-0 bg-navy-900/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+              <img 
+                src={avatarImg} 
+                alt="Profile Avatar" 
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute bottom-8 left-8 right-8 z-20 text-center">
+                <h3 className="text-2xl font-display font-bold text-white mb-2 drop-shadow-lg">Code meets Design</h3>
+                <p className="text-cyan-400 text-sm font-semibold tracking-wider uppercase drop-shadow-md">Building digital experiences</p>
               </div>
             </div>
             {/* Decorative elements */}
