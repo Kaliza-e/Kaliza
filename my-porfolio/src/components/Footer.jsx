@@ -13,8 +13,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <a href="#home" className="font-display text-2xl font-extrabold text-white mb-4">
               <span className="text-cyan-400 font-light">&lt;</span>
-              Dev
-              <span className="text-gradient">Portfolio</span>
+              <span className="text-gradient">Kaliza</span>
               <span className="text-cyan-400 font-light">/&gt;</span>
             </a>
             <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
@@ -55,7 +54,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-glass-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} DevPortfolio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Kaliza. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-cyan-400 transition-colors">Terms of Service</a>

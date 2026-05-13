@@ -50,7 +50,7 @@ export default function Navbar() {
         
         {/* Logo Icon */}
         <Link to="home" smooth duration={600} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center cursor-pointer flex-shrink-0 text-white border border-white/10 hover:bg-white/10 transition-colors">
-          <span className="font-display font-bold text-lg leading-none mt-0.5">S</span>
+          <span className="font-display font-bold text-lg leading-none mt-0.5">K</span>
         </Link>
 
         {/* Desktop Links */}
