@@ -39,38 +39,39 @@ export default function Navbar() {
 
   return (
     <motion.div
-      className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
+      className="fixed top-8 left-0 right-0 z-50 flex justify-center px-6"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <nav className={`w-full max-w-5xl rounded-full transition-all duration-300 flex items-center justify-between px-6 py-3 ${
-        scrolled ? 'bg-navy-900/90 backdrop-blur-md shadow-2xl border border-white/5' : 'bg-navy-800/50 backdrop-blur-sm border border-white/5'
+      <nav className={`w-full max-w-5xl rounded-[30px] transition-all duration-500 flex items-center justify-between px-8 py-4 ${
+        scrolled ? 'bg-navy-900/80 backdrop-blur-2xl shadow-card border border-white/10' : 'bg-transparent border border-transparent'
       }`}>
         
         {/* Logo Icon */}
-        <Link to="home" smooth duration={600} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center cursor-pointer flex-shrink-0 text-white border border-white/10 hover:bg-white/10 transition-colors">
-          <span className="font-display font-bold text-lg leading-none mt-0.5">K</span>
+        <Link to="home" smooth duration={600} className="group relative w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center cursor-pointer flex-shrink-0 text-white border border-white/10 hover:border-cyan-400/50 transition-all duration-500 overflow-hidden shadow-glow">
+          <div className="absolute inset-0 bg-grad-viby opacity-0 group-hover:opacity-20 transition-opacity"></div>
+          <span className="font-display font-black text-xl leading-none tracking-tighter">EK</span>
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-2">
+        <ul className="hidden md:flex items-center gap-1">
           {navLinks.map(({ label, to }) => (
             <li key={to}>
               <Link
                 to={to}
                 smooth
                 duration={600}
-                className={`relative font-display text-sm font-medium px-5 py-2 rounded-full cursor-pointer transition-colors duration-300 z-10 block ${
-                  active === to ? 'text-white' : 'text-slate-300 hover:text-white'
+                className={`relative font-body text-[13px] font-bold uppercase tracking-widest px-6 py-2.5 rounded-full cursor-pointer transition-all duration-500 z-10 block ${
+                  active === to ? 'text-white' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 {label}
                 {active === to && (
                   <motion.span
-                    className="absolute inset-0 bg-white/10 border border-white/5 rounded-full -z-10"
+                    className="absolute inset-0 bg-white/10 border border-white/10 rounded-full -z-10 shadow-glow"
                     layoutId="nav-indicator"
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                   />
                 )}
               </Link>
@@ -79,17 +80,17 @@ export default function Navbar() {
         </ul>
 
         {/* CTA Button */}
-        <a href="#contact" className="hidden md:inline-flex bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 text-white px-6 py-2 rounded-full font-medium text-sm transition-all shadow-[0_0_15px_rgba(217,70,239,0.3)]">
-          Contact
+        <a href="#contact" className="btn-primary px-8 py-2.5 text-xs font-black uppercase tracking-widest hidden md:inline-flex">
+          Let's Talk
         </a>
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden p-2 text-white/80 hover:text-white transition-colors pointer-events-auto"
+          className="md:hidden p-3 rounded-2xl bg-white/5 border border-white/10 text-white/80 hover:text-white transition-all pointer-events-auto"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
       </nav>
 
@@ -97,20 +98,22 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="absolute top-20 left-4 right-4 bg-navy-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col md:hidden"
+            className="absolute top-24 left-6 right-6 glass-card p-8 shadow-card flex flex-col md:hidden z-40"
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-3">
               {navLinks.map(({ label, to }) => (
                 <li key={to}>
                   <Link
                     to={to}
                     smooth
                     duration={600}
-                    className="block font-display text-base font-medium text-slate-300 px-4 py-3 rounded-xl cursor-pointer hover:text-white hover:bg-white/5 transition-colors"
+                    className={`block font-display text-xl font-bold px-6 py-4 rounded-2xl cursor-pointer transition-all ${
+                      active === to ? 'bg-white/10 text-white shadow-glow' : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}
@@ -118,8 +121,8 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a href="#contact" className="mt-4 bg-gradient-to-r from-cyan-400 to-teal-400 text-white text-center py-3 rounded-xl font-medium" onClick={() => setMenuOpen(false)}>
-              Contact
+            <a href="#contact" className="mt-8 btn-primary w-full py-4 text-center text-sm font-black uppercase tracking-widest" onClick={() => setMenuOpen(false)}>
+              Start a Project
             </a>
           </motion.div>
         )}

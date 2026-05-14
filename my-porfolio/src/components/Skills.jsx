@@ -2,35 +2,34 @@ import { motion } from 'framer-motion'
 
 const skillCategories = [
   {
-    title: 'Frontend',
+    title: 'Visual Frontend',
     skills: [
-      { name: 'React/Next.js', level: 90 },
-      { name: 'JavaScript/TS', level: 85 },
-      { name: 'Tailwind CSS', level: 95 },
-      { name:''}
+      { name: 'React / Next.js', level: 95 },
+      { name: 'JavaScript / TS', level: 90 },
+      { name: 'Tailwind CSS', level: 98 },
+      { name: 'Framer Motion', level: 85 }
     ]
   },
   {
-    title: 'Backend & DB',
+    title: 'Scalable Systems',
     skills: [
-      { name: 'Node.js', level: 80 },
-      { name: 'Python/Django', level: 70 },
-      { name: 'PostgreSQL', level: 85 },
-      { name: 'MongoDB', level: 75 },
-      {name:"Express.js",level:"90"},
-      {name:"MySQL",level:"85"}
+      { name: 'Node.js / Express', level: 88 },
+      { name: 'Python / Django', level: 75 },
+      { name: 'PostgreSQL / Mongo', level: 82 },
+      { name: 'Cloud / AWS', level: 70 }
     ]
   }
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-navy-800/30">
+    <section id="skills" className="py-32 relative overflow-hidden">
       {/* Decorative Orbs */}
-      <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+      <div className="absolute top-[20%] right-[5%] w-[500px] h-[500px] bg-fuchsia-500/10 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-cyan-400/10 rounded-full blur-[150px] pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-20 items-start">
           
           <motion.div 
             className="lg:col-span-5"
@@ -39,14 +38,15 @@ export default function Skills() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="section-label">Expertise</span>
-            <h2 className="section-title mb-6">My <span className="text-gradient">Skills</span></h2>
-            <p className="text-slate-300 leading-relaxed mb-8">
-              I've spent years mastering the tools needed to build incredible digital experiences. I focus on modern stacks that ensure high performance and seamless developer experience.
+            <span className="section-label">TECHNICAL PROWESS</span>
+            <h2 className="section-title mb-8">Mastering the <br/><span className="text-gradient">Digital Craft</span></h2>
+            <p className="font-body text-slate-300 text-lg leading-relaxed mb-10 opacity-80">
+              I've spent years mastering the tools needed to build incredible digital experiences. I focus on modern stacks that ensure high performance and seamless user interaction.
             </p>
+            
             <div className="flex flex-wrap gap-3">
-              {['Docker', 'AWS', 'GraphQL', 'Figma', 'Git'].map(tool => (
-                <span key={tool} className="px-4 py-2 border border-glass-border rounded-lg text-slate-300 text-sm font-medium backdrop-blur-sm">
+              {['Docker', 'AWS', 'GraphQL', 'Figma', 'Git', 'Vercel', 'Prisma'].map(tool => (
+                <span key={tool} className="px-5 py-2 bg-white/5 border border-white/10 rounded-xl text-slate-400 text-xs font-black font-creative uppercase tracking-widest hover:border-fuchsia-500/50 hover:text-white transition-all duration-300">
                   {tool}
                 </span>
               ))}
@@ -57,35 +57,37 @@ export default function Skills() {
             {skillCategories.map((category, catIdx) => (
               <motion.div 
                 key={catIdx}
-                className="glass-card p-10 border-cyan-400/10 hover:border-cyan-400/30 transition-colors duration-300"
+                className="glass-card p-10 group"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: catIdx * 0.2 }}
               >
-                <h3 className="text-2xl font-display font-bold text-white mb-10 flex items-center gap-4">
-                  <span className="w-12 h-12 rounded-xl bg-cyan-400/20 flex items-center justify-center text-cyan-400 text-xl shadow-glow">
-                    {catIdx === 0 ? '</>' : '⚙️'}
+                <div className="flex items-center gap-4 mb-12">
+                  <span className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-glow ${catIdx === 0 ? 'bg-cyan-400/10 text-cyan-400' : 'bg-fuchsia-500/10 text-fuchsia-500 shadow-fuchsia'}`}>
+                    {catIdx === 0 ? '✨' : '⚡'}
                   </span>
-                  {category.title}
-                </h3>
+                  <h3 className="text-2xl font-display font-bold text-white">
+                    {category.title}
+                  </h3>
+                </div>
                 
-                <div className="space-y-8">
+                <div className="space-y-10">
                   {category.skills.map((skill, idx) => (
                     <div key={idx}>
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="text-slate-200 font-medium text-lg">{skill.name}</span>
-                        <span className="text-cyan-400 font-bold">{skill.level}%</span>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-slate-200 font-body text-base font-semibold group-hover:text-white transition-colors">{skill.name}</span>
+                        <span className={`font-display font-black tracking-tighter text-xl ${catIdx === 0 ? 'text-cyan-400' : 'text-fuchsia-500'}`}>{skill.level}%</span>
                       </div>
-                      <div className="h-3 w-full bg-navy-900 rounded-full overflow-hidden shadow-inner">
+                      <div className="h-2 w-full bg-navy-800 rounded-full overflow-hidden p-[2px]">
                         <motion.div 
-                          className="h-full bg-grad-cyan rounded-full relative"
+                          className={`h-full rounded-full relative shadow-glow ${catIdx === 0 ? 'bg-cyan-400' : 'bg-fuchsia-500 shadow-fuchsia'}`}
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           viewport={{ once: true }}
                           transition={{ duration: 1.5, delay: 0.2 + (idx * 0.1), ease: "easeOut" }}
                         >
-                          <div className="absolute top-0 right-0 bottom-0 w-8 bg-white/20 blur-[2px]"></div>
+                          <div className="absolute top-0 right-0 bottom-0 w-12 bg-white/30 blur-[4px]"></div>
                         </motion.div>
                       </div>
                     </div>
