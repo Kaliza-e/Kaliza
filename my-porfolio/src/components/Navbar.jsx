@@ -49,7 +49,7 @@ export default function Navbar() {
       }`}>
         
         {/* Logo Icon */}
-        <Link to="home" smooth duration={600} className="group relative w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center cursor-pointer flex-shrink-0 text-white border border-white/10 hover:border-cyan-400/50 transition-all duration-500 overflow-hidden shadow-glow">
+        <Link to="home" smooth duration={600} className="group relative w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center cursor-pointer flex-shrink-0 text-white border border-white/10 hover:border-leaf-400/50 transition-all duration-500 overflow-hidden shadow-glow">
           <div className="absolute inset-0 bg-grad-viby opacity-0 group-hover:opacity-20 transition-opacity"></div>
           <span className="font-display font-black text-xl leading-none tracking-tighter">EK</span>
         </Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
                 {label}
                 {active === to && (
                   <motion.span
-                    className="absolute inset-0 bg-white/10 border border-white/10 rounded-full -z-10 shadow-glow"
+                    className="absolute inset-0 bg-leaf-400/10 border border-leaf-400/20 rounded-full -z-10 shadow-glow"
                     layoutId="nav-indicator"
                     transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                   />
@@ -80,7 +80,7 @@ export default function Navbar() {
         </ul>
 
         {/* CTA Button */}
-        <a href="#contact" className="btn-primary px-8 py-2.5 text-xs font-black uppercase tracking-widest hidden md:inline-flex">
+        <a href="#contact" className="btn-primary px-8 py-2.5 text-xs font-black uppercase tracking-widest hidden md:inline-flex shadow-neon">
           Let's Talk
         </a>
 
@@ -112,7 +112,7 @@ export default function Navbar() {
                     smooth
                     duration={600}
                     className={`block font-display text-xl font-bold px-6 py-4 rounded-2xl cursor-pointer transition-all ${
-                      active === to ? 'bg-white/10 text-white shadow-glow' : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      active === to ? 'bg-leaf-400/10 text-white shadow-glow' : 'text-slate-400 hover:text-white hover:bg-white/5'
                     }`}
                     onClick={() => setMenuOpen(false)}
                   >

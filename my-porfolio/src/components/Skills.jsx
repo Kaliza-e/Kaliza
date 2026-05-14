@@ -25,8 +25,8 @@ export default function Skills() {
   return (
     <section id="skills" className="py-32 relative overflow-hidden">
       {/* Decorative Orbs */}
-      <div className="absolute top-[20%] right-[5%] w-[500px] h-[500px] bg-fuchsia-500/10 rounded-full blur-[150px] pointer-events-none"></div>
-      <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-cyan-400/10 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute top-[20%] right-[5%] w-[500px] h-[500px] bg-leaf-400/10 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-cream-200/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-12 gap-20 items-start">
@@ -40,13 +40,13 @@ export default function Skills() {
           >
             <span className="section-label">TECHNICAL PROWESS</span>
             <h2 className="section-title mb-8">Mastering the <br/><span className="text-gradient">Digital Craft</span></h2>
-            <p className="font-body text-slate-300 text-lg leading-relaxed mb-10 opacity-80">
+            <p className="font-body text-slate-300 text-lg leading-relaxed mb-10 opacity-70">
               I've spent years mastering the tools needed to build incredible digital experiences. I focus on modern stacks that ensure high performance and seamless user interaction.
             </p>
             
             <div className="flex flex-wrap gap-3">
               {['Docker', 'AWS', 'GraphQL', 'Figma', 'Git', 'Vercel', 'Prisma'].map(tool => (
-                <span key={tool} className="px-5 py-2 bg-white/5 border border-white/10 rounded-xl text-slate-400 text-xs font-black font-creative uppercase tracking-widest hover:border-fuchsia-500/50 hover:text-white transition-all duration-300">
+                <span key={tool} className="px-5 py-2 bg-white/5 border border-white/10 rounded-xl text-slate-400 text-xs font-black font-creative uppercase tracking-widest hover:border-leaf-400/50 hover:text-white transition-all duration-300">
                   {tool}
                 </span>
               ))}
@@ -64,8 +64,8 @@ export default function Skills() {
                 transition={{ duration: 0.8, delay: catIdx * 0.2 }}
               >
                 <div className="flex items-center gap-4 mb-12">
-                  <span className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-glow ${catIdx === 0 ? 'bg-cyan-400/10 text-cyan-400' : 'bg-fuchsia-500/10 text-fuchsia-500 shadow-fuchsia'}`}>
-                    {catIdx === 0 ? '✨' : '⚡'}
+                  <span className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-glow ${catIdx === 0 ? 'bg-leaf-400/10 text-leaf-400' : 'bg-olive-500/10 text-olive-500 shadow-neon'}`}>
+                    {catIdx === 0 ? '🍃' : '🌿'}
                   </span>
                   <h3 className="text-2xl font-display font-bold text-white">
                     {category.title}
@@ -77,11 +77,11 @@ export default function Skills() {
                     <div key={idx}>
                       <div className="flex justify-between items-center mb-4">
                         <span className="text-slate-200 font-body text-base font-semibold group-hover:text-white transition-colors">{skill.name}</span>
-                        <span className={`font-display font-black tracking-tighter text-xl ${catIdx === 0 ? 'text-cyan-400' : 'text-fuchsia-500'}`}>{skill.level}%</span>
+                        <span className={`font-display font-black tracking-tighter text-xl ${catIdx === 0 ? 'text-leaf-400' : 'text-cream-200'}`}>{skill.level}%</span>
                       </div>
-                      <div className="h-2 w-full bg-navy-800 rounded-full overflow-hidden p-[2px]">
+                      <div className="h-2 w-full bg-forest-800 rounded-full overflow-hidden p-[2px]">
                         <motion.div 
-                          className={`h-full rounded-full relative shadow-glow ${catIdx === 0 ? 'bg-cyan-400' : 'bg-fuchsia-500 shadow-fuchsia'}`}
+                          className={`h-full rounded-full relative shadow-glow ${catIdx === 0 ? 'bg-leaf-400' : 'bg-olive-500 shadow-neon'}`}
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           viewport={{ once: true }}

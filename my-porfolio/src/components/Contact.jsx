@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-400/5 blur-[150px] -z-10 rounded-full"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-leaf-400/5 blur-[150px] -z-10 rounded-full"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div 
@@ -37,9 +37,9 @@ export default function Contact() {
 
             <div className="space-y-8">
               {[
-                { icon: FiMail, label: 'Email', value: 'hello@estherkaliza.com', href: 'mailto:hello@estherkaliza.com', color: 'text-cyan-400', bg: 'bg-cyan-400/10' },
-                { icon: FiPhone, label: 'Phone', value: '+1 (234) 567-890', href: 'tel:+1234567890', color: 'text-fuchsia-500', bg: 'bg-fuchsia-500/10' },
-                { icon: FiMapPin, label: 'Location', value: 'San Francisco, CA', color: 'text-cyan-400', bg: 'bg-cyan-400/10' },
+                { icon: FiMail, label: 'Email', value: 'hello@estherkaliza.com', href: 'mailto:hello@estherkaliza.com', color: 'text-leaf-400', bg: 'bg-leaf-400/10' },
+                { icon: FiPhone, label: 'Phone', value: '+1 (234) 567-890', href: 'tel:+1234567890', color: 'text-cream-200', bg: 'bg-cream-200/10' },
+                { icon: FiMapPin, label: 'Location', value: 'San Francisco, CA', color: 'text-leaf-400', bg: 'bg-leaf-400/10' },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-6 group">
                   <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center flex-shrink-0 border border-white/5 group-hover:scale-110 transition-all duration-300 shadow-glow`}>
@@ -73,7 +73,7 @@ export default function Contact() {
                   <input 
                     type="text" 
                     id="name" 
-                    className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all placeholder:text-slate-600 font-body"
+                    className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-leaf-400 focus:ring-1 focus:ring-leaf-400 transition-all placeholder:text-slate-600 font-body"
                     placeholder="John Doe"
                   />
                 </div>
@@ -82,7 +82,7 @@ export default function Contact() {
                   <input 
                     type="email" 
                     id="email" 
-                    className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 transition-all placeholder:text-slate-600 font-body"
+                    className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-cream-200 focus:ring-1 focus:ring-cream-200 transition-all placeholder:text-slate-600 font-body"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -93,7 +93,7 @@ export default function Contact() {
                 <input 
                   type="text" 
                   id="subject" 
-                  className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all placeholder:text-slate-600 font-body"
+                  className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-leaf-400 focus:ring-1 focus:ring-leaf-400 transition-all placeholder:text-slate-600 font-body"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -103,14 +103,14 @@ export default function Contact() {
                 <textarea 
                   id="message" 
                   rows="5" 
-                  className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 transition-all placeholder:text-slate-600 font-body resize-none"
+                  className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-cream-200 focus:ring-1 focus:ring-cream-200 transition-all placeholder:text-slate-600 font-body resize-none"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </div>
 
               <button type="submit" className="btn-primary w-full py-5 text-lg group">
                 Send Message 
-                <FiSend className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <FiSend className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-forest-900" />
               </button>
             </form>
           </motion.div>

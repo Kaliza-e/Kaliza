@@ -7,21 +7,21 @@ const posts = [
     date: 'May 10, 2026',
     category: 'Trends',
     excerpt: 'Exploring the new paradigms in frontend frameworks, serverless architectures, and AI integration.',
-    image: 'bg-gradient-to-tr from-indigo-900 via-navy-900 to-fuchsia-900',
+    image: 'bg-gradient-to-tr from-forest-800 via-leaf-400 to-olive-500',
   },
   {
     title: 'Mastering Framer Motion in React',
     date: 'April 22, 2026',
     category: 'Tutorial',
     excerpt: 'A comprehensive guide to creating fluid, physics-based animations in modern React applications.',
-    image: 'bg-gradient-to-tr from-navy-900 via-cyan-900 to-indigo-900',
+    image: 'bg-gradient-to-tr from-forest-900 via-olive-400 to-leaf-300',
   },
   {
     title: 'Designing for Accessibility First',
     date: 'March 15, 2026',
     category: 'Design',
     excerpt: 'Why inclusive design isn\'t just a nice-to-have, but a core requirement for successful digital products.',
-    image: 'bg-gradient-to-tr from-fuchsia-900 via-navy-900 to-cyan-900',
+    image: 'bg-gradient-to-tr from-cream-200 via-leaf-400 to-forest-800',
   }
 ]
 
@@ -29,7 +29,7 @@ export default function Blog() {
   return (
     <section id="blog" className="py-32 relative overflow-hidden">
       {/* Background Decorative Element */}
-      <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-cyan-400/5 blur-[120px] -z-10 rounded-full"></div>
+      <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-leaf-400/5 blur-[120px] -z-10 rounded-full"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div 
@@ -47,7 +47,7 @@ export default function Blog() {
           {posts.map((post, index) => (
             <motion.article 
               key={index}
-              className="glass-card group flex flex-col h-full cursor-pointer hover:border-fuchsia-500/30 transition-all duration-500"
+              className="glass-card group flex flex-col h-full cursor-pointer hover:border-leaf-400/30 transition-all duration-500"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -55,12 +55,12 @@ export default function Blog() {
             >
               {/* Image Placeholder */}
               <div className={`h-56 w-full ${post.image} relative overflow-hidden shrink-0`}>
-                <div className="absolute inset-0 bg-navy-900/60 group-hover:bg-navy-900/20 transition-all duration-700"></div>
+                <div className="absolute inset-0 bg-forest-900/60 group-hover:bg-forest-900/20 transition-all duration-700"></div>
                 
                 {/* Decorative Mesh */}
                 <div className="absolute inset-0 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
 
-                <div className="absolute top-6 left-6 bg-navy-900/80 backdrop-blur-md border border-white/10 text-fuchsia-500 font-fancy text-[10px] font-black tracking-widest px-5 py-2 rounded-xl uppercase shadow-fuchsia">
+                <div className="absolute top-6 left-6 bg-forest-900/80 backdrop-blur-md border border-white/10 text-leaf-400 font-fancy text-[10px] font-black tracking-widest px-5 py-2 rounded-xl uppercase shadow-glow">
                   {post.category}
                 </div>
               </div>
@@ -72,12 +72,12 @@ export default function Blog() {
                   <h3 className="text-2xl font-display font-bold text-white mb-4 group-hover:text-gradient transition-all duration-500 line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="font-body text-slate-400 text-sm leading-relaxed mb-10 line-clamp-3 opacity-80 group-hover:opacity-100 transition-opacity">
+                  <p className="font-body text-slate-400 text-sm leading-relaxed mb-10 line-clamp-3 opacity-70 group-hover:opacity-100 transition-opacity">
                     {post.excerpt}
                   </p>
                 </div>
                 
-                <div className="flex items-center text-cyan-400 font-fancy text-[11px] font-black uppercase tracking-widest group-hover:translate-x-3 transition-transform duration-500">
+                <div className="flex items-center text-leaf-400 font-fancy text-[11px] font-black uppercase tracking-widest group-hover:translate-x-3 transition-transform duration-500">
                   Dive Deeper <FiArrowRight className="ml-3 group-hover:scale-125 transition-transform" />
                 </div>
               </div>
