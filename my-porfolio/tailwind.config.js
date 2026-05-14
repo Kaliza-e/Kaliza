@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// Force reload for Viby theme
 export default {
   content: [
     "./index.html",
@@ -8,34 +9,39 @@ export default {
     extend: {
       colors: {
         navy: {
-          800: '#064e3b',
-          900: '#022c22',
+          800: '#0a0a1a', // Deep indigo
+          900: '#050505', // True black
         },
         cyan: {
-          300: '#fde047',
-          400: '#fbbf24',
-          500: '#f59e0b',
+          300: '#b3f8ff',
+          400: '#00f2ff', // Electric Cyan
+          500: '#00d0db',
         },
-        teal: {
-          400: '#fcd34d',
+        fuchsia: {
+          400: '#ff61f2',
+          500: '#ff00e5', // Neon Fuchsia
+          600: '#db00c5',
         },
         glass: {
-          bg: 'rgba(255, 255, 255, 0.04)',
-          border: 'rgba(251, 191, 36, 0.18)',
+          bg: 'rgba(255, 255, 255, 0.03)',
+          border: 'rgba(255, 255, 255, 0.1)',
         }
       },
       fontFamily: {
-        display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Clash Display"', 'sans-serif'],
+        creative: ['"Syne"', 'sans-serif'],
+        body: ['"Syne"', 'sans-serif'],
       },
       backgroundImage: {
-        'grad-cyan': 'linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%)',
-        'grad-hero': 'linear-gradient(135deg, #022c22 0%, #064e3b 50%, #065f46 100%)',
-        'grad-card': 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%)',
+        'grad-viby': 'linear-gradient(135deg, #00f2ff 0%, #ff00e5 100%)',
+        'grad-cyan': 'linear-gradient(90deg, #00f2ff 0%, #ff00e5 100%)',
+        'grad-hero': 'radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%)',
+        'grad-card': 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
       },
       boxShadow: {
-        glow: '0 0 30px -5px rgba(251, 191, 36, 0.4)', // Magenta glow
-        card: '0 8px 32px rgba(0, 0, 0, 0.4)',
+        glow: '0 0 30px -5px rgba(0, 242, 255, 0.5)',
+        neon: '0 0 30px -5px rgba(255, 0, 229, 0.5)',
+        card: '0 8px 32px rgba(0, 0, 0, 0.8)',
       }
     },
   },

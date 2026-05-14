@@ -23,73 +23,81 @@ function AnimatedCounter({ value }) {
 
 export default function About() {
   const [ref, inView] = useInView({
+    threshold: 0.3,
     triggerOnce: true,
-    threshold: 0.2,
   })
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="section-label">Discover</span>
-          <h2 className="section-title">About <span className="text-gradient">Me</span></h2>
-        </motion.div>
+    <section id="about" className="relative py-32 bg-navy-900 overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-cyan-400/10 rounded-full blur-[120px] -z-10"></div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Image/Visual side */}
           <motion.div
-            className="relative"
+            className="relative flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring" }}
           >
-            <div className="glass-card aspect-square max-w-md mx-auto relative overflow-hidden border-cyan-400/20 group hover:-translate-y-4 transition-transform duration-500 rounded-3xl">
-              <div className="absolute inset-0 bg-navy-900/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-              <img 
-                src={avatarImg} 
-                alt="Profile Avatar" 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent z-10 pointer-events-none"></div>
-              <div className="absolute bottom-8 left-8 right-8 z-20 text-center">
-                <h3 className="text-2xl font-display font-bold text-white mb-2 drop-shadow-lg">Code meets Design</h3>
-                <p className="text-cyan-400 text-sm font-semibold tracking-wider uppercase drop-shadow-md">Building digital experiences</p>
+            <div className="relative w-[300px] h-[300px] md:w-[420px] md:h-[420px]">
+              {/* The distinctive rotated glowing frame */}
+              <div className="absolute inset-4 rounded-[50px] border-[14px] border-fuchsia-500 shadow-neon transform -rotate-6 group-hover:rotate-0 transition-transform duration-700"></div>
+              
+              {/* Floating elements */}
+              <motion.div 
+                className="absolute -right-6 bottom-12 w-16 h-16 bg-white/5 backdrop-blur-2xl rounded-2xl border border-white/10 flex items-center justify-center text-2xl z-20 shadow-card"
+                animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              >💻</motion.div>
+              <motion.div 
+                className="absolute -left-10 top-16 w-14 h-14 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 flex items-center justify-center text-xl z-20 shadow-card"
+                animate={{ y: [0, 10, 0], rotate: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              >🎨</motion.div>
+
+              {/* Avatar image container */}
+              <div className="absolute inset-8 rounded-[35px] overflow-hidden flex items-end justify-center bg-navy-800 z-10 border border-white/5">
+                <img 
+                  src={avatarImg} 
+                  alt="Profile Avatar" 
+                  className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-700 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-grad-cyan rounded-full mix-blend-screen blur-xl opacity-50"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-teal-400 rounded-full mix-blend-screen blur-2xl opacity-30"></div>
           </motion.div>
 
           {/* Text/Content side */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h3 className="text-3xl font-display font-bold text-white mb-6">
-              I develop <span className="text-cyan-400">innovative solutions</span> that help brands grow.
-            </h3>
-            <p className="text-slate-300 leading-relaxed mb-6">
-              I'm a passionate developer with a strong focus on building user-centric interfaces and robust backend architectures. I blend creativity with technical expertise to transform complex problems into elegant, intuitive digital products.
+            <span className="section-label">THE STORY SO FAR</span>
+            <h2 className="section-title">
+              Crafting Digital <br/> 
+              <span className="text-gradient">Magic</span>
+            </h2>
+            
+            <p className="font-body text-slate-300 text-base md:text-lg leading-relaxed mb-8 opacity-80">
+              I blend technical expertise with artistic vision to transform complex problems into elegant, intuitive digital products. 
+              My approach revolves around clean code, modern aesthetics, and seamless interactions. 
             </p>
-            <p className="text-slate-300 leading-relaxed mb-10">
-              My approach revolves around clean code, modern aesthetics, and seamless interactions. Whether it's a sleek landing page or a complex web application, I ensure every pixel serves a purpose.
+
+            <p className="font-body text-slate-400 text-sm md:text-base leading-relaxed mb-12 italic border-l-2 border-fuchsia-500 pl-6">
+              "Whether it's a sleek landing page or a complex web application, I ensure every pixel serves a purpose and every interaction feels alive."
             </p>
 
             {/* Stats */}
-            <div ref={ref} className="grid grid-cols-3 gap-6">
+            <div ref={ref} className="grid grid-cols-3 gap-8 mt-16">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center sm:text-left">
-                  <div className="text-3xl md:text-4xl font-display font-extrabold text-transparent bg-clip-text bg-grad-cyan mb-2">
+                <div key={index} className="relative group">
+                  <div className="font-display text-4xl md:text-6xl font-bold text-white mb-2 drop-shadow-sm tracking-tighter">
                     {inView ? (
                       <AnimatedCounter value={stat.value} />
                     ) : (
@@ -97,9 +105,11 @@ export default function About() {
                     )}
                     {stat.suffix}
                   </div>
-                  <div className="text-xs md:text-sm text-slate-400 uppercase tracking-wider font-medium">
+                  <div className="font-body text-[9px] md:text-[10px] text-fuchsia-500 uppercase tracking-[0.3em] font-black">
                     {stat.label}
                   </div>
+                  {/* Subtle hover indicator */}
+                  <div className="absolute -bottom-4 left-0 w-0 h-1 bg-grad-viby group-hover:w-full transition-all duration-700 rounded-full"></div>
                 </div>
               ))}
             </div>
