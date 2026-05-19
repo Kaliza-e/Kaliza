@@ -55,12 +55,12 @@ export default function Blog() {
             >
               {/* Image Placeholder */}
               <div className={`h-56 w-full ${post.image} relative overflow-hidden shrink-0`}>
-                <div className="absolute inset-0 bg-forest-900/60 group-hover:bg-forest-900/20 transition-all duration-700"></div>
+                <div className="absolute inset-0 bg-[#1B211A]/60 group-hover:bg-[#1B211A]/20 transition-all duration-700"></div>
                 
                 {/* Decorative Mesh */}
                 <div className="absolute inset-0 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
 
-                <div className="absolute top-6 left-6 bg-forest-900/80 backdrop-blur-md border border-white/10 text-leaf-400 font-fancy text-[10px] font-black tracking-widest px-5 py-2 rounded-xl uppercase shadow-glow">
+                <div className="absolute top-6 left-6 bg-[#1B211A]/80 backdrop-blur-md border border-white/10 text-leaf-400 font-fancy text-[10px] font-black tracking-widest px-5 py-2 rounded-xl uppercase shadow-glow">
                   {post.category}
                 </div>
               </div>

@@ -79,7 +79,7 @@ export default function Skills() {
                         <span className="text-slate-200 font-body text-base font-semibold group-hover:text-white transition-colors">{skill.name}</span>
                         <span className={`font-display font-black tracking-tighter text-xl ${catIdx === 0 ? 'text-leaf-400' : 'text-cream-200'}`}>{skill.level}%</span>
                       </div>
-                      <div className="h-2 w-full bg-forest-800 rounded-full overflow-hidden p-[2px]">
+                      <div className="h-2 w-full bg-[#1B211A] rounded-full overflow-hidden p-[2px]">
                         <motion.div 
                           className={`h-full rounded-full relative shadow-glow ${catIdx === 0 ? 'bg-leaf-400' : 'bg-olive-500 shadow-neon'}`}
                           initial={{ width: 0 }}

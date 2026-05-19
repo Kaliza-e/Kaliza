@@ -75,13 +75,13 @@ function ProjectCard({ project, index }) {
       <div style={{ transform: "translateZ(50px)" }}>
         {/* Project Image Placeholder */}
         <div className={`h-64 w-full ${project.image} relative overflow-hidden rounded-t-3xl`}>
-          <div className="absolute inset-0 bg-forest-900/40 group-hover:bg-transparent transition-colors duration-700"></div>
+          <div className="absolute inset-0 bg-[#1B211A]/40 group-hover:bg-transparent transition-colors duration-700"></div>
           
           {/* Decorative Mesh Overlay */}
           <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
 
           {/* Overlay Links */}
-          <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 backdrop-blur-md bg-forest-900/60">
+          <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 backdrop-blur-md bg-[#1B211A]/60">
             <a href="#" className="w-12 h-12 rounded-2xl bg-leaf-400 text-forest-900 flex items-center justify-center hover:scale-110 transition-transform shadow-glow">
               <FiExternalLink size={20} />
             </a>

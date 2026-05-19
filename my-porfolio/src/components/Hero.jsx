@@ -3,11 +3,11 @@ import WaveBackground from './WaveBackground'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-10 overflow-hidden bg-forest-900">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-10 overflow-hidden bg-[#1B211A]">
       <WaveBackground />
       
       {/* Deep Shadow Overlay for Depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forest-900/40 to-forest-900 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1B211A]/40 to-[#1B211A] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-20 items-center">
         {/* Text Content */}
@@ -71,13 +71,13 @@ export default function Hero() {
             >✨</motion.div>
 
             {/* Avatar image container */}
-            <div className="absolute inset-8 rounded-[35px] overflow-hidden flex items-end justify-center bg-forest-800 z-10 border border-white/5 shadow-2xl">
+            <div className="absolute inset-8 rounded-[35px] overflow-hidden flex items-end justify-center bg-[#242b23] z-10 border border-white/5 shadow-2xl">
               <img 
                 src="/src/assets/avatar.jpg" 
                 alt="Creative Developer" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 brightness-90 hover:brightness-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-900 via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1B211A] via-transparent to-transparent opacity-60"></div>
             </div>
           </div>
         </motion.div>

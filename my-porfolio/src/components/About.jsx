@@ -28,10 +28,10 @@ export default function About() {
   })
 
   return (
-    <section id="about" className="relative py-32 bg-forest-900 overflow-hidden">
+    <section id="about" className="relative py-32 bg-[#1B211A] overflow-hidden">
       {/* Background Orbs */}
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-leaf-400/10 rounded-full blur-[120px] -z-10"></div>
-      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-cream-200/5 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-[#8BAE66]/10 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-[#EBD5AB]/5 rounded-full blur-[120px] -z-10"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -60,13 +60,13 @@ export default function About() {
               >🎨</motion.div>
 
               {/* Avatar image container */}
-              <div className="absolute inset-8 rounded-[35px] overflow-hidden flex items-end justify-center bg-forest-800 z-10 border border-white/5">
+              <div className="absolute inset-8 rounded-[35px] overflow-hidden flex items-end justify-center bg-[#242b23] z-10 border border-white/5">
                 <img 
                   src={avatarImg} 
                   alt="Profile Avatar" 
                   className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1B211A]/80 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
           </motion.div>

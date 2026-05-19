@@ -45,7 +45,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <nav className={`w-full max-w-5xl rounded-[30px] transition-all duration-500 flex items-center justify-between px-8 py-4 ${
-        scrolled ? 'bg-navy-900/80 backdrop-blur-2xl shadow-card border border-white/10' : 'bg-transparent border border-transparent'
+        scrolled ? 'bg-[#1B211A]/80 backdrop-blur-2xl shadow-card border border-white/10' : 'bg-transparent border border-transparent'
       }`}>
         
         {/* Logo Icon */}
