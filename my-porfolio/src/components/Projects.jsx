@@ -41,7 +41,7 @@ function ProjectCard({ project, index }) {
 
   return (
     <motion.div
-      className="glass-card group relative w-full overflow-visible"
+      className="glass-card group relative w-full overflow-visible rounded-none"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -57,15 +57,20 @@ function ProjectCard({ project, index }) {
         transformStyle: "preserve-3d",
       }}
     >
+      {/* Target-Lock corner brackets */}
+      <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+      <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+      <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+      <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+
       {/* Dynamic Glow Effect */}
       <motion.div
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-500 group-hover:opacity-100 blur-xl"
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 group-hover:opacity-100 blur-xl"
         style={{
           background: useMotionTemplate`
             radial-gradient(
               400px circle at ${useTransform(mouseX, val => val + 200)}px ${useTransform(mouseY, val => val + 200)}px,
-              rgba(139, 174, 102, 0.15),
-              rgba(235, 213, 171, 0.05),
+              rgba(136, 255, 0, 0.15),
               transparent 80%
             )
           `,
@@ -73,33 +78,33 @@ function ProjectCard({ project, index }) {
       />
 
       <div style={{ transform: "translateZ(50px)" }}>
-        {/* Project Image Placeholder */}
-        <div className={`h-64 w-full ${project.image} relative overflow-hidden rounded-t-3xl`}>
-          <div className="absolute inset-0 bg-[#1B211A]/40 group-hover:bg-transparent transition-colors duration-700"></div>
+        {/* Project Image Placeholder with technical wireframes */}
+        <div className={`h-60 w-full ${project.image} relative overflow-hidden`}>
+          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/10 transition-colors duration-700"></div>
           
-          {/* Decorative Mesh Overlay */}
-          <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+          {/* Grainy Mesh Overlay */}
+          <div className="absolute inset-0 opacity-15 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
 
-          {/* Overlay Links */}
-          <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 backdrop-blur-md bg-[#1B211A]/60">
-            <a href="#" className="w-12 h-12 rounded-2xl bg-leaf-400 text-forest-900 flex items-center justify-center hover:scale-110 transition-transform shadow-glow">
-              <FiExternalLink size={20} />
+          {/* Overlay Link Buttons */}
+          <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 backdrop-blur-md bg-black/60">
+            <a href="#" className="w-12 h-12 bg-leaf-400 text-black flex items-center justify-center hover:scale-115 transition-transform shadow-glow font-bold">
+              <FiExternalLink size={18} />
             </a>
-            <a href="#" className="w-12 h-12 rounded-2xl bg-white text-forest-900 flex items-center justify-center hover:scale-110 transition-transform shadow-card">
-              <FiGithub size={20} />
+            <a href="#" className="w-12 h-12 bg-white text-black flex items-center justify-center hover:scale-115 transition-transform shadow-card">
+              <FiGithub size={18} />
             </a>
           </div>
         </div>
 
         {/* Project Content */}
-        <div className="p-8">
+        <div className="p-8 bg-[#0c0f0c] border-t border-white/5 relative">
           <div className="flex justify-between items-start mb-4">
-            <h3 className="font-display text-3xl font-bold text-white group-hover:text-gradient transition-all duration-500">
+            <h3 className="font-display text-2xl font-black text-white group-hover:text-leaf-400 transition-all duration-300 uppercase">
               {project.title}
             </h3>
           </div>
           
-          <p className="font-body text-slate-300 text-sm md:text-base leading-relaxed mb-8 line-clamp-2 opacity-70 group-hover:opacity-100 transition-opacity">
+          <p className="font-creative text-slate-300 text-xs md:text-sm leading-relaxed mb-8 line-clamp-2 opacity-70 group-hover:opacity-100 transition-opacity">
             {project.description}
           </p>
 
@@ -107,7 +112,7 @@ function ProjectCard({ project, index }) {
             {project.tags.map((tag, i) => (
               <span 
                 key={i} 
-                className="px-3 py-1 text-[10px] font-black font-creative uppercase tracking-widest text-leaf-400 bg-leaf-400/5 border border-leaf-400/10 rounded-full group-hover:border-leaf-400/30 transition-colors"
+                className="px-3 py-1 text-[9px] font-black font-creative uppercase tracking-widest text-leaf-400 bg-leaf-400/5 border border-leaf-400/10 group-hover:border-leaf-400/30 transition-colors"
               >
                 {tag}
               </span>
@@ -121,7 +126,7 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32 relative">
+    <section id="projects" className="py-32 relative bg-[#030503]">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div 
           className="text-center mb-24"
@@ -134,21 +139,21 @@ export default function Projects() {
           <h2 className="section-title">Case <span className="text-gradient">Studies</span></h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 pointer-events-auto">
+        <div className="grid lg:grid-cols-2 gap-10 pointer-events-auto">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
         
         <div className="mt-20 text-center pointer-events-auto">
-          <a href="#" className="btn-outline border-leaf-400/30 hover:border-leaf-400 text-leaf-400">
+          <a href="#" className="bracket-btn">
             View Archives
           </a>
         </div>
       </div>
 
-      {/* Background Decorative Element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-leaf-400/5 blur-[150px] -z-10 rounded-full"></div>
+      {/* Background atmospheric glowing dust */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-leaf-400/[0.02] blur-[150px] -z-10 rounded-full"></div>
     </section>
   )
 }

@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
 import WaveBackground from './WaveBackground'
-import heroChar from '../assets/hero_character.png'
+import heroChar from '../assests/avatar.jpg'
 import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#030503]">
       <WaveBackground />
-      
+
       {/* Heavy obsidian mesh glow behind visual assets */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#030503]/50 via-transparent to-[#030503] pointer-events-none z-10"></div>
 
@@ -26,7 +26,7 @@ export default function Hero() {
           <span className="w-5 h-0.5 bg-white group-hover:bg-leaf-400 transition-all"></span>
           <span className="w-6 h-0.5 bg-white group-hover:bg-leaf-400 group-hover:-translate-x-1 transition-all"></span>
         </div>
-        
+
         {/* Page counter oriented vertically */}
         <div className="font-creative text-xs font-black tracking-[0.4em] text-white/40 uppercase rotate-90 origin-center my-8 whitespace-nowrap">
           <span className="text-leaf-400">01</span> / 07
@@ -41,11 +41,11 @@ export default function Hero() {
             { icon: <FaWhatsapp size={14} />, link: "https://wa.me" },
             { icon: <FaInstagram size={14} />, link: "https://instagram.com" },
           ].map((item, idx) => (
-            <a 
-              key={idx} 
-              href={item.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              key={idx}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/40 hover:text-leaf-400 transition-all duration-300 transform hover:scale-125 p-2"
             >
               {item.icon}
@@ -58,9 +58,9 @@ export default function Hero() {
 
       {/* Core Main Grid container */}
       <div className="container mx-auto px-6 md:px-16 lg:px-24 relative z-20 grid lg:grid-cols-12 gap-12 lg:gap-6 items-center w-full min-h-[calc(100vh-160px)]">
-        
+
         {/* Left Side Content - taking 7/12 grid spaces */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-7 text-left flex flex-col items-start pt-6 lg:pt-0"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -78,7 +78,7 @@ export default function Hero() {
           <h1 className="font-display text-7xl md:text-9xl font-black text-white mb-6 leading-[0.8] tracking-tighter uppercase relative select-none">
             ARCANE
           </h1>
-          
+
           {/* Secondary Glow Tagline below Title */}
           <div className="mb-12 font-creative text-left">
             <h2 className="text-leaf-400 text-lg md:text-xl font-bold tracking-[0.2em] uppercase leading-none mb-1 text-glow">
@@ -98,14 +98,14 @@ export default function Hero() {
         </motion.div>
 
         {/* Right Side Visual Elements - taking 5/12 grid spaces */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-5 relative flex justify-center lg:justify-end h-full w-full select-none"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, type: "spring" }}
         >
           <div className="relative w-full max-w-[450px] aspect-[4/5] flex items-center justify-center">
-            
+
             {/* Massive Spray-paint Graffiti Backdrop text "JINX" */}
             <div className="absolute -top-6 lg:-top-12 left-0 lg:-left-12 font-display text-[9rem] md:text-[11rem] lg:text-[12rem] font-black text-graffiti select-none pointer-events-none opacity-80 z-0 tracking-tighter -rotate-12 transform">
               JINX
@@ -121,16 +121,16 @@ export default function Hero() {
               <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-leaf-400 z-20"></div>
               <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-leaf-400 z-20"></div>
               <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-leaf-400 z-20"></div>
-              
-              <img 
-                src={heroChar} 
-                alt="Cyberpunk Developer Jinx Aesthetic" 
+
+              <img
+                src={heroChar}
+                alt="Cyberpunk Developer Jinx Aesthetic"
                 className="w-full h-full object-cover brightness-[0.85] hover:brightness-[1.0] transition-all duration-700 hover:scale-105"
               />
               {/* Dark mist overlay at the bottom of the portrait */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#030503] via-[#030503]/40 to-transparent z-20"></div>
             </div>
-            
+
             {/* Copyright indicator framing the portrait */}
             <div className="absolute bottom-0 right-0 font-creative text-[8px] md:text-[9px] text-white/30 uppercase tracking-[0.2em] z-20 pr-1">
               © 2026 KALIZA PRODUCTIONS INC.
@@ -143,7 +143,7 @@ export default function Hero() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-auto">
         <a href="#about" className="flex flex-col items-center gap-2 cursor-pointer group">
           <div className="w-5 h-9 border border-white/20 rounded-full flex justify-center p-1 hover:border-leaf-400 transition-all duration-300">
-            <motion.div 
+            <motion.div
               className="w-1 h-2 bg-leaf-400 rounded-full"
               animate={{ y: [0, 10, 0], opacity: [1, 0.4, 1] }}
               transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}

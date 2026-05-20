@@ -28,46 +28,47 @@ export default function About() {
   })
 
   return (
-    <section id="about" className="relative py-32 bg-[#1B211A] overflow-hidden">
-      {/* Background Orbs */}
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-[#8BAE66]/10 rounded-full blur-[120px] -z-10"></div>
-      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-[#EBD5AB]/5 rounded-full blur-[120px] -z-10"></div>
+    <section id="about" className="relative py-32 bg-[#030503] overflow-hidden">
+      {/* Dynamic atmospheric orbs */}
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-leaf-400/5 rounded-full blur-[130px] -z-10 animate-pulse"></div>
+      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-leaf-500/5 rounded-full blur-[130px] -z-10 animate-pulse"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
-          {/* Image/Visual side */}
+          {/* Visual/Image side */}
           <motion.div
             className="relative flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring" }}
           >
-            <div className="relative w-[300px] h-[300px] md:w-[420px] md:h-[420px]">
-              {/* The distinctive rotated glowing frame */}
-              <div className="absolute inset-4 rounded-[50px] border-[14px] border-leaf-400/30 shadow-glow transform -rotate-6 group-hover:rotate-0 transition-transform duration-700"></div>
-              
-              {/* Floating elements */}
-              <motion.div 
-                className="absolute -right-6 bottom-12 w-16 h-16 bg-white/5 backdrop-blur-2xl rounded-2xl border border-white/10 flex items-center justify-center text-2xl z-20 shadow-card"
-                animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              >🌿</motion.div>
-              <motion.div 
-                className="absolute -left-10 top-16 w-14 h-14 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 flex items-center justify-center text-xl z-20 shadow-card"
-                animate={{ y: [0, 10, 0], rotate: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-              >🎨</motion.div>
+            <div className="relative w-full max-w-[400px] aspect-square">
+              {/* High-quality character portrait inside styled brackets */}
+              <div className="relative w-full h-full z-10 overflow-hidden border border-white/10 shadow-neon">
+                {/* Corner accent bracket markers */}
+                <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-leaf-400 z-20"></div>
+                <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-leaf-400 z-20"></div>
+                <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-leaf-400 z-20"></div>
+                <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-leaf-400 z-20"></div>
 
-              {/* Avatar image container */}
-              <div className="absolute inset-8 rounded-[35px] overflow-hidden flex items-end justify-center bg-[#242b23] z-10 border border-white/5">
-                <img 
-                  src={avatarImg} 
-                  alt="Profile Avatar" 
-                  className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-700 ease-in-out"
+                <img
+                  src={avatarImg}
+                  alt="Profile Avatar"
+                  className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B211A]/80 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030503] via-[#030503]/20 to-transparent pointer-events-none z-10"></div>
               </div>
+
+              {/* Decorative industrial badge */}
+              <motion.div
+                className="absolute -right-6 bottom-12 w-16 h-16 bg-[#0c0f0c] border border-white/10 flex flex-col items-center justify-center z-20 shadow-card font-creative text-[10px] tracking-widest font-black text-leaf-400"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              >
+                <span>SYS</span>
+                <span className="text-[7px] text-white opacity-40">ACTIVE</span>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -80,36 +81,38 @@ export default function About() {
           >
             <span className="section-label">THE STORY SO FAR</span>
             <h2 className="section-title">
-              Crafting Digital <br/> 
+              Crafting Digital <br />
               <span className="text-gradient">Magic</span>
             </h2>
-            
-            <p className="font-body text-slate-300 text-base md:text-lg leading-relaxed mb-8 opacity-70">
-              I blend technical expertise with organic vision to transform complex problems into elegant, intuitive digital products. 
-              My approach revolves around clean code, sophisticated aesthetics, and seamless interactions. 
+
+            <p className="font-creative text-slate-300 text-sm md:text-base leading-relaxed mb-8 opacity-70">
+              I blend deep visual grit with high-voltage clean code to build striking gaming experiences and immersive web interfaces.
+              My focus centers on responsive structures, micro-interactions, and premium aesthetics that stand out immediately.
             </p>
 
-            <p className="font-body text-slate-400 text-sm md:text-base leading-relaxed mb-12 italic border-l-2 border-leaf-400 pl-6">
-              "Whether it's a sleek landing page or a complex web application, I ensure every pixel serves a purpose and every interaction feels alive."
+            <p className="font-creative text-[#A0A5A0] text-xs md:text-sm leading-relaxed mb-12 italic border-l border-leaf-400 pl-6 uppercase tracking-wider">
+              "Every line of code is an asset; every pixel is an atmospheric vector."
             </p>
 
-            {/* Stats */}
-            <div ref={ref} className="grid grid-cols-3 gap-8 mt-16">
+            {/* Stats - formatted as digital terminals */}
+            <div ref={ref} className="grid grid-cols-3 gap-4 mt-16">
               {stats.map((stat, index) => (
-                <div key={index} className="relative group">
-                  <div className="font-display text-4xl md:text-6xl font-bold text-white mb-2 drop-shadow-sm tracking-tighter">
+                <div key={index} className="relative group p-4 border border-white/5 bg-black/40 hover:border-leaf-400 transition-all duration-500">
+                  {/* Micro Corner notch */}
+                  <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-leaf-400/20 group-hover:border-leaf-400 transition-colors"></div>
+                  <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-leaf-400/20 group-hover:border-leaf-400 transition-colors"></div>
+
+                  <div className="font-display text-3xl md:text-5xl font-black text-white mb-2 drop-shadow-sm tracking-tighter">
                     {inView ? (
                       <AnimatedCounter value={stat.value} />
                     ) : (
                       '0'
                     )}
-                    {stat.suffix}
+                    <span className="text-leaf-400 font-creative font-normal">{stat.suffix}</span>
                   </div>
-                  <div className="font-body text-[9px] md:text-[10px] text-leaf-400 uppercase tracking-[0.3em] font-black">
+                  <div className="font-creative text-[8px] md:text-[9px] text-[#A0A5A0] uppercase tracking-[0.2em] font-black group-hover:text-white transition-colors">
                     {stat.label}
                   </div>
-                  {/* Subtle hover indicator */}
-                  <div className="absolute -bottom-4 left-0 w-0 h-1 bg-grad-viby group-hover:w-full transition-all duration-700 rounded-full"></div>
                 </div>
               ))}
             </div>

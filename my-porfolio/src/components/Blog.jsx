@@ -27,12 +27,12 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-32 relative overflow-hidden">
+    <section id="blog" className="py-32 relative overflow-hidden bg-[#030503]">
       {/* Background Decorative Element */}
-      <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-leaf-400/5 blur-[120px] -z-10 rounded-full"></div>
+      <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-leaf-400/[0.02] blur-[120px] -z-10 rounded-full"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,40 +45,46 @@ export default function Blog() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.map((post, index) => (
-            <motion.article 
+            <motion.article
               key={index}
-              className="glass-card group flex flex-col h-full cursor-pointer hover:border-leaf-400/30 transition-all duration-500"
+              className="glass-card group flex flex-col h-full cursor-pointer hover:border-leaf-400/20 transition-all duration-500 relative rounded-none"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              {/* Image Placeholder */}
-              <div className={`h-56 w-full ${post.image} relative overflow-hidden shrink-0`}>
-                <div className="absolute inset-0 bg-[#1B211A]/60 group-hover:bg-[#1B211A]/20 transition-all duration-700"></div>
-                
-                {/* Decorative Mesh */}
-                <div className="absolute inset-0 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+              {/* Target-Lock corner brackets */}
+              <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+              <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+              <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+              <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
 
-                <div className="absolute top-6 left-6 bg-[#1B211A]/80 backdrop-blur-md border border-white/10 text-leaf-400 font-fancy text-[10px] font-black tracking-widest px-5 py-2 rounded-xl uppercase shadow-glow">
+              {/* Image Placeholder */}
+              <div className={`h-52 w-full ${post.image} relative overflow-hidden shrink-0`}>
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-all duration-700"></div>
+
+                {/* Grainy Mesh */}
+                <div className="absolute inset-0 opacity-15 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+
+                <div className="absolute top-4 left-4 bg-black/90 border border-white/10 text-leaf-400 font-creative text-[9px] font-black tracking-widest px-4 py-1.5 rounded-none uppercase shadow-glow">
                   {post.category}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8 flex-grow flex flex-col justify-between">
+              <div className="p-6 bg-[#0c0f0c] border-t border-white/5 flex-grow flex flex-col justify-between">
                 <div>
-                  <p className="font-fancy text-[10px] font-black tracking-widest text-slate-500 uppercase mb-4">{post.date}</p>
-                  <h3 className="text-2xl font-display font-bold text-white mb-4 group-hover:text-gradient transition-all duration-500 line-clamp-2">
+                  <p className="font-creative text-[9px] font-black tracking-widest text-slate-500 uppercase mb-3">{post.date}</p>
+                  <h3 className="text-xl font-display font-black text-white mb-3 group-hover:text-leaf-400 transition-all duration-300 line-clamp-2 uppercase tracking-wide">
                     {post.title}
                   </h3>
-                  <p className="font-body text-slate-400 text-sm leading-relaxed mb-10 line-clamp-3 opacity-70 group-hover:opacity-100 transition-opacity">
+                  <p className="font-creative text-slate-400 text-xs leading-relaxed mb-8 line-clamp-3 opacity-70 group-hover:opacity-100 transition-opacity">
                     {post.excerpt}
                   </p>
                 </div>
-                
-                <div className="flex items-center text-leaf-400 font-fancy text-[11px] font-black uppercase tracking-widest group-hover:translate-x-3 transition-transform duration-500">
-                  Dive Deeper <FiArrowRight className="ml-3 group-hover:scale-125 transition-transform" />
+
+                <div className="flex items-center text-leaf-400 font-creative text-[10px] font-black uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-500">
+                  Dive Deeper <FiArrowRight className="ml-3 group-hover:scale-115 transition-transform" />
                 </div>
               </div>
             </motion.article>
