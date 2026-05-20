@@ -9,44 +9,45 @@ export default {
     extend: {
       colors: {
         forest: {
-          800: '#242b23',
-          900: '#1B211A', // Base
+          800: '#0c0f0c', // Dark obsidian panel
+          900: '#030503', // Obsidian black-green background
         },
         leaf: {
-          300: '#a5c485',
-          400: '#8BAE66', // Primary
-          500: '#759654',
+          300: '#adff2f', // Electric lime
+          400: '#88ff00', // Electric neon green primary
+          500: '#6ce000', // Darker neon green
         },
         olive: {
-          400: '#7a9b55',
-          500: '#628141', // Secondary
-          600: '#4d6632',
+          400: '#233d23', // Muted dark olive
+          500: '#142b14', // Deep green-black
+          600: '#081708', 
         },
         cream: {
-          100: '#f7edd7',
-          200: '#EBD5AB', // Accent
-          300: '#d9c296',
+          100: '#ffffff', // Stark white
+          200: '#88ff00', // Neon green accent
+          300: '#a0a5a0', // Concrete grunge gray
         },
         glass: {
-          bg: 'rgba(255, 255, 255, 0.02)',
-          border: 'rgba(255, 255, 255, 0.05)',
+          bg: 'rgba(0, 0, 0, 0.4)',
+          border: 'rgba(136, 255, 0, 0.1)',
         }
       },
       fontFamily: {
-        display: ['"Clash Display"', 'sans-serif'],
+        display: ['"Cinzel Decorative"', '"Cinzel"', '"Clash Display"', 'sans-serif'],
         creative: ['"Syne"', 'sans-serif'],
         body: ['"Syne"', 'sans-serif'],
+        cinzel: ['"Cinzel"', 'serif'],
       },
       backgroundImage: {
-        'grad-viby': 'linear-gradient(135deg, #8BAE66 0%, #EBD5AB 100%)',
-        'grad-cyan': 'linear-gradient(90deg, #8BAE66 0%, #628141 100%)',
-        'grad-hero': 'radial-gradient(circle at 50% 50%, #242b23 0%, #1B211A 100%)',
-        'grad-card': 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)',
+        'grad-viby': 'linear-gradient(135deg, #88ff00 0%, #ffffff 100%)',
+        'grad-cyan': 'linear-gradient(90deg, #88ff00 0%, #142b14 100%)',
+        'grad-hero': 'radial-gradient(circle at 50% 50%, #0c0f0c 0%, #030503 100%)',
+        'grad-card': 'linear-gradient(180deg, rgba(136,255,0,0.02) 0%, rgba(0,0,0,0) 100%)',
       },
       boxShadow: {
-        glow: '0 0 30px -5px rgba(139, 174, 102, 0.3)',
-        neon: '0 0 30px -5px rgba(235, 213, 171, 0.3)',
-        card: '0 8px 32px rgba(0, 0, 0, 0.4)',
+        glow: '0 0 30px -5px rgba(136, 255, 0, 0.4)',
+        neon: '0 0 35px -5px rgba(136, 255, 0, 0.6)',
+        card: '0 12px 40px rgba(0, 0, 0, 0.7)',
       }
     },
   },

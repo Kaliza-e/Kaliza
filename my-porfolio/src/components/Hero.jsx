@@ -1,97 +1,156 @@
 import { motion } from 'framer-motion'
 import WaveBackground from './WaveBackground'
+import heroChar from '../assets/hero_character.png'
+import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-10 overflow-hidden bg-[#1B211A]">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#030503]">
       <WaveBackground />
       
-      {/* Deep Shadow Overlay for Depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1B211A]/40 to-[#1B211A] pointer-events-none"></div>
+      {/* Heavy obsidian mesh glow behind visual assets */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030503]/50 via-transparent to-[#030503] pointer-events-none z-10"></div>
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-20 items-center">
-        {/* Text Content */}
+      {/* Massive Faint Backdrop Text - Outlined */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0">
+        <h2 className="text-[14vw] font-display font-black uppercase text-outline tracking-[0.2em] opacity-40 translate-y-10">
+          DEVELOPER
+        </h2>
+      </div>
+
+      {/* Left Sidebar Channel (Vertical Menu & Page Indicator) */}
+      <div className="absolute left-6 md:left-12 bottom-12 top-28 w-10 hidden lg:flex flex-col justify-between items-center z-30 pointer-events-auto">
+        {/* Minimalist Hamburger representation as vertical lines */}
+        <div className="flex flex-col gap-1.5 cursor-pointer group p-2">
+          <span className="w-6 h-0.5 bg-white group-hover:bg-leaf-400 group-hover:translate-x-1 transition-all"></span>
+          <span className="w-5 h-0.5 bg-white group-hover:bg-leaf-400 transition-all"></span>
+          <span className="w-6 h-0.5 bg-white group-hover:bg-leaf-400 group-hover:-translate-x-1 transition-all"></span>
+        </div>
+        
+        {/* Page counter oriented vertically */}
+        <div className="font-creative text-xs font-black tracking-[0.4em] text-white/40 uppercase rotate-90 origin-center my-8 whitespace-nowrap">
+          <span className="text-leaf-400">01</span> / 07
+        </div>
+      </div>
+
+      {/* Right Sidebar Channel (Vertical Social Handles) */}
+      <div className="absolute right-6 md:right-12 bottom-12 top-28 w-10 hidden lg:flex flex-col justify-center items-center z-30 pointer-events-auto">
+        <div className="flex flex-col gap-8 items-center">
+          {[
+            { icon: <FaFacebookF size={14} />, link: "https://facebook.com" },
+            { icon: <FaWhatsapp size={14} />, link: "https://wa.me" },
+            { icon: <FaInstagram size={14} />, link: "https://instagram.com" },
+          ].map((item, idx) => (
+            <a 
+              key={idx} 
+              href={item.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-white/40 hover:text-leaf-400 transition-all duration-300 transform hover:scale-125 p-2"
+            >
+              {item.icon}
+            </a>
+          ))}
+          {/* Vertical dividing wire */}
+          <div className="w-[1px] h-20 bg-white/10 mt-2"></div>
+        </div>
+      </div>
+
+      {/* Core Main Grid container */}
+      <div className="container mx-auto px-6 md:px-16 lg:px-24 relative z-20 grid lg:grid-cols-12 gap-12 lg:gap-6 items-center w-full min-h-[calc(100vh-160px)]">
+        
+        {/* Left Side Content - taking 7/12 grid spaces */}
         <motion.div 
-          className="text-center lg:text-left flex flex-col items-center lg:items-start"
+          className="lg:col-span-7 text-left flex flex-col items-start pt-6 lg:pt-0"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="font-creative text-[10px] md:text-xs font-black tracking-[0.5em] text-leaf-400 uppercase mb-4 bg-leaf-400/10 px-6 py-2 rounded-full border border-leaf-400/20">
-            AVAILABLE FOR NEW VENTURES
-          </span>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-            Hi, I'm <span className="font-normal opacity-80">Esther Kaliza</span>
-          </h2>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-[0.8] tracking-tighter">
-            <span className="text-gradient">Creative</span> <br/> 
-            <span className="opacity-90">Developer</span>
+          {/* Accent Line-decorated Tagline */}
+          <div className="flex items-center gap-4 mb-4">
+            <span className="w-12 h-[1px] bg-leaf-400"></span>
+            <span className="font-creative text-[10px] md:text-xs font-black tracking-[0.5em] text-white uppercase">
+              ESTHER KALIZA PROD™
+            </span>
+          </div>
+
+          {/* Main Huge Title */}
+          <h1 className="font-display text-7xl md:text-9xl font-black text-white mb-6 leading-[0.8] tracking-tighter uppercase relative select-none">
+            ARCANE
           </h1>
           
-          <p className="font-body text-slate-300 max-w-md text-base md:text-lg leading-relaxed mb-12 opacity-70">
-            Blending organic aesthetics with architectural precision to build high-end digital environments.
-          </p>
+          {/* Secondary Glow Tagline below Title */}
+          <div className="mb-12 font-creative text-left">
+            <h2 className="text-leaf-400 text-lg md:text-xl font-bold tracking-[0.2em] uppercase leading-none mb-1 text-glow">
+              " THERE IS A MONSTER "
+            </h2>
+            <p className="text-white text-xs md:text-sm font-black tracking-[0.3em] uppercase opacity-60">
+              INSIDE ALL OF US
+            </p>
+          </div>
 
-          <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
-            <a href="#projects" className="btn-primary group">
-              View Work <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+          {/* Cyberpunk framed interactive Action Button */}
+          <div className="flex flex-wrap gap-6 items-center">
+            <a href="#projects" className="bracket-btn pointer-events-auto">
+              DISCOVER
             </a>
-            <div className="flex gap-4">
-              {['in', 'gh', 'tw'].map((social) => (
-                <a key={social} href="#" className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 text-white flex items-center justify-center hover:bg-leaf-400/20 hover:border-leaf-400 transition-all duration-500 shadow-card">
-                  <span className="font-black text-[10px] uppercase tracking-tighter">{social}</span>
-                </a>
-              ))}
-            </div>
           </div>
         </motion.div>
 
-        {/* Image/Avatar */}
+        {/* Right Side Visual Elements - taking 5/12 grid spaces */}
         <motion.div 
-          className="relative flex justify-center lg:justify-end"
-          initial={{ opacity: 0, scale: 0.8 }}
+          className="lg:col-span-5 relative flex justify-center lg:justify-end h-full w-full select-none"
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, type: "spring" }}
         >
-          <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px]">
-            {/* The distinctive rounded glowing frame */}
-            <div className="absolute inset-4 rounded-[50px] border-[16px] border-leaf-400/30 shadow-glow transform rotate-6 group-hover:rotate-0 transition-transform duration-700"></div>
-            <div className="absolute inset-4 rounded-[50px] border-[16px] border-cream-200/10 blur-xl transform rotate-6"></div>
+          <div className="relative w-full max-w-[450px] aspect-[4/5] flex items-center justify-center">
             
-            {/* Floating elements */}
-            <motion.div 
-              className="absolute -left-10 bottom-10 w-20 h-20 bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 flex items-center justify-center text-3xl transform -rotate-12 shadow-card z-20"
-              animate={{ y: [0, -20, 0], rotate: [-12, 0, -12] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            >🌿</motion.div>
-            <motion.div 
-              className="absolute -right-8 top-20 w-16 h-16 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 flex items-center justify-center text-2xl transform rotate-12 shadow-card z-20"
-              animate={{ y: [0, 25, 0], rotate: [12, -12, 12] }}
-              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            >✨</motion.div>
+            {/* Massive Spray-paint Graffiti Backdrop text "JINX" */}
+            <div className="absolute -top-6 lg:-top-12 left-0 lg:-left-12 font-display text-[9rem] md:text-[11rem] lg:text-[12rem] font-black text-graffiti select-none pointer-events-none opacity-80 z-0 tracking-tighter -rotate-12 transform">
+              JINX
+            </div>
 
-            {/* Avatar image container */}
-            <div className="absolute inset-8 rounded-[35px] overflow-hidden flex items-end justify-center bg-[#242b23] z-10 border border-white/5 shadow-2xl">
+            {/* Glowing neon rings/sparks in background */}
+            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-leaf-400/25 rounded-full blur-[80px] z-0 animate-pulse pointer-events-none"></div>
+
+            {/* High-quality character portrait inside styled brackets */}
+            <div className="relative w-full h-[85%] z-10 overflow-hidden border border-white/10 shadow-neon">
+              {/* Corner accent bracket markers */}
+              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-leaf-400 z-20"></div>
+              <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-leaf-400 z-20"></div>
+              <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-leaf-400 z-20"></div>
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-leaf-400 z-20"></div>
+              
               <img 
-                src="/src/assets/avatar.jpg" 
-                alt="Creative Developer" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 brightness-90 hover:brightness-110"
+                src={heroChar} 
+                alt="Cyberpunk Developer Jinx Aesthetic" 
+                className="w-full h-full object-cover brightness-[0.85] hover:brightness-[1.0] transition-all duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1B211A] via-transparent to-transparent opacity-60"></div>
+              {/* Dark mist overlay at the bottom of the portrait */}
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#030503] via-[#030503]/40 to-transparent z-20"></div>
+            </div>
+            
+            {/* Copyright indicator framing the portrait */}
+            <div className="absolute bottom-0 right-0 font-creative text-[8px] md:text-[9px] text-white/30 uppercase tracking-[0.2em] z-20 pr-1">
+              © 2026 KALIZA PRODUCTIONS INC.
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Scroll Down Indicator */}
-      <motion.a
-        href="#about"
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white pointer-events-auto hover:bg-leaf-400 hover:text-forest-900 transition-all duration-500 z-20 shadow-glow"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-      >
-        <span className="text-xl">↓</span>
-      </motion.a>
+      {/* Bottom Mouse Scroll Pulse Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-auto">
+        <a href="#about" className="flex flex-col items-center gap-2 cursor-pointer group">
+          <div className="w-5 h-9 border border-white/20 rounded-full flex justify-center p-1 hover:border-leaf-400 transition-all duration-300">
+            <motion.div 
+              className="w-1 h-2 bg-leaf-400 rounded-full"
+              animate={{ y: [0, 10, 0], opacity: [1, 0.4, 1] }}
+              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+            />
+          </div>
+        </a>
+      </div>
     </section>
   )
 }
