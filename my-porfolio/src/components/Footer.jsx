@@ -13,10 +13,10 @@ export default function Footer() {
           <div className="md:col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
             <a href="#home" className="group flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-2xl bg-grad-viby flex items-center justify-center text-forest-900 font-display font-black text-xl shadow-glow">
-                EK
+                K
               </div>
               <span className="font-display text-3xl font-bold text-white tracking-tighter">
-                Esther <span className="text-gradient">Kaliza</span>
+               <span className="text-gradient">Kaliza</span>
               </span>
             </a>
             <p className="font-body text-slate-400 text-base max-w-sm leading-relaxed opacity-70">

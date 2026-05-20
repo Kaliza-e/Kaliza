@@ -51,7 +51,7 @@ export default function Navbar() {
         {/* Logo Icon */}
         <Link to="home" smooth duration={600} className="group relative w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center cursor-pointer flex-shrink-0 text-white border border-white/10 hover:border-leaf-400/50 transition-all duration-500 overflow-hidden shadow-glow">
           <div className="absolute inset-0 bg-grad-viby opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <span className="font-display font-black text-xl leading-none tracking-tighter">EK</span>
+          <span className="font-display font-black text-xl leading-none tracking-tighter">K</span>
         </Link>
 
         {/* Desktop Links */}
