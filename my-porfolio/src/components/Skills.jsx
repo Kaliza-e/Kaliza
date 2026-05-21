@@ -7,7 +7,9 @@ const skillCategories = [
       { name: 'React / Next.js', level: 95 },
       { name: 'JavaScript / TS', level: 90 },
       { name: 'Tailwind CSS', level: 98 },
-      { name: 'Framer Motion', level: 85 }
+      { name: 'Framer Motion', level: 85 },
+      { name: 'UI Design', level: 90 },
+      { name: 'UX Design', level: 88 }
     ]
   },
   {
@@ -45,7 +47,7 @@ export default function Skills() {
             </p>
 
             <div className="flex flex-wrap gap-2.5">
-              {['Docker', 'AWS', 'GraphQL', 'Figma', 'Git', 'Vercel', 'Prisma'].map(tool => (
+              {['Docker', 'AWS', 'GraphQL', 'Figma', 'Adobe XD', 'Canva', 'Git', 'Vercel', 'Prisma'].map(tool => (
                 <span key={tool} className="px-4 py-2 border border-white/5 bg-black/40 text-slate-400 text-[10px] font-black font-creative uppercase tracking-widest hover:border-leaf-400 hover:text-white transition-all duration-300">
                   {tool}
                 </span>

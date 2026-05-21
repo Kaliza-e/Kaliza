@@ -3,29 +3,48 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi'
 
 const projects = [
   {
-    title: 'Nexus E-Commerce',
-    description: 'A full-stack e-commerce platform with real-time inventory, secure payments, and a sleek admin dashboard.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    title: 'Foodly',
+    description: 'A full-stack recipe sharing app with cool recipes for food lovers and explorers.',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
     image: 'bg-gradient-to-br from-forest-800 via-leaf-400 to-olive-500',
   },
   {
-    title: 'Aero UI Kit',
-    description: 'A comprehensive, accessible UI component library built for modern web applications.',
-    tags: ['Vue', 'TypeScript', 'Tailwind', 'Storybook'],
+    title: 'Musica',
+    description: 'A personal music streaming app with a sleek interface and personalized playlists.',
+    tags: ['Vue', 'TypeScript', 'Tailwind', 'Music API'],
     image: 'bg-gradient-to-br from-leaf-300 via-olive-400 to-forest-900',
   },
   {
-    title: 'CryptoTracker',
-    description: 'Real-time cryptocurrency tracking app featuring live charts, portfolio management, and market news.',
+    title: 'CoopMIS',
+    description: 'A cooperative management information system for efficient member and financial tracking.',
     tags: ['Next.js', 'Framer Motion', 'REST API'],
     image: 'bg-gradient-to-br from-cream-200 via-leaf-400 to-olive-600',
   },
   {
-    title: 'AI Image Gen',
-    description: 'Web application leveraging OpenAI models to generate, edit, and curate digital art.',
+    title: 'SecureShake',
+    description: 'An emergency alert app that sends location-based notifications to trusted contacts with a simple shake or tap to ensure safety and peace of mind.',
     tags: ['React', 'Python', 'FastAPI', 'OpenAI'],
     image: 'bg-gradient-to-br from-leaf-400 via-forest-800 to-cream-300',
+  },
+  {
+    title: 'IsokoSense',
+    description: 'A smart water monitoring app that provides real-time data on waterbodies health and environmental conditions.',
+    tags: ['React Native', 'Node.js', 'PostgreSQL', 'IoT'],
+    image: 'bg-gradient-to-br from-forest-800 via-leaf-400 to-olive-500',
+  },
+  {
+    title: 'RespiraIQ',
+    description: 'A smart air quality monitoring app that provides real-time data on pollution levels and health impacts.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'IoT'],
+    image: 'bg-gradient-to-br from-leaf-400 via-forest-800 to-cream-300',
+  },
+  {
+    title: 'Colelyon',
+    description: 'A personal interior designs app that helps give inspirations to interior designers and house builders.',
+    tags: ['React', 'TypeScript', 'Tailwind', 'Figma'],
+    image: 'bg-gradient-to-br from-cream-200 via-leaf-400 to-olive-600',
   }
+
 ]
 
 // 3D Tilt Card Component
@@ -109,7 +128,7 @@ function ProjectCard({ project, index }) {
           </p>
 
           <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, i) => (
+            {project.tags?.map((tag, i) => (
               <span 
                 key={i} 
                 className="px-3 py-1 text-[9px] font-black font-creative uppercase tracking-widest text-leaf-400 bg-leaf-400/5 border border-leaf-400/10 group-hover:border-leaf-400/30 transition-colors"

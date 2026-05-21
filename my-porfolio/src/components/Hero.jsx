@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import WaveBackground from './WaveBackground'
-import heroChar from '../assests/avatar.jpg'
 import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa'
-
+import avatar from '../assets/avatar.jpg'
+ // High-quality character portrait
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#030503]">
@@ -70,22 +70,22 @@ export default function Hero() {
           <div className="flex items-center gap-4 mb-4">
             <span className="w-12 h-[1px] bg-leaf-400"></span>
             <span className="font-creative text-[10px] md:text-xs font-black tracking-[0.5em] text-white uppercase">
-              ESTHER KALIZA PROD™
+              KALIZA PROD™
             </span>
           </div>
 
           {/* Main Huge Title */}
           <h1 className="font-display text-7xl md:text-9xl font-black text-white mb-6 leading-[0.8] tracking-tighter uppercase relative select-none">
-            ARCANE
+            IwacuTech
           </h1>
 
           {/* Secondary Glow Tagline below Title */}
           <div className="mb-12 font-creative text-left">
             <h2 className="text-leaf-400 text-lg md:text-xl font-bold tracking-[0.2em] uppercase leading-none mb-1 text-glow">
-              " THERE IS A MONSTER "
+              " There is a Developer "
             </h2>
             <p className="text-white text-xs md:text-sm font-black tracking-[0.3em] uppercase opacity-60">
-              INSIDE ALL OF US
+              inside all of us, waiting to be unleashed. Let's code the future together.
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export default function Hero() {
               <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-leaf-400 z-20"></div>
 
               <img
-                src={heroChar}
+                src={avatar}
                 alt="Cyberpunk Developer Jinx Aesthetic"
                 className="w-full h-full object-cover brightness-[0.85] hover:brightness-[1.0] transition-all duration-700 hover:scale-105"
               />
