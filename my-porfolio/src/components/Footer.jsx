@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#030503] border-t border-white/5 pt-24 pb-12 relative overflow-hidden">
+    <footer className="bg-[#0b0310] border-t border-white/5 pt-24 pb-12 relative overflow-hidden">
       {/* Decorative Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-64 bg-leaf-400/[0.015] rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-64 bg-rose-400/[0.015] rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid md:grid-cols-4 gap-16 mb-20">
@@ -39,10 +39,10 @@ export default function Footer() {
             <h4 className="font-creative text-[9px] font-black tracking-[0.25em] uppercase text-slate-500 mb-8">Connect</h4>
             <div className="flex flex-wrap gap-4">
               {[
-                { icon: FiGithub, href: '#', color: 'hover:border-leaf-400 hover:text-leaf-400 hover:bg-leaf-400/5' },
-                { icon: FiLinkedin, href: '#', color: 'hover:border-leaf-400 hover:text-leaf-400 hover:bg-leaf-400/5' },
-                { icon: FiTwitter, href: '#', color: 'hover:border-leaf-400 hover:text-leaf-400 hover:bg-leaf-400/5' },
-                { icon: FiDribbble, href: '#', color: 'hover:border-leaf-400 hover:text-leaf-400 hover:bg-leaf-400/5' },
+                { icon: FiGithub, href: '#', color: 'hover:border-rose-400 hover:text-rose-400 hover:bg-rose-400/5' },
+                { icon: FiLinkedin, href: '#', color: 'hover:border-rose-400 hover:text-rose-400 hover:bg-rose-400/5' },
+                { icon: FiTwitter, href: '#', color: 'hover:border-rose-400 hover:text-rose-400 hover:bg-rose-400/5' },
+                { icon: FiDribbble, href: '#', color: 'hover:border-rose-400 hover:text-rose-400 hover:bg-rose-400/5' },
               ].map((social, idx) => (
                 <a 
                   key={idx} 
@@ -60,11 +60,12 @@ export default function Footer() {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[9px] font-black font-creative uppercase tracking-[0.25em] text-slate-600">
           <p>© {new Date().getFullYear()} ESTHER KALIZA. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-10">
-            <a href="#" className="hover:text-leaf-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-leaf-300 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-rose-400 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-rose-300 transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
     </footer>
   )
 }
+

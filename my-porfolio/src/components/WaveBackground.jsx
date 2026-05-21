@@ -7,7 +7,7 @@ export default function WaveBackground() {
       
       {/* Dynamic Gaming Atmosphere Orbs */}
       <motion.div 
-        className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-leaf-400/8 rounded-full blur-[140px]"
+        className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-rose-400/8 rounded-full blur-[140px]"
         animate={{
           x: [0, 60, 0],
           y: [0, 40, 0],
@@ -16,7 +16,7 @@ export default function WaveBackground() {
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] bg-leaf-500/5 rounded-full blur-[160px]"
+        className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] bg-rose-500/5 rounded-full blur-[160px]"
         animate={{
           x: [0, -50, 0],
           y: [0, -70, 0],
@@ -25,7 +25,7 @@ export default function WaveBackground() {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="absolute top-[35%] left-[25%] w-[30%] h-[30%] bg-leaf-400/5 rounded-full blur-[110px]"
+        className="absolute top-[35%] left-[25%] w-[30%] h-[30%] bg-rose-400/5 rounded-full blur-[110px]"
         animate={{
           x: [0, 80, 0],
           y: [0, -40, 0],
@@ -35,3 +35,4 @@ export default function WaveBackground() {
     </div>
   )
 }
+

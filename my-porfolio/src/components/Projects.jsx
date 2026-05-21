@@ -6,43 +6,43 @@ const projects = [
     title: 'Foodly',
     description: 'A full-stack recipe sharing app with cool recipes for food lovers and explorers.',
     tags: ['React', 'Node.js', 'Express', 'MongoDB'],
-    image: 'bg-gradient-to-br from-forest-800 via-leaf-400 to-olive-500',
+    image: 'bg-rose-400',
   },
   {
     title: 'Musica',
     description: 'A personal music streaming app with a sleek interface and personalized playlists.',
     tags: ['Vue', 'TypeScript', 'Tailwind', 'Music API'],
-    image: 'bg-gradient-to-br from-leaf-300 via-olive-400 to-forest-900',
+    image: 'bg-rose-400',
   },
   {
     title: 'CoopMIS',
     description: 'A cooperative management information system for efficient member and financial tracking.',
     tags: ['Next.js', 'Framer Motion', 'REST API'],
-    image: 'bg-gradient-to-br from-cream-200 via-leaf-400 to-olive-600',
+    image: 'bg-rose-400',
   },
   {
     title: 'SecureShake',
     description: 'An emergency alert app that sends location-based notifications to trusted contacts with a simple shake or tap to ensure safety and peace of mind.',
     tags: ['React', 'Python', 'FastAPI', 'OpenAI'],
-    image: 'bg-gradient-to-br from-leaf-400 via-forest-800 to-cream-300',
+    image: 'bg-rose-400',
   },
   {
     title: 'IsokoSense',
     description: 'A smart water monitoring app that provides real-time data on waterbodies health and environmental conditions.',
     tags: ['React Native', 'Node.js', 'PostgreSQL', 'IoT'],
-    image: 'bg-gradient-to-br from-forest-800 via-leaf-400 to-olive-500',
+    image: 'bg-rose-400',
   },
   {
     title: 'RespiraIQ',
     description: 'A smart air quality monitoring app that provides real-time data on pollution levels and health impacts.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'IoT'],
-    image: 'bg-gradient-to-br from-leaf-400 via-forest-800 to-cream-300',
+    image: 'bg-rose-400',
   },
   {
     title: 'Colelyon',
     description: 'A personal interior designs app that helps give inspirations to interior designers and house builders.',
     tags: ['React', 'TypeScript', 'Tailwind', 'Figma'],
-    image: 'bg-gradient-to-br from-cream-200 via-leaf-400 to-olive-600',
+    image: 'bg-rose-400',
   }
 
 ]
@@ -77,10 +77,10 @@ function ProjectCard({ project, index }) {
       }}
     >
       {/* Target-Lock corner brackets */}
-      <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
-      <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
-      <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
-      <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 z-20 transition-colors"></div>
+      <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-rose-400/30 group-hover:border-rose-400 z-20 transition-colors"></div>
+      <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-rose-400/30 group-hover:border-rose-400 z-20 transition-colors"></div>
+      <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-rose-400/30 group-hover:border-rose-400 z-20 transition-colors"></div>
+      <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-rose-400/30 group-hover:border-rose-400 z-20 transition-colors"></div>
 
       {/* Dynamic Glow Effect */}
       <motion.div
@@ -89,7 +89,7 @@ function ProjectCard({ project, index }) {
           background: useMotionTemplate`
             radial-gradient(
               400px circle at ${useTransform(mouseX, val => val + 200)}px ${useTransform(mouseY, val => val + 200)}px,
-              rgba(136, 255, 0, 0.15),
+              rgba(255, 77, 184, 0.18),
               transparent 80%
             )
           `,
@@ -106,7 +106,7 @@ function ProjectCard({ project, index }) {
 
           {/* Overlay Link Buttons */}
           <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 backdrop-blur-md bg-black/60">
-            <a href="#" className="w-12 h-12 bg-leaf-400 text-black flex items-center justify-center hover:scale-115 transition-transform shadow-glow font-bold">
+            <a href="#" className="w-12 h-12 bg-rose-400 text-black flex items-center justify-center hover:scale-115 transition-transform shadow-glow font-bold">
               <FiExternalLink size={18} />
             </a>
             <a href="#" className="w-12 h-12 bg-white text-black flex items-center justify-center hover:scale-115 transition-transform shadow-card">
@@ -116,9 +116,9 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Project Content */}
-        <div className="p-8 bg-[#0c0f0c] border-t border-white/5 relative">
+        <div className="p-8 bg-[#140521] border-t border-white/5 relative">
           <div className="flex justify-between items-start mb-4">
-            <h3 className="font-display text-2xl font-black text-white group-hover:text-leaf-400 transition-all duration-300 uppercase">
+            <h3 className="font-display text-2xl font-black text-white group-hover:text-rose-400 transition-all duration-300 uppercase">
               {project.title}
             </h3>
           </div>
@@ -131,7 +131,7 @@ function ProjectCard({ project, index }) {
             {project.tags?.map((tag, i) => (
               <span 
                 key={i} 
-                className="px-3 py-1 text-[9px] font-black font-creative uppercase tracking-widest text-leaf-400 bg-leaf-400/5 border border-leaf-400/10 group-hover:border-leaf-400/30 transition-colors"
+                className="px-3 py-1 text-[9px] font-black font-creative uppercase tracking-widest text-rose-400 bg-rose-400/5 border border-rose-400/10 group-hover:border-rose-400/30 transition-colors"
               >
                 {tag}
               </span>
@@ -145,7 +145,7 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32 relative bg-[#030503]">
+    <section id="projects" className="snap-start py-32 relative bg-[#0b0310]">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div 
           className="text-center mb-24"
@@ -172,7 +172,8 @@ export default function Projects() {
       </div>
 
       {/* Background atmospheric glowing dust */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-leaf-400/[0.02] blur-[150px] -z-10 rounded-full"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-rose-400/[0.02] blur-[150px] -z-10 rounded-full"></div>
     </section>
   )
 }
+

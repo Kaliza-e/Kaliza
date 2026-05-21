@@ -50,7 +50,7 @@ export default function Navbar() {
         
         {/* Logo Text styled like gaming screen */}
         <Link to="home" smooth duration={600} className="group relative cursor-pointer flex-shrink-0 text-white flex items-center gap-2">
-          <span className="font-display font-black text-lg tracking-[0.2em] leading-none text-white hover:text-leaf-400 transition-colors uppercase">KALIZA</span>
+          <span className="font-display font-black text-lg tracking-[0.2em] leading-none text-white hover:text-rose-400 transition-colors uppercase">KALIZA</span>
         </Link>
  
         {/* Desktop Links */}
@@ -62,13 +62,13 @@ export default function Navbar() {
                 smooth
                 duration={600}
                 className={`relative font-creative text-[10px] font-black uppercase tracking-[0.2em] px-5 py-2 cursor-pointer transition-all duration-500 z-10 block ${
-                  active === to ? 'text-leaf-400' : 'text-[#A0A5A0] hover:text-white'
+                  active === to ? 'text-rose-400' : 'text-[#A0A5A0] hover:text-white'
                 }`}
               >
                 {label}
                 {active === to && (
                   <motion.span
-                    className="absolute bottom-0 left-5 right-5 h-[1.5px] bg-leaf-400 shadow-glow"
+                    className="absolute bottom-0 left-5 right-5 h-[1.5px] bg-rose-400 shadow-glow"
                     layoutId="nav-indicator"
                     transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                   />
@@ -85,7 +85,7 @@ export default function Navbar() {
  
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden p-2 border border-white/10 hover:border-leaf-400/50 text-white/80 hover:text-white transition-all rounded-none"
+          className="md:hidden p-2 border border-white/10 hover:border-rose-400/50 text-white/80 hover:text-white transition-all rounded-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -111,7 +111,7 @@ export default function Navbar() {
                     smooth
                     duration={600}
                     className={`block font-creative text-sm uppercase tracking-widest px-6 py-4 rounded-none cursor-pointer transition-all ${
-                      active === to ? 'bg-leaf-400/10 text-leaf-400 border-l border-leaf-400' : 'text-[#A0A5A0] hover:text-white hover:bg-white/5'
+                      active === to ? 'bg-rose-400/10 text-rose-400 border-l border-rose-400' : 'text-[#A0A5A0] hover:text-white hover:bg-white/5'
                     }`}
                     onClick={() => setMenuOpen(false)}
                   >
@@ -129,3 +129,4 @@ export default function Navbar() {
     </motion.div>
   )
 }
+

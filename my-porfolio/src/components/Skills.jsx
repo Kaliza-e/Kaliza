@@ -25,10 +25,10 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32 relative overflow-hidden bg-[#030503]">
+    <section id="skills" className="snap-start py-32 relative overflow-hidden bg-[#0b0310]">
       {/* Decorative atmospheric orbs */}
-      <div className="absolute top-[20%] right-[5%] w-[500px] h-[500px] bg-leaf-400/5 rounded-full blur-[160px] pointer-events-none"></div>
-      <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-leaf-500/3 rounded-full blur-[160px] pointer-events-none"></div>
+      <div className="absolute top-[20%] right-[5%] w-[500px] h-[500px] bg-rose-400/5 rounded-full blur-[160px] pointer-events-none"></div>
+      <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-rose-500/3 rounded-full blur-[160px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-12 gap-20 items-start">
@@ -48,7 +48,7 @@ export default function Skills() {
 
             <div className="flex flex-wrap gap-2.5">
               {['Docker', 'AWS', 'GraphQL', 'Figma', 'Adobe XD', 'Canva', 'Git', 'Vercel', 'Prisma'].map(tool => (
-                <span key={tool} className="px-4 py-2 border border-white/5 bg-black/40 text-slate-400 text-[10px] font-black font-creative uppercase tracking-widest hover:border-leaf-400 hover:text-white transition-all duration-300">
+                <span key={tool} className="px-4 py-2 border border-white/5 bg-black/40 text-slate-400 text-[10px] font-black font-creative uppercase tracking-widest hover:border-rose-400 hover:text-white transition-all duration-300">
                   {tool}
                 </span>
               ))}
@@ -66,13 +66,13 @@ export default function Skills() {
                 transition={{ duration: 0.8, delay: catIdx * 0.2 }}
               >
                 {/* Target-Lock notches for cards */}
-                <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 transition-colors"></div>
-                <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 transition-colors"></div>
-                <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-leaf-400/30 group-hover:border-leaf-400 transition-colors"></div>
-                <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-leaf-400/30 group-hover:border-leaf-400 transition-colors"></div>
+                <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-rose-400/30 group-hover:border-rose-400 transition-colors"></div>
+                <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-rose-400/30 group-hover:border-rose-400 transition-colors"></div>
+                <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-rose-400/30 group-hover:border-rose-400 transition-colors"></div>
+                <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-rose-400/30 group-hover:border-rose-400 transition-colors"></div>
 
                 <div className="flex items-center gap-4 mb-10">
-                  <span className={`w-12 h-12 flex items-center justify-center text-xl border border-white/10 ${catIdx === 0 ? 'bg-leaf-400/5 text-leaf-400' : 'bg-leaf-400/5 text-leaf-300'}`}>
+                  <span className={`w-12 h-12 flex items-center justify-center text-xl border border-white/10 ${catIdx === 0 ? 'bg-rose-400/5 text-rose-400' : 'bg-rose-400/5 text-rose-300'}`}>
                     {catIdx === 0 ? '01' : '02'}
                   </span>
                   <h3 className="text-xl font-display font-black text-white uppercase tracking-wider">
@@ -85,11 +85,11 @@ export default function Skills() {
                     <div key={idx}>
                       <div className="flex justify-between items-center mb-3">
                         <span className="text-slate-300 font-creative text-xs uppercase tracking-wide group-hover:text-white transition-colors">{skill.name}</span>
-                        <span className={`font-display font-black text-lg ${catIdx === 0 ? 'text-leaf-400' : 'text-leaf-300'}`}>{skill.level}%</span>
+                        <span className={`font-display font-black text-lg ${catIdx === 0 ? 'text-rose-400' : 'text-rose-300'}`}>{skill.level}%</span>
                       </div>
                       <div className="h-2 w-full bg-black border border-white/5 p-[1px] rounded-none overflow-hidden">
                         <motion.div
-                          className={`h-full rounded-none relative shadow-glow ${catIdx === 0 ? 'bg-leaf-400' : 'bg-leaf-300'}`}
+                          className={`h-full rounded-none relative shadow-glow ${catIdx === 0 ? 'bg-rose-400' : 'bg-rose-300'}`}
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           viewport={{ once: true }}
@@ -109,3 +109,4 @@ export default function Skills() {
     </section>
   )
 }
+

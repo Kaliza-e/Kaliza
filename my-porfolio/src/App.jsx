@@ -13,7 +13,7 @@ function App() {
     <div className="relative bg-grad-hero min-h-screen">
       <CustomCursor />
       <Navbar />
-      <main>
+      <main className="snap-y snap-mandatory">
         <Hero />
         <About />
         <Projects />
@@ -27,3 +27,4 @@ function App() {
 }
 
 export default App
+
