@@ -6,32 +6,38 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        midnight: {
-          800: '#1a081b', // Deep plum panel
-          900: '#0b0310', // Soft midnight background
-        },
-        rose: {
-          300: '#ff9ee6', // Bubblegum pink
-          400: '#ff4db8', // Neon rose primary
-          500: '#d53ab0', // Rich magenta
-        },
-        lilac: {
-          400: '#8a5c93', // Muted lavender
-          500: '#4c2f64', // Deep purple
-          600: '#2e163f', 
-        },
-        cream: {
-          100: '#fff1fb', // Pale blush
-          200: '#ffd4f0', // Soft pink glow
-          300: '#f3d9ef', // Warm rose mist
-        },
-        glass: {
-          bg: 'rgba(20, 5, 24, 0.45)',
-          border: 'rgba(255, 77, 184, 0.12)',
-        }
+    colors: {
+      transparent: 'transparent',
+      white: '#ffffff',
+      black: '#000000',
+      slate: {
+        700: '#374151',
       },
+      midnight: {
+        800: '#1a081b', // Deep plum panel
+        900: '#0b0310', // Soft midnight background
+      },
+      rose: {
+        300: '#ff9ee6', // Bubblegum pink
+        400: '#ff4db8', // Neon rose primary
+        500: '#d53ab0', // Rich magenta
+      },
+      lilac: {
+        400: '#8a5c93', // Muted lavender
+        500: '#4c2f64', // Deep purple
+        600: '#2e163f', 
+      },
+      cream: {
+        100: '#fff1fb', // Pale blush
+        200: '#ffd4f0', // Soft pink glow
+        300: '#f3d9ef', // Warm rose mist
+      },
+      glass: {
+        bg: 'rgba(20, 5, 24, 0.45)',
+        border: 'rgba(255, 77, 184, 0.12)',
+      }
+    },
+    extend: {
       fontFamily: {
         display: ['"Cinzel Decorative"', '"Cinzel"', '"Clash Display"', 'sans-serif'],
         creative: ['"Syne"', 'sans-serif'],

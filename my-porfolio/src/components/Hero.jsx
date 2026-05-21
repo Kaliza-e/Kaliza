@@ -102,12 +102,6 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2, type: "spring" }}
         >
           <div className="relative w-full max-w-[450px] aspect-[4/5] flex items-center justify-center">
-
-            {/* Massive Spray-paint Graffiti Backdrop text "JINX" */}
-            <div className="absolute -top-6 lg:-top-12 left-0 lg:-left-12 font-display text-[9rem] md:text-[11rem] lg:text-[12rem] font-black text-graffiti select-none pointer-events-none opacity-80 z-0 tracking-tighter -rotate-12 transform">
-              JINX
-            </div>
-
             {/* Glowing neon rings/sparks in background */}
             <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-rose-400/25 rounded-full blur-[80px] z-0 animate-pulse pointer-events-none"></div>
 
