@@ -1,24 +1,71 @@
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { Heart, ArrowUp, Sparkles } from "lucide-react";
 
-export default function Footer() {
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer style={{ background: 'var(--dark-brown)', color: 'var(--bg-primary)', padding: '64px 0 32px' }}>
-      <div className="container" style={{ textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', color: 'var(--bg-primary)', marginBottom: '8px' }}>Esther Kaliza</h2>
-        <p style={{ color: 'var(--surface-secondary)', fontSize: '0.95rem', marginBottom: '32px' }}>
-          Frontend Engineer • Full-Stack Developer • UI/UX Designer
-        </p>
+    <footer className="py-10 border-t border-border/50 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
+      
+      <div className="section-container relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo & Copyright */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center md:text-left"
+          >
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">K</span>
+              </div>
+              <span className="font-bold font-display gradient-text">KALIZA Esther</span>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} All rights reserved.
+            </p>
+          </motion.div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginBottom: '48px' }}>
-          <a href="#" style={{ color: 'var(--bg-primary)', opacity: 0.8, transition: 'opacity 0.2s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.8}><FiGithub size={24}/></a>
-          <a href="#" style={{ color: 'var(--bg-primary)', opacity: 0.8, transition: 'opacity 0.2s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.8}><FiLinkedin size={24}/></a>
-          <a href="mailto:kalizaesther5@gmail.com" style={{ color: 'var(--bg-primary)', opacity: 0.8, transition: 'opacity 0.2s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.8}><FiMail size={24}/></a>
-        </div>
+          {/* Made with love */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="flex items-center gap-2 text-sm text-muted-foreground"
+          >
+            <span>Made with</span>
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1, repeat: Infinity }}
+            >
+              <Heart size={16} className="text-accent fill-accent" />
+            </motion.div>
+            <span>in</span>
+            <span className="font-medium text-foreground">Rwanda</span>
+            <Sparkles size={14} className="text-primary" />
+          </motion.div>
 
-        <div style={{ borderTop: '1px solid rgba(247, 241, 222, 0.1)', paddingTop: '32px', fontSize: '0.85rem', color: 'rgba(247, 241, 222, 0.6)' }}>
-          &copy; {new Date().getFullYear()} Esther Kaliza. All rights reserved.
+          {/* Scroll to top */}
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            onClick={scrollToTop}
+            whileHover={{ scale: 1.1, y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-12 h-12 glass-card flex items-center justify-center text-muted-foreground hover:text-primary transition-all duration-300 group"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={20} className="group-hover:-translate-y-1 transition-transform" />
+          </motion.button>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

@@ -13,7 +13,6 @@ module.exports = {
         "dark-brown": "#4E220F",
       },
       fontFamily: {
-        // Using Google Font 'Inter' as a modern, readable typeface.
         sans: ["Inter", "system-ui", "sans-serif"],
       },
     },

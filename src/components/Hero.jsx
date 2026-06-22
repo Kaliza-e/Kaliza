@@ -1,502 +1,182 @@
-import { motion } from 'framer-motion';
-import { HiArrowDown, HiDownload } from 'react-icons/hi';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import {Palette,ArrowRight} from 'lucide-react'
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const techBadges = [
-  'React', 'JavaScript', 'Spring Boot', 'Node.js',
-  'PostgreSQL', 'MySQL', 'MongoDB', 'Tailwind CSS',
-];
 
-const socialLinks = [
-  { icon: FiGithub, href: 'https://github.com', label: 'GitHub' },
-  { icon: FiLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: FiMail, href: 'mailto:kalizaesther5@gmail.com', label: 'Email' },
-];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] },
-  },
-};
-
-export default function Hero() {
-  const scrollToSection = (id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+const Hero = () => {
   return (
     <section
-      id="hero"
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-        paddingTop: '90px',
-      }}
+      id="home"
+      className="min-h-screen w-full flex items-center justify-center relative overflow-hidden px-4 sm:px-6 pt-28 pb-16"
     >
-      {/* Background Gradient Orbs */}
-      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-        <div style={{
-          position: 'absolute',
-          top: '-10%',
-          right: '-5%',
-          width: '600px',
-          height: '600px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176, 186, 153, 0.35) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }} />
-        <div style={{
-          position: 'absolute',
-          bottom: '10%',
-          left: '-8%',
-          width: '500px',
-          height: '500px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(157, 102, 56, 0.15) 0%, transparent 70%)',
-          filter: 'blur(50px)',
-        }} />
-        <div style={{
-          position: 'absolute',
-          top: '40%',
-          left: '40%',
-          width: '300px',
-          height: '300px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176, 186, 153, 0.2) 0%, transparent 70%)',
-          filter: 'blur(30px)',
-        }} />
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-purple-600/15 rounded-full blur-[120px]" />
+        <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-indigo-600/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="container" style={{ width: '100%' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '64px',
-          alignItems: 'center',
-        }}
-          className="hero-grid"
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-4 relative z-10"
+      >
+        {/* Profile & Brand Widget */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1 }}
+          className="lg:col-span-4 p-8 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl flex flex-col items-center text-center space-y-6 shadow-2xl"
         >
-          {/* Left: Text Content */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {/* Greeting Badge */}
-            <motion.div variants={itemVariants} style={{ marginBottom: '20px' }}>
-              <span style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '8px 16px',
-                background: 'rgba(157, 102, 56, 0.1)',
-                border: '1px solid rgba(157, 102, 56, 0.25)',
-                borderRadius: '999px',
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                color: 'var(--accent-bronze)',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-              }}>
-                <span style={{
-                  width: 8, height: 8,
-                  borderRadius: '50%',
-                  background: 'var(--accent-bronze)',
-                  animation: 'pulse-ring 2s infinite',
-                }} />
-                Available for Opportunities
-              </span>
-            </motion.div>
-
-            {/* Main Headline */}
-            <motion.h1
-              variants={itemVariants}
-              style={{
-                fontSize: 'clamp(2.4rem, 5vw, 4rem)',
-                fontWeight: 800,
-                color: 'var(--dark-brown)',
-                lineHeight: 1.1,
-                marginBottom: '20px',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Building Digital{' '}
-              <span style={{
-                background: 'linear-gradient(135deg, var(--accent-bronze) 0%, var(--dark-brown) 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>
-                Experiences
-              </span>{' '}
-              That Solve Real Problems
-            </motion.h1>
-
-            {/* Subheadline */}
-            <motion.p
-              variants={itemVariants}
-              style={{
-                fontSize: '1.1rem',
-                color: 'rgba(78, 34, 15, 0.7)',
-                lineHeight: 1.7,
-                marginBottom: '32px',
-                maxWidth: '520px',
-              }}
-            >
-              Frontend Engineer, Full-Stack Developer, UI/UX Designer, and Technology Innovator passionate about creating scalable applications, intuitive user experiences, and impactful digital solutions.
-            </motion.p>
-
-            {/* Role Tags */}
-            <motion.div
-              variants={itemVariants}
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '8px',
-                marginBottom: '36px',
-              }}
-            >
-              {['Frontend Engineer', 'Full-Stack Dev', 'UI/UX Designer', 'Founder @ IwaCuTech'].map((role) => (
-                <span key={role} style={{
-                  padding: '6px 14px',
-                  background: 'rgba(176, 186, 153, 0.25)',
-                  border: '1px solid rgba(176, 186, 153, 0.5)',
-                  borderRadius: 'var(--radius-sm)',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  color: 'var(--dark-brown)',
-                }}>
-                  {role}
-                </span>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              variants={itemVariants}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}
-            >
-              <motion.button
-                id="hero-view-projects"
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => scrollToSection('#projects')}
-                className="btn-primary"
-              >
-                View My Projects
-                <HiArrowDown size={16} />
-              </motion.button>
-
-              <motion.a
-                id="hero-download-resume"
-                href="#"
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="btn-secondary"
-              >
-                <HiDownload size={16} />
-                Download Resume
-              </motion.a>
-
-              <motion.button
-                id="hero-contact"
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => scrollToSection('#contact')}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '14px 28px',
-                  background: 'transparent',
-                  color: 'var(--dark-brown)',
-                  border: '2px solid rgba(176, 186, 153, 0.5)',
-                  borderRadius: 'var(--radius-sm)',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '0.95rem',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={e => { e.target.style.borderColor = 'var(--accent-bronze)'; }}
-                onMouseLeave={e => { e.target.style.borderColor = 'rgba(176, 186, 153, 0.5)'; }}
-              >
-                Contact Me
-              </motion.button>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              variants={itemVariants}
-              style={{ display: 'flex', alignItems: 'center', gap: '16px' }}
-            >
-              <span style={{ fontSize: '0.8rem', color: 'rgba(78, 34, 15, 0.5)', fontWeight: 600 }}>FIND ME ON</span>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                {socialLinks.map(({ icon: Icon, href, label }) => (
-                  <motion.a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    whileHover={{ scale: 1.15, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: '50%',
-                      background: 'rgba(176, 186, 153, 0.2)',
-                      border: '1px solid rgba(176, 186, 153, 0.4)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: 'var(--dark-brown)',
-                      textDecoration: 'none',
-                      transition: 'all 0.25s ease',
-                    }}
-                  >
-                    <Icon size={18} />
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right: Portrait */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.88, x: 40 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1], delay: 0.15 }}
-            style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}
-          >
-            {/* Floating ring decoration */}
-            <div style={{
-              position: 'absolute',
-              width: '110%',
-              height: '110%',
-              borderRadius: '50%',
-              border: '1.5px dashed rgba(157, 102, 56, 0.25)',
-              top: '-5%',
-              left: '-5%',
-              animation: 'float 6s ease-in-out infinite',
-            }} />
-            <div style={{
-              position: 'absolute',
-              width: '90%',
-              height: '90%',
-              borderRadius: '50%',
-              border: '1px solid rgba(176, 186, 153, 0.35)',
-              top: '5%',
-              left: '5%',
-            }} />
-
-            {/* Portrait container */}
-            <motion.div
-              style={{
-                width: 'clamp(280px, 40vw, 440px)',
-                height: 'clamp(280px, 40vw, 440px)',
-                borderRadius: '50%',
-                overflow: 'hidden',
-                position: 'relative',
-                boxShadow: '0 24px 80px rgba(78, 34, 15, 0.22), 0 0 0 6px rgba(176, 186, 153, 0.25)',
-                animation: 'float 6s ease-in-out infinite',
-              }}
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.4 }}
-            >
+          <div className="relative">
+            <div className="absolute inset-0 bg-purple-500 rounded-full blur-2xl opacity-30" />
+            <div className="relative w-40 h-40 rounded-full border-2 border-white/10 overflow-hidden ring-8 ring-white/5">
               <img
                 src="/esther.png"
-                alt="Esther Kaliza - Frontend Engineer & Full-Stack Developer"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center top',
-                }}
+                alt="KALIZA Esther"
+                className="w-full h-full object-cover object-top"
               />
-              {/* Gradient overlay */}
-              <div style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(to bottom, transparent 60%, rgba(78, 34, 15, 0.1) 100%)',
-                pointerEvents: 'none',
-              }} />
-            </motion.div>
-
-            {/* Floating Badge - Projects */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              style={{
-                position: 'absolute',
-                bottom: '10%',
-                right: '-5%',
-                background: 'rgba(247, 241, 222, 0.9)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(176, 186, 153, 0.5)',
-                borderRadius: 'var(--radius-md)',
-                padding: '14px 18px',
-                boxShadow: '0 8px 32px rgba(78, 34, 15, 0.12)',
-                textAlign: 'center',
-                minWidth: '120px',
-              }}
-              whileHover={{ y: -4, boxShadow: '0 16px 40px rgba(78, 34, 15, 0.18)' }}
-            >
-              <div style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--accent-bronze)', fontFamily: 'var(--font-display)' }}>6+</div>
-              <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'rgba(78, 34, 15, 0.65)', letterSpacing: '0.05em' }}>Projects Built</div>
-            </motion.div>
-
-            {/* Floating Badge - IwaCuTech */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.0, duration: 0.6 }}
-              style={{
-                position: 'absolute',
-                top: '12%',
-                left: '-8%',
-                background: 'rgba(247, 241, 222, 0.9)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(176, 186, 153, 0.5)',
-                borderRadius: 'var(--radius-md)',
-                padding: '12px 16px',
-                boxShadow: '0 8px 32px rgba(78, 34, 15, 0.12)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-              }}
-              whileHover={{ y: -4, boxShadow: '0 16px 40px rgba(78, 34, 15, 0.18)' }}
-            >
-              <div style={{
-                width: 36,
-                height: 36,
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, var(--accent-bronze), var(--dark-brown))',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '1rem',
-              }}>🚀</div>
-              <div>
-                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--dark-brown)' }}>IwaCuTech</div>
-                <div style={{ fontSize: '0.65rem', color: 'rgba(78, 34, 15, 0.6)', fontWeight: 500 }}>Founder</div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Tech Stack Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.6 }}
-          style={{
-            marginTop: '64px',
-            paddingTop: '40px',
-            borderTop: '1px solid rgba(176, 186, 153, 0.3)',
-          }}
-        >
-          <p style={{
-            fontSize: '0.72rem',
-            fontWeight: 700,
-            color: 'rgba(78, 34, 15, 0.45)',
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            marginBottom: '16px',
-            textAlign: 'center',
-          }}>
-            Technology Stack
-          </p>
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '10px',
-            justifyContent: 'center',
-          }}>
-            {techBadges.map((tech, i) => (
-              <motion.span
-                key={tech}
-                className="tech-badge"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + i * 0.05 }}
-                whileHover={{ scale: 1.06 }}
+            </div>
+          </div>
+          <div className="space-y-1">
+            <h2 className="text-4xl font-extrabold tracking-tight font-display">
+              KALIZA Esther
+            </h2>
+            <p className="text-purple-400 font-semibold tracking-wide uppercase text-xs">
+              Junior Software Developer
+            </p>
+          </div>
+          <div className="flex gap-3">
+            {[
+              { icon: FaGithub, href: "https://github.com", label: "GitHub" },
+              { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+              { icon: FaEnvelope, href: "mailto:kalizaesther5@gmail.com", label: "Email" },
+            ].map((s, i) => (
+              <a
+                key={i}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground/80 hover:bg-white/10 hover:text-purple-300 transition-colors"
               >
-                {tech}
-              </motion.span>
+                <s.icon size={16} />
+              </a>
             ))}
           </div>
         </motion.div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        style={{
-          position: 'absolute',
-          bottom: '32px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '8px',
-          cursor: 'pointer',
-        }}
-        onClick={() => scrollToSection('#about')}
-      >
-        <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(78, 34, 15, 0.4)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Scroll</span>
+        {/* Hero Content Widget */}
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          style={{
-            width: 28,
-            height: 44,
-            borderRadius: 14,
-            border: '2px solid rgba(157, 102, 56, 0.3)',
-            display: 'flex',
-            justifyContent: 'center',
-            paddingTop: '6px',
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="md:col-span-4 lg:col-span-8 p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl flex flex-col justify-center space-y-6 shadow-2xl"
         >
-          <div style={{
-            width: 4,
-            height: 8,
-            borderRadius: 2,
-            background: 'var(--accent-bronze)',
-          }} />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 w-fit">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">
+              Open for projects
+            </span>
+          </div>
+          <h1 className="text-5xl lg:text-7xl font-extrabold font-display leading-[0.9] tracking-tighter">
+            Designing{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 italic">
+              seamless
+            </span>{" "}
+            digital experiences.
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+            I bridge the gap between complex backend logic and pixel-perfect
+            frontend aesthetics — building high-performance, human-centered web
+            applications.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <a
+              href="#portfolio"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_30px_rgba(147,51,234,0.4)] transition-all"
+            >
+              View Portfolio
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-foreground font-semibold text-sm tracking-wide hover:bg-white/10 transition-all"
+            >
+              Contact Me
+            </a>
+          </div>
         </motion.div>
-      </motion.div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-            gap: 40px !important;
-            text-align: center;
-          }
-          .hero-grid > div:last-child {
-            order: -1;
-          }
-        }
-      `}</style>
+        {/* Stack Widget */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="md:col-span-2 lg:col-span-5 p-8 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl flex flex-col justify-between"
+        >
+          <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-6">
+            Primary Stack
+          </h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex flex-col gap-2">
+              <span className="text-xs text-purple-400 font-bold">Frontend</span>
+              <span className="text-sm font-medium">React, Tailwind, TS</span>
+            </div>
+            <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex flex-col gap-2">
+              <span className="text-xs text-indigo-400 font-bold">Backend</span>
+              <span className="text-sm font-medium">Node, Python, SQL</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* UI/UX Widget */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="md:col-span-2 lg:col-span-4 p-8 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl overflow-hidden group"
+        >
+          <div className="flex justify-between items-start mb-4">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+              UI / UX Design
+            </h3>
+            <div className="p-2 rounded-lg bg-white/5">
+              <Palette size={16} className="text-purple-300" />
+            </div>
+          </div>
+          <div className="h-24 flex items-end gap-2">
+            <div className="flex-1 bg-white/5 rounded-t-xl group-hover:bg-purple-500/20 transition-all h-[40%]" />
+            <div className="flex-1 bg-white/10 rounded-t-xl group-hover:bg-purple-500/40 transition-all h-[70%]" />
+            <div className="flex-1 bg-white/5 rounded-t-xl group-hover:bg-purple-500/20 transition-all h-[50%]" />
+            <div className="flex-1 bg-white/10 rounded-t-xl group-hover:bg-purple-500/40 transition-all h-[90%]" />
+          </div>
+        </motion.div>
+
+        {/* Contact CTA Widget */}
+        <motion.a
+          href="#contact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          whileHover={{ scale: 0.98 }}
+          className="md:col-span-4 lg:col-span-3 p-8 rounded-[2.5rem] bg-gradient-to-br from-purple-600 to-indigo-700 border border-white/20 shadow-[0_0_40px_rgba(147,51,234,0.3)] flex flex-col justify-between cursor-pointer min-h-[180px]"
+        >
+          <div className="flex justify-end">
+            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
+              <ArrowRight className="w-5 h-5 text-white" />
+            </div>
+          </div>
+          <div>
+            <h4 className="text-2xl font-bold font-display text-white">Let's Chat</h4>
+            <p className="text-white/70 text-sm">Start a new project together</p>
+          </div>
+        </motion.a>
+      </motion.div>
     </section>
   );
-}
+};
+
+export default Hero;
