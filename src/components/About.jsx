@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, Calendar, MapPin, Code, Zap } from "lucide-react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { GraduationCap, MapPin, Code, Zap } from "lucide-react";
 const education = [
   {
     school: "Rwanda Coding Academy",

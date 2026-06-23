@@ -1,177 +1,187 @@
 import { motion } from "framer-motion";
-import {Palette,ArrowRight} from 'lucide-react'
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { ArrowRight, Palette } from "lucide-react";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
+const socials = [
+  { icon: FaGithub, href: "https://github.com", label: "GitHub" },
+  { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FaEnvelope, href: "mailto:kalizaesther5@gmail.com", label: "Email" },
+];
 
+const stack = [
+  { label: "Frontend", value: "React, Tailwind, TS", color: "text-purple-300" },
+  { label: "Backend", value: "Node, Python, SQL", color: "text-indigo-300" },
+];
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex items-center justify-center relative overflow-hidden px-4 sm:px-6 pt-28 pb-16"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:px-6"
     >
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-purple-600/15 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-indigo-600/10 rounded-full blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 left-0 h-80 w-80 rounded-full bg-purple-600/15 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-600/10 blur-3xl" />
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-4 relative z-10"
+        className="relative z-10 grid w-full max-w-6xl grid-cols-1 gap-5 lg:grid-cols-12"
       >
-        {/* Profile & Brand Widget */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
-          className="lg:col-span-4 p-8 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl flex flex-col items-center text-center space-y-6 shadow-2xl"
+          className="hero-panel flex flex-col items-center justify-center text-center lg:col-span-4"
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-purple-500 rounded-full blur-2xl opacity-30" />
-            <div className="relative w-40 h-40 rounded-full border-2 border-white/10 overflow-hidden ring-8 ring-white/5">
+            <div className="absolute inset-0 rounded-full bg-purple-500 opacity-30 blur-2xl" />
+            <div className="relative h-36 w-36 overflow-hidden rounded-full border-2 border-white/10 ring-8 ring-white/5 sm:h-40 sm:w-40">
               <img
                 src="/esther.png"
                 alt="KALIZA Esther"
-                className="w-full h-full object-cover object-top"
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </div>
-          <div className="space-y-1">
-            <h2 className="text-4xl font-extrabold tracking-tight font-display">
+
+          <div className="mt-6 space-y-1">
+            <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
               KALIZA Esther
             </h2>
-            <p className="text-purple-400 font-semibold tracking-wide uppercase text-xs">
+            <p className="text-xs font-semibold uppercase tracking-wide text-purple-300">
               Junior Software Developer
             </p>
           </div>
-          <div className="flex gap-3">
-            {[
-              { icon: FaGithub, href: "https://github.com", label: "GitHub" },
-              { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: FaEnvelope, href: "mailto:kalizaesther5@gmail.com", label: "Email" },
-            ].map((s, i) => (
+
+          <div className="mt-5 flex gap-3">
+            {socials.map((social) => (
               <a
-                key={i}
-                href={s.href}
+                key={social.label}
+                href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={s.label}
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-foreground/80 hover:bg-white/10 hover:text-purple-300 transition-colors"
+                aria-label={social.label}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground/80 transition-colors hover:bg-white/10 hover:text-purple-300"
               >
-                <s.icon size={16} />
+                <social.icon size={16} />
               </a>
             ))}
           </div>
         </motion.div>
 
-        {/* Hero Content Widget */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="md:col-span-4 lg:col-span-8 p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl flex flex-col justify-center space-y-6 shadow-2xl"
+          className="hero-panel flex flex-col justify-center lg:col-span-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 w-fit">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-purple-500" />
             </span>
             <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">
               Open for projects
             </span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-extrabold font-display leading-[0.9] tracking-tighter">
+
+          <h1 className="mt-5 font-display text-5xl font-extrabold leading-none sm:text-6xl lg:text-6xl xl:text-7xl">
             Designing{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 italic">
+            <span className="bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 bg-clip-text italic text-transparent">
               seamless
             </span>{" "}
             digital experiences.
           </h1>
-          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+
+          <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
             I bridge the gap between complex backend logic and pixel-perfect
-            frontend aesthetics — building high-performance, human-centered web
+            frontend aesthetics, building high-performance, human-centered web
             applications.
           </p>
-          <div className="flex flex-wrap gap-4 pt-2">
+
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
               href="#portfolio"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_30px_rgba(147,51,234,0.4)] transition-all"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-950/30 transition-all hover:-translate-y-0.5 hover:shadow-purple-700/30"
             >
               View Portfolio
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-foreground font-semibold text-sm tracking-wide hover:bg-white/10 transition-all"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:bg-white/10"
             >
               Contact Me
             </a>
           </div>
         </motion.div>
 
-        {/* Stack Widget */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="md:col-span-2 lg:col-span-5 p-8 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl flex flex-col justify-between"
+          className="hero-panel min-h-48 lg:col-span-4"
         >
-          <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-6">
+          <h3 className="mb-6 text-sm font-bold uppercase tracking-widest text-muted-foreground">
             Primary Stack
           </h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex flex-col gap-2">
-              <span className="text-xs text-purple-400 font-bold">Frontend</span>
-              <span className="text-sm font-medium">React, Tailwind, TS</span>
-            </div>
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/5 flex flex-col gap-2">
-              <span className="text-xs text-indigo-400 font-bold">Backend</span>
-              <span className="text-sm font-medium">Node, Python, SQL</span>
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {stack.map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-4"
+              >
+                <span className={`text-xs font-bold ${item.color}`}>
+                  {item.label}
+                </span>
+                <span className="text-sm font-medium">{item.value}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
 
-        {/* UI/UX Widget */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="md:col-span-2 lg:col-span-4 p-8 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl overflow-hidden group"
+          className="hero-panel group min-h-48 overflow-hidden lg:col-span-4"
         >
-          <div className="flex justify-between items-start mb-4">
+          <div className="mb-4 flex items-start justify-between gap-4">
             <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
               UI / UX Design
             </h3>
-            <div className="p-2 rounded-lg bg-white/5">
+            <div className="rounded-lg bg-white/5 p-2">
               <Palette size={16} className="text-purple-300" />
             </div>
           </div>
-          <div className="h-24 flex items-end gap-2">
-            <div className="flex-1 bg-white/5 rounded-t-xl group-hover:bg-purple-500/20 transition-all h-[40%]" />
-            <div className="flex-1 bg-white/10 rounded-t-xl group-hover:bg-purple-500/40 transition-all h-[70%]" />
-            <div className="flex-1 bg-white/5 rounded-t-xl group-hover:bg-purple-500/20 transition-all h-[50%]" />
-            <div className="flex-1 bg-white/10 rounded-t-xl group-hover:bg-purple-500/40 transition-all h-[90%]" />
+          <div className="flex h-28 items-end gap-2">
+            <div className="h-[42%] flex-1 rounded-t-lg bg-white/5 transition-all group-hover:bg-purple-500/20" />
+            <div className="h-[72%] flex-1 rounded-t-lg bg-white/10 transition-all group-hover:bg-purple-500/40" />
+            <div className="h-[54%] flex-1 rounded-t-lg bg-white/5 transition-all group-hover:bg-purple-500/20" />
+            <div className="h-[90%] flex-1 rounded-t-lg bg-white/10 transition-all group-hover:bg-purple-500/40" />
           </div>
         </motion.div>
 
-        {/* Contact CTA Widget */}
         <motion.a
           href="#contact"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          whileHover={{ scale: 0.98 }}
-          className="md:col-span-4 lg:col-span-3 p-8 rounded-[2.5rem] bg-gradient-to-br from-purple-600 to-indigo-700 border border-white/20 shadow-[0_0_40px_rgba(147,51,234,0.3)] flex flex-col justify-between cursor-pointer min-h-[180px]"
+          whileHover={{ y: -4 }}
+          className="flex min-h-48 cursor-pointer flex-col justify-between rounded-lg border border-white/20 bg-gradient-to-br from-purple-600 to-indigo-700 p-7 shadow-[0_0_40px_rgba(147,51,234,0.3)] lg:col-span-4"
         >
           <div className="flex justify-end">
-            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
-              <ArrowRight className="w-5 h-5 text-white" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
+              <ArrowRight className="h-5 w-5 text-white" />
             </div>
           </div>
           <div>
-            <h4 className="text-2xl font-bold font-display text-white">Let's Chat</h4>
-            <p className="text-white/70 text-sm">Start a new project together</p>
+            <h4 className="font-display text-2xl font-bold text-white">
+              Let's Chat
+            </h4>
+            <p className="text-sm text-white/75">Start a new project together</p>
           </div>
         </motion.a>
       </motion.div>

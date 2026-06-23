@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
-import { FaGithub, FaLinkedin, FaEnvelope,FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 import { toast } from "sonner";
 
@@ -15,7 +15,7 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -26,7 +26,7 @@ const Contact = () => {
     setIsSubmitting(false);
   };
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
