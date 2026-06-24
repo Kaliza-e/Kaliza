@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Palette } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, MapPin, Sparkles } from "lucide-react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socials = [
@@ -8,183 +8,123 @@ const socials = [
   { icon: FaEnvelope, href: "mailto:kalizaesther5@gmail.com", label: "Email" },
 ];
 
-const stack = [
-  { label: "Frontend", value: "React, Tailwind, TS", color: "text-purple-300" },
-  { label: "Backend", value: "Node, Python, SQL", color: "text-indigo-300" },
+const highlights = [
+  "React interfaces",
+  "Backend APIs",
+  "UI/UX design",
+  "Database systems",
+];
+
+const metrics = [
+  { value: "6+", label: "Projects" },
+  { value: "Full-stack", label: "Focus" },
+  { value: "RCA", label: "Training" },
 ];
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:px-6"
-    >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-32 left-0 h-80 w-80 rounded-full bg-purple-600/15 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-600/10 blur-3xl" />
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 grid w-full max-w-6xl grid-cols-1 gap-5 lg:grid-cols-12"
-      >
+    <section id="home" className="relative overflow-hidden pb-20 pt-32 sm:pt-36 lg:min-h-screen lg:pb-24">
+      <div className="absolute left-1/2 top-28 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="section-container relative grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.1 }}
-          className="hero-panel flex flex-col items-center justify-center text-center lg:col-span-4"
-        >
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-purple-500 opacity-30 blur-2xl" />
-            <div className="relative h-36 w-36 overflow-hidden rounded-full border-2 border-white/10 ring-8 ring-white/5 sm:h-40 sm:w-40">
-              <img
-                src="/esther.png"
-                alt="KALIZA Esther"
-                className="h-full w-full object-cover object-top"
-              />
-            </div>
-          </div>
-
-          <div className="mt-6 space-y-1">
-            <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-              KALIZA Esther
-            </h2>
-            <p className="text-xs font-semibold uppercase tracking-wide text-purple-300">
-              Junior Software Developer
-            </p>
-          </div>
-
-          <div className="mt-5 flex gap-3">
-            {socials.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground/80 transition-colors hover:bg-white/10 hover:text-purple-300"
-              >
-                <social.icon size={16} />
-              </a>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="hero-panel flex flex-col justify-center lg:col-span-8"
+          transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-purple-500" />
-            </span>
-            <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">
-              Open for projects
-            </span>
-          </div>
-
-          <h1 className="mt-5 font-display text-5xl font-extrabold leading-none sm:text-6xl lg:text-6xl xl:text-7xl">
-            Designing{" "}
-            <span className="bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 bg-clip-text italic text-transparent">
-              seamless
-            </span>{" "}
-            digital experiences.
+          <p className="eyebrow">Available for projects</p>
+          <h1 className="display-title text-balance">
+            KALIZA Esther, junior software developer.
           </h1>
-
-          <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-            I bridge the gap between complex backend logic and pixel-perfect
-            frontend aesthetics, building high-performance, human-centered web
-            applications.
+          <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-cyan-100/90">
+            I build clean web interfaces, practical backend systems, and useful
+            digital products for real-world problems.
+          </p>
+          <p className="section-copy max-w-2xl">
+            A Rwanda Coding Academy developer combining React, APIs, databases,
+            and UI thinking to create polished, responsive experiences.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#portfolio"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-950/30 transition-all hover:-translate-y-0.5 hover:shadow-purple-700/30"
-            >
-              View Portfolio
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#portfolio" className="primary-link">
+              View Portfolio <ArrowRight size={18} />
             </a>
-            <a
-              href="#contact"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:bg-white/10"
-            >
-              Contact Me
+            <a href="#contact" className="secondary-link">
+              <Mail size={18} /> Start a Project
             </a>
           </div>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="hero-panel min-h-48 lg:col-span-4"
-        >
-          <h3 className="mb-6 text-sm font-bold uppercase tracking-widest text-muted-foreground">
-            Primary Stack
-          </h3>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {stack.map((item) => (
-              <div
-                key={item.label}
-                className="flex flex-col gap-2 rounded-lg border border-white/10 bg-white/5 p-4"
-              >
-                <span className={`text-xs font-bold ${item.color}`}>
-                  {item.label}
-                </span>
-                <span className="text-sm font-medium">{item.value}</span>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {metrics.map((metric) => (
+              <div key={metric.label} className="rounded-lg border border-white/10 bg-white/[0.035] p-4">
+                <p className="font-display text-2xl font-black gradient-text">{metric.value}</p>
+                <p className="mt-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">{metric.label}</p>
               </div>
             ))}
           </div>
+
+          <div className="mt-5 flex flex-wrap gap-3">
+            {highlights.map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.035] px-3 py-2 text-sm font-semibold text-muted-foreground"
+              >
+                <CheckCircle2 size={15} className="text-cyan-300" />
+                {item}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="hero-panel group min-h-48 overflow-hidden lg:col-span-4"
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="surface-card overflow-hidden p-4 sm:p-5"
         >
-          <div className="mb-4 flex items-start justify-between gap-4">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
-              UI / UX Design
-            </h3>
-            <div className="rounded-lg bg-white/5 p-2">
-              <Palette size={16} className="text-purple-300" />
-            </div>
+          <div className="mb-4 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.035] px-4 py-3">
+            <span className="inline-flex items-center gap-2 text-sm font-bold text-cyan-100">
+              <Sparkles size={16} className="text-cyan-300" /> Portfolio Snapshot
+            </span>
+            <span className="rounded-full bg-emerald-400/12 px-3 py-1 text-xs font-bold text-emerald-200">
+              Open to work
+            </span>
           </div>
-          <div className="flex h-28 items-end gap-2">
-            <div className="h-[42%] flex-1 rounded-t-lg bg-white/5 transition-all group-hover:bg-purple-500/20" />
-            <div className="h-[72%] flex-1 rounded-t-lg bg-white/10 transition-all group-hover:bg-purple-500/40" />
-            <div className="h-[54%] flex-1 rounded-t-lg bg-white/5 transition-all group-hover:bg-purple-500/20" />
-            <div className="h-[90%] flex-1 rounded-t-lg bg-white/10 transition-all group-hover:bg-purple-500/40" />
+          <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.035]">
+            <img
+              src="/esther.png"
+              alt="KALIZA Esther"
+              className="h-[360px] w-full object-cover object-top sm:h-[430px]"
+            />
+          </div>
+
+          <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 className="font-display text-3xl font-bold">KALIZA Esther</h2>
+              <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-cyan-300">
+                Junior Software Developer
+              </p>
+              <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin size={16} className="text-cyan-300" /> Rwanda
+              </p>
+            </div>
+
+            <div className="flex gap-2">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-muted-foreground transition hover:border-cyan-300/35 hover:text-cyan-300"
+                >
+                  <social.icon size={17} />
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
-
-        <motion.a
-          href="#contact"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          whileHover={{ y: -4 }}
-          className="flex min-h-48 cursor-pointer flex-col justify-between rounded-lg border border-white/20 bg-gradient-to-br from-purple-600 to-indigo-700 p-7 shadow-[0_0_40px_rgba(147,51,234,0.3)] lg:col-span-4"
-        >
-          <div className="flex justify-end">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
-              <ArrowRight className="h-5 w-5 text-white" />
-            </div>
-          </div>
-          <div>
-            <h4 className="font-display text-2xl font-bold text-white">
-              Let's Chat
-            </h4>
-            <p className="text-sm text-white/75">Start a new project together</p>
-          </div>
-        </motion.a>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,75 +1,85 @@
 import { motion, useInView } from "framer-motion";
+import { Code, Globe, Layout, Palette, Server, Smartphone } from "lucide-react";
 import { useRef } from "react";
-import { Code, Palette, Layout, Globe, Smartphone, Server, ArrowUpRight } from "lucide-react";
 
 const services = [
-  { icon: Code, title: "Frontend Development", description: "Responsive, interactive UIs with React, TypeScript, and clean semantic HTML/CSS." },
-  { icon: Palette, title: "UI Design", description: "Polished interfaces with strong typography, color, and visual rhythm." },
-  { icon: Layout, title: "UX Design", description: "User-centered flows, wireframes, and prototypes that feel obvious." },
-  { icon: Globe, title: "Web Development", description: "Full-cycle web work — from concept to deployment, accessible and fast." },
-  { icon: Smartphone, title: "Mobile-Ready", description: "Responsive applications that look right across every device." },
-  { icon: Server, title: "Backend Development", description: "Solid server-side foundations with Node.js, Express, and databases." },
+  {
+    icon: Code,
+    title: "Frontend Development",
+    description:
+      "Responsive React interfaces with clean component structure and accessible UI patterns.",
+  },
+  {
+    icon: Server,
+    title: "Backend Development",
+    description:
+      "APIs, server-side logic, and database connections for practical web products.",
+  },
+  {
+    icon: Palette,
+    title: "UI Design",
+    description:
+      "Polished pages with strong spacing, hierarchy, typography, and visual consistency.",
+  },
+  {
+    icon: Layout,
+    title: "UX Design",
+    description:
+      "Simple user flows, wireframes, and screens that make products easier to understand.",
+  },
+  {
+    icon: Smartphone,
+    title: "Responsive Layouts",
+    description:
+      "Mobile-ready pages that stay readable and well-spaced across screen sizes.",
+  },
+  {
+    icon: Globe,
+    title: "Web Delivery",
+    description:
+      "Project setup, integration, testing, and deployment-minded implementation.",
+  },
 ];
 
 const Services = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 relative">
-      <div className="max-w-6xl mx-auto" ref={ref}>
+    <section id="services" className="site-section">
+      <div className="section-container" ref={ref}>
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="space-y-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          className="section-header center"
         >
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-2xl"
-          >
-            <span className="w-2 h-2 rounded-full bg-purple-500" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">Services</span>
-          </motion.div>
-
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-extrabold font-display tracking-tight">
-            Things I{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-indigo-400">help with.</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {services.map((service) => (
-              <motion.div
-                key={service.title}
-                variants={itemVariants}
-                whileHover={{ y: -6 }}
-                className="group p-7 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl hover:border-purple-500/30 transition-colors flex flex-col gap-4 min-h-[220px]"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-purple-500/15 border border-purple-500/20 flex items-center justify-center">
-                    <service.icon className="w-5 h-5 text-purple-300" />
-                  </div>
-                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-purple-300 transition-colors" />
-                </div>
-                <h3 className="text-lg font-bold font-display">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          <p className="eyebrow">Services</p>
+          <h2 className="section-heading">Ways I can help.</h2>
+          <p className="section-copy">
+            From interface design to backend implementation, I focus on building
+            pages and apps that feel clear, stable, and useful.
+          </p>
         </motion.div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <motion.article
+              key={service.title}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: index * 0.05 }}
+              className="surface-card p-6"
+            >
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
+                <service.icon size={22} />
+              </div>
+              <h3 className="font-display text-xl font-bold">{service.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                {service.description}
+              </p>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );

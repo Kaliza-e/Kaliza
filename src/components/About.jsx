@@ -1,27 +1,38 @@
 import { motion, useInView } from "framer-motion";
+import { Code, GraduationCap, HeartHandshake, MapPin } from "lucide-react";
 import { useRef } from "react";
-import { GraduationCap, MapPin, Code, Zap } from "lucide-react";
+
+const stats = [
+  { icon: Code, label: "Focus", value: "Full-stack development" },
+  { icon: GraduationCap, label: "Education", value: "Rwanda Coding Academy" },
+  { icon: MapPin, label: "Location", value: "Rwanda" },
+];
+
+const principles = [
+  "Readable code",
+  "Human-centered layouts",
+  "Mobile-first thinking",
+  "Reliable delivery",
+];
+
 const education = [
   {
     school: "Rwanda Coding Academy",
-    period: "2024 – Present",
-    description: "Software Development & Embedded Systems",
+    period: "2024 - Present",
+    description: "Software Development and Embedded Systems",
     location: "Rwanda",
-    current: true,
   },
   {
-    school: "Lycee Notre Dame de Cîteaux",
-    period: "2021 – 2024",
+    school: "Lycee Notre Dame de Citeaux",
+    period: "2021 - 2024",
     description: "Ordinary Level Education",
     location: "Rwanda",
-    current: false,
   },
   {
     school: "Espoir Primary School",
-    period: "2014 – 2021",
+    period: "2014 - 2021",
     description: "Primary Education",
     location: "Rwamagana",
-    current: false,
   },
 ];
 
@@ -29,105 +40,95 @@ const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const container = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } };
-  const item = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
-
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 relative">
-      <div className="max-w-6xl mx-auto" ref={ref}>
-        {/* Section label widget */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-2xl mb-8"
-        >
-          <span className="w-2 h-2 rounded-full bg-purple-500" />
-          <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">About</span>
-        </motion.div>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-4"
-        >
-          {/* Intro widget */}
+    <section id="about" className="site-section border-t border-white/5">
+      <div className="section-container" ref={ref}>
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <motion.div
-            variants={item}
-            className="lg:col-span-7 p-8 lg:p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl"
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="section-header"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 font-display leading-[0.95] tracking-tight">
-              About{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-indigo-400">
-                me.
-              </span>
+            <p className="eyebrow">About</p>
+            <h2 className="section-heading text-balance">
+              I turn ideas into reliable, readable web products.
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                I'm <span className="text-foreground font-semibold">KALIZA Esther</span>, a passionate junior software developer at{" "}
-                <span className="text-purple-300 font-medium">Rwanda Coding Academy</span>. My journey is driven by curiosity and a desire to build impactful tools.
-              </p>
-              <p>
-                I combine frontend, backend, and UI/UX skills into a holistic craft — clean code that quietly powers thoughtful, human experiences.
+            <p className="section-copy">
+              I am a passionate junior software developer at Rwanda Coding
+              Academy. I enjoy building clean interfaces, thoughtful user flows,
+              and backend systems that support real-world use.
+            </p>
+            <div className="mt-7 rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-5">
+              <div className="mb-3 flex items-center gap-3 text-cyan-100">
+                <HeartHandshake size={20} className="text-cyan-300" />
+                <span className="font-display text-lg font-bold">How I work</span>
+              </div>
+              <p className="text-sm leading-7 text-muted-foreground">
+                I care about products that are clear to use, simple to maintain,
+                and polished enough to earn trust from the first interaction.
               </p>
             </div>
           </motion.div>
 
-          {/* Quick stat widgets */}
-          <motion.div variants={item} className="lg:col-span-5 grid grid-cols-3 gap-4">
-            {[
-              { icon: Code, label: "Full Stack", value: "Dev" },
-              { icon: GraduationCap, label: "RCA", value: "Student" },
-              { icon: MapPin, label: "Rwanda", value: "Based" },
-            ].map((s, i) => (
-              <div
-                key={i}
-                className="p-5 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl flex flex-col items-center justify-center text-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/20 flex items-center justify-center">
-                  <s.icon className="w-5 h-5 text-purple-300" />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.08, duration: 0.5 }}
+            className="grid gap-4 sm:grid-cols-3"
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className="surface-card p-5">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
+                  <stat.icon size={20} />
                 </div>
-                <p className="font-bold text-foreground text-sm">{s.value}</p>
-                <p className="text-[10px] uppercase tracking-widest text-muted-foreground">{s.label}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  {stat.label}
+                </p>
+                <p className="mt-2 font-semibold text-foreground">{stat.value}</p>
               </div>
             ))}
           </motion.div>
+        </div>
 
-          {/* Education timeline widget */}
-          <motion.div
-            variants={item}
-            className="lg:col-span-12 p-8 lg:p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-3xl shadow-2xl"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/20 flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-purple-300" />
-              </div>
-              <h3 className="text-xl font-bold font-display">Education Journey</h3>
-            </div>
-            <div className="grid md:grid-cols-3 gap-4">
-              {education.map((edu, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ y: -4 }}
-                  className={`p-6 rounded-2xl bg-white/[0.03] border ${edu.current ? "border-purple-500/40" : "border-white/10"} flex flex-col gap-3`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground">{edu.period}</span>
-                    {edu.current && (
-                      <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest bg-purple-500/15 text-purple-300 px-2 py-1 rounded-full border border-purple-500/20">
-                        <Zap size={10} /> Now
-                      </span>
-                    )}
-                  </div>
-                  <h4 className="font-bold text-foreground">{edu.school}</h4>
-                  <p className="text-sm text-muted-foreground">{edu.description}</p>
-                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground mt-auto">
-                    <MapPin size={12} className="text-purple-400" /> {edu.location}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.12, duration: 0.5 }}
+          className="mt-8 flex flex-wrap gap-3"
+        >
+          {principles.map((principle) => (
+            <span key={principle} className="tech-badge">
+              {principle}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.14, duration: 0.5 }}
+          className="mt-12"
+        >
+          <h3 className="mb-5 font-display text-2xl font-bold">
+            Education Journey
+          </h3>
+          <div className="grid gap-4 md:grid-cols-3">
+            {education.map((item) => (
+              <article key={item.school} className="surface-card p-6">
+                <p className="text-xs font-bold uppercase tracking-widest text-cyan-300">
+                  {item.period}
+                </p>
+                <h4 className="mt-4 text-lg font-bold">{item.school}</h4>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {item.description}
+                </p>
+                <p className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin size={15} className="text-cyan-300" /> {item.location}
+                </p>
+              </article>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
