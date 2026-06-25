@@ -23,7 +23,9 @@ const metrics = [
 
 const Hero = () => {
   return (
-    <section id="home" className="relative overflow-hidden pb-20 pt-32 sm:pt-36 lg:min-h-screen lg:pb-24">
+    <section
+  id="home"
+  className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-40 pb-20">
       <div className="absolute left-1/2 top-28 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
       <div className="section-container relative grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
         <motion.div
@@ -33,7 +35,7 @@ const Hero = () => {
         >
           <p className="eyebrow">Available for projects</p>
           <h1 className="display-title text-balance">
-            KALIZA Esther, junior software developer.
+         KALIZA Esther, junior software developer.
           </h1>
           <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-cyan-100/90">
             I build clean web interfaces, practical backend systems, and useful

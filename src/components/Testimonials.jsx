@@ -28,7 +28,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="testimonials" className="site-section border-y border-white/5">
+    <section id="testimonials" className="site-section border-y">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}

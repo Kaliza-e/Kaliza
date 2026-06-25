@@ -5,4 +5,14 @@
   flex-direction: column;
 }
 
+.site-section {
+  padding: 6rem 0;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 /* Reset default App.css vite styles */
