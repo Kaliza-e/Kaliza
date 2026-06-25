@@ -24,18 +24,24 @@ const metrics = [
 const Hero = () => {
   return (
     <section
-  id="home"
-  className="relative overflow-hidden pt-28 sm:pt-32 lg:pt-40 pb-20">
-      <div className="absolute left-1/2 top-28 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="section-container relative grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+      id="home"
+      className="relative overflow-hidden pb-20"
+      style={{ paddingTop: "5rem" }}
+    >
+      <div className="pointer-events-none absolute left-1/2 top-28 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 relative grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+
+        {/* Left column */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="min-w-0 pt-10 sm:pt-14"
         >
-          <p className="eyebrow">Available for projects</p>
+          {/* <p className="eyebrow">Available for projects</p> */}
           <h1 className="display-title text-balance">
-         KALIZA Esther, junior software developer.
+            KALIZA Esther, junior software developer.
           </h1>
           <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-cyan-100/90">
             I build clean web interfaces, practical backend systems, and useful
@@ -55,11 +61,18 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+          <div className="mt-8 grid grid-cols-3 gap-3">
             {metrics.map((metric) => (
-              <div key={metric.label} className="rounded-lg border border-white/10 bg-white/[0.035] p-4">
-                <p className="font-display text-2xl font-black gradient-text">{metric.value}</p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">{metric.label}</p>
+              <div
+                key={metric.label}
+                className="rounded-lg border border-white/10 bg-white/[0.035] p-4"
+              >
+                <p className="font-display text-2xl font-black gradient-text">
+                  {metric.value}
+                </p>
+                <p className="mt-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  {metric.label}
+                </p>
               </div>
             ))}
           </div>
@@ -77,11 +90,12 @@ const Hero = () => {
           </div>
         </motion.div>
 
+        {/* Right column - profile card — mt-16 clears the navbar */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="surface-card overflow-hidden p-4 sm:p-5"
+          className="surface-card min-w-0 overflow-hidden p-4 sm:p-5 mt-16 sm:mt-20"
         >
           <div className="mb-4 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.035] px-4 py-3">
             <span className="inline-flex items-center gap-2 text-sm font-bold text-cyan-100">
@@ -91,16 +105,17 @@ const Hero = () => {
               Open to work
             </span>
           </div>
+
           <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.035]">
             <img
               src="/esther.png"
               alt="KALIZA Esther"
-              className="h-[360px] w-full object-cover object-top sm:h-[430px]"
+              className="h-[300px] w-full object-cover object-top sm:h-[360px]"
             />
           </div>
 
           <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div>
+            <div className="min-w-0">
               <h2 className="font-display text-3xl font-bold">KALIZA Esther</h2>
               <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-cyan-300">
                 Junior Software Developer
@@ -110,7 +125,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex shrink-0 gap-2">
               {socials.map((social) => (
                 <a
                   key={social.label}
@@ -126,6 +141,7 @@ const Hero = () => {
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

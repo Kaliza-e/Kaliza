@@ -40,10 +40,10 @@ export default function Navbar() {
         </a>
 
         <ul className="hidden md:flex gap-8 text-white/70 text-sm">
-          {navItems.map((i) => (
-            <li key={i.href}>
-              <a href={i.href} className="hover:text-white transition">
-                {i.label}
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} className="hover:text-white transition">
+                {item.label}
               </a>
             </li>
           ))}
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         <a
           href="#contact"
-          className="hidden md:inline-flex bg-white text-black px-5 py-2 rounded-full text-sm font-semibold"
+          className="hidden md:inline-flex bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:scale-105 transition"
         >
           Hire Me
         </a>
@@ -69,14 +69,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
           >
-            {navItems.map((i) => (
+            {navItems.map((item) => (
               <a
-                key={i.href}
-                href={i.href}
+                key={item.href}
+                href={item.href}
                 onClick={() => setOpen(false)}
-                className="block py-3 text-white/80"
+                className="block py-3 text-white/80 hover:text-white transition"
               >
-                {i.label}
+                {item.label}
               </a>
             ))}
           </motion.div>

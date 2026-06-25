@@ -43,74 +43,78 @@ const About = () => {
   return (
     <section id="about" className="site-section border-t border-white/5">
       <div className="section-container" ref={ref}>
-        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+
+        {/* ── Top: text + stats side by side, vertically centered ── */}
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+
+          {/* Left: heading + description + how I work */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="section-header"
           >
             <p className="eyebrow">About</p>
-            <h2 className="section-heading text-balance">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display leading-tight text-balance mt-3">
               I turn ideas into reliable, readable web products.
             </h2>
-            <p className="section-copy">
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">
               I am a passionate junior software developer at Rwanda Coding
               Academy. I enjoy building clean interfaces, thoughtful user flows,
               and backend systems that support real-world use.
             </p>
-            <div className="mt-7 rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-5">
-              <div className="mb-3 flex items-center gap-3 text-cyan-100">
-                <HeartHandshake size={20} className="text-cyan-300" />
-                <span className="font-display text-lg font-bold">How I work</span>
+
+            <div className="mt-6 rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-5">
+              <div className="mb-2 flex items-center gap-3 text-cyan-100">
+                <HeartHandshake size={18} className="text-cyan-300" />
+                <span className="font-display text-base font-bold">How I work</span>
               </div>
-              <p className="text-sm leading-7 text-muted-foreground">
+              <p className="text-sm leading-6 text-muted-foreground">
                 I care about products that are clear to use, simple to maintain,
                 and polished enough to earn trust from the first interaction.
               </p>
             </div>
           </motion.div>
 
+          {/* Right: stat cards stacked vertically so they don't float weirdly */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.08, duration: 0.5 }}
-            className="grid gap-4 sm:grid-cols-3"
+            className="flex flex-col gap-4"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="surface-card p-5">
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
+              <div key={stat.label} className="surface-card flex items-center gap-4 p-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
                   <stat.icon size={20} />
                 </div>
-                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                  {stat.label}
-                </p>
-                <p className="mt-2 font-semibold text-foreground">{stat.value}</p>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                    {stat.label}
+                  </p>
+                  <p className="mt-1 font-semibold text-foreground">{stat.value}</p>
+                </div>
               </div>
             ))}
+
+            {/* Principles badges sit naturally under the stats */}
+            <div className="flex flex-wrap gap-2 pt-1">
+              {principles.map((principle) => (
+                <span key={principle} className="tech-badge">
+                  {principle}
+                </span>
+              ))}
+            </div>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.12, duration: 0.5 }}
-          className="mt-8 flex flex-wrap gap-3"
-        >
-          {principles.map((principle) => (
-            <span key={principle} className="tech-badge">
-              {principle}
-            </span>
-          ))}
-        </motion.div>
-
+        {/* ── Bottom: education cards ── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.14, duration: 0.5 }}
-          className="mt-12"
+          className="mt-14"
         >
-          <h3 className="mb-5 font-display text-2xl font-bold">
+          <h3 className="mb-6 font-display text-2xl font-bold">
             Education Journey
           </h3>
           <div className="grid gap-4 md:grid-cols-3">
@@ -119,7 +123,7 @@ const About = () => {
                 <p className="text-xs font-bold uppercase tracking-widest text-cyan-300">
                   {item.period}
                 </p>
-                <h4 className="mt-4 text-lg font-bold">{item.school}</h4>
+                <h4 className="mt-3 text-lg font-bold">{item.school}</h4>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {item.description}
                 </p>
@@ -130,6 +134,7 @@ const About = () => {
             ))}
           </div>
         </motion.div>
+
       </div>
     </section>
   );
