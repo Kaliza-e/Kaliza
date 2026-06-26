@@ -68,7 +68,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.05 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl p-8 shadow-sm hover:border-cyan-500/30 transition-colors duration-300"
+              className="p-4 sm:p-6"
             >
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
                 <service.icon size={22} />

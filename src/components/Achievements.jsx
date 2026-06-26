@@ -19,7 +19,7 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.04 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl p-6 text-center shadow-sm"
+              className="p-4 text-center"
             >
               <p className="font-display text-4xl font-black gradient-text">
                 {stat.value}

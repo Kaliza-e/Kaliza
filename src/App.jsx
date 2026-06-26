@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import ParticleBackground from './components/ParticleBackground'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
@@ -13,6 +14,7 @@ import Services from './components/Services'
 function App() {
   return (
     <>
+      <ParticleBackground />
       <Navbar />
       <main>
         <Hero />

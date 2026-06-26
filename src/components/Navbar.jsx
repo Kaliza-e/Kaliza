@@ -28,33 +28,30 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
     >
       <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between px-6 py-4 transition-all ${
-          scrolled ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"
-        }`}
+        className={`mx-auto flex w-full max-w-[1200px] items-center justify-between py-4 transition-all ${scrolled ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"
+          }`}
+        style={{ paddingInline: "clamp(1rem, 5vw, 2rem)" }}
       >
-        <a href="#home" className="flex items-center gap-3">
-          <span className="h-9 w-9 rounded-lg bg-gradient-to-br from-cyan-300 to-violet-500 flex items-center justify-center font-bold text-black">
-            K
+        <a href="#home" className="flex items-center gap-2">
+          <span className="font-display text-xl font-bold tracking-widest uppercase text-white">
+            KALIZA
           </span>
-          <span className="text-white font-semibold">Kaliza</span>
         </a>
 
-        <ul className="hidden md:flex gap-8 text-white/70 text-sm">
+        <ul className="hidden md:flex gap-10 text-white/60 text-xs font-bold uppercase tracking-[0.2em]">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className="hover:text-white transition">
+              <a href={item.href} className="hover:text-white transition-colors">
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
-
-        <a
-          href="#contact"
-          className="hidden md:inline-flex bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:scale-105 transition"
-        >
-          Hire Me
-        </a>
+        <div className="hidden md:block">
+          <a href="#contact" className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">
+            Hire me
+          </a>
+        </div>
 
         <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}

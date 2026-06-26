@@ -28,7 +28,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="testimonials" className="site-section border-y">
+    <section id="testimonials" className="site-section">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -49,7 +49,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.06 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl p-6 shadow-sm"
+              className="p-4 sm:p-6"
             >
               <Quote className="mb-5 h-8 w-8 text-cyan-300" />
               <p className="text-sm leading-7 text-muted-foreground">

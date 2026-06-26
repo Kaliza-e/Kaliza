@@ -41,7 +41,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="site-section border-t border-white/5">
+    <section id="about" className="site-section">
       <div className="section-container" ref={ref}>
 
         {/* ── Top: text + stats side by side, vertically centered ── */}
@@ -63,7 +63,7 @@ const About = () => {
               and backend systems that support real-world use.
             </p>
 
-            <div className="mt-6 rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-6">
+            <div className="mt-6 pt-6">
               <div className="mb-3 flex items-center gap-3 text-cyan-100">
                 <HeartHandshake size={18} className="text-cyan-300" />
                 <span className="font-display text-base font-bold">How I work</span>
@@ -83,7 +83,7 @@ const About = () => {
             className="flex flex-col gap-4"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-[#111827] border border-white/10 rounded-2xl flex items-center gap-5 p-6 shadow-sm">
+              <div key={stat.label} className="flex items-center gap-5 p-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
                   <stat.icon size={20} />
                 </div>
@@ -119,7 +119,7 @@ const About = () => {
           </h3>
           <div className="grid gap-5 md:grid-cols-3">
             {education.map((item) => (
-              <article key={item.school} className="bg-[#111827] border border-white/10 rounded-2xl p-8 sm:p-10 shadow-sm hover:border-cyan-500/30 transition-colors duration-300">
+              <article key={item.school} className="p-4 sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-widest text-cyan-400">
                   {item.period}
                 </p>

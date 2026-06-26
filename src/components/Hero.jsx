@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Mail, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socials = [
@@ -8,124 +8,72 @@ const socials = [
   { icon: FaEnvelope, href: "mailto:kalizaesther5@gmail.com", label: "Email" },
 ];
 
-const highlights = [
-  "React interfaces",
-  "Backend APIs",
-  "UI/UX design",
-  "Database systems",
-];
-
-const metrics = [
-  { value: "6+", label: "Projects" },
-  { value: "Full-stack", label: "Focus" },
-  { value: "RCA", label: "Training" },
-];
-
 const Hero = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden pb-20"
-      style={{ paddingTop: "5rem" }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20"
     >
-      <div className="pointer-events-none absolute left-1/2 top-28 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+      {/* Vertical Grid Lines Background */}
+      <div className="absolute inset-0 z-[-1] flex justify-between px-10 pointer-events-none opacity-20">
+        <div className="w-[1px] h-full bg-white/20"></div>
+        <div className="w-[1px] h-full bg-white/20"></div>
+        <div className="w-[1px] h-full bg-white/20"></div>
+        <div className="w-[1px] h-full bg-white/20"></div>
+        <div className="w-[1px] h-full bg-white/20"></div>
+      </div>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 relative grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="section-container relative flex flex-col items-center text-center z-10">
 
-        {/* Left column */}
+        {/* Ring Light and Profile Image */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="min-w-0 pt-10 sm:pt-14"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative w-64 h-64 sm:w-80 sm:h-80 mb-10 flex items-center justify-center"
         >
-          {/* <p className="eyebrow">Available for projects</p> */}
-          <h1 className="display-title text-balance">
-            KALIZA Esther, junior software developer.
-          </h1>
-          <p className="mt-5 max-w-2xl text-xl font-semibold leading-8 text-cyan-100/90">
-            I build clean web interfaces, practical backend systems, and useful
-            digital products for real-world problems.
-          </p>
-          <p className="section-copy max-w-2xl">
-            A Rwanda Coding Academy developer combining React, APIs, databases,
-            and UI thinking to create polished, responsive experiences.
-          </p>
+          {/* Ring Light */}
+          <div className="absolute inset-0 rounded-full border-[6px] border-white/80 shadow-[0_0_40px_rgba(255,255,255,0.4)] animate-[pulse-glow_4s_ease-in-out_infinite]"></div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#portfolio" className="primary-link">
-              View Portfolio <ArrowRight size={18} />
-            </a>
-            <a href="#contact" className="secondary-link">
-              <Mail size={18} /> Start a Project
-            </a>
-          </div>
-
-          <div className="mt-8 grid gap-5 sm:grid-cols-3">
-            {metrics.map((metric) => (
-              <div
-                key={metric.label}
-                className="bg-[#111827] border border-white/10 rounded-2xl p-6 flex flex-col items-center sm:items-start shadow-lg"
-              >
-                <p className="font-display text-3xl font-black gradient-text">
-                  {metric.value}
-                </p>
-                <p className="mt-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                  {metric.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-3">
-            {highlights.map((item) => (
-              <span
-                key={item}
-                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-muted-foreground"
-              >
-                <CheckCircle2 size={15} className="text-cyan-300" />
-                {item}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Right column - profile card — mt-16 clears the navbar */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.6 }}
-          className="bg-[#111827] border border-white/10 rounded-2xl shadow-lg min-w-0 overflow-hidden p-6 sm:p-8 mt-16 sm:mt-20"
-        >
-          <div className="mb-4 flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-4 py-3">
-            <span className="inline-flex items-center gap-2 text-sm font-bold text-cyan-100">
-              <Sparkles size={16} className="text-cyan-300" /> Portfolio Snapshot
-            </span>
-            <span className="rounded-full bg-emerald-400/12 px-3 py-1 text-xs font-bold text-emerald-200">
-              Open to work
-            </span>
-          </div>
-
-          <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
+          {/* Image */}
+          <div className="relative z-10 w-full h-full rounded-full overflow-hidden border border-white/10 bg-[#05070d]">
             <img
               src="/esther.png"
               alt="KALIZA Esther"
-              className="h-[300px] w-full object-cover object-top sm:h-[360px]"
+              className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
             />
           </div>
+        </motion.div>
 
-          <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div className="min-w-0">
-              <h2 className="font-display text-3xl font-bold">KALIZA Esther</h2>
-              <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-cyan-300">
-                Junior Software Developer
-              </p>
-              <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin size={16} className="text-cyan-300" /> Rwanda
-              </p>
-            </div>
+        {/* Typography */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative z-20 mix-blend-difference mt-[-80px]"
+        >
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-bold tracking-tighter leading-[0.9] text-white">
+            KALIZA<br />ESTHER
+          </h1>
+        </motion.div>
 
-            <div className="flex shrink-0 gap-2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-8 flex flex-col items-center"
+        >
+          <p className="max-w-xl text-sm sm:text-base font-medium leading-relaxed text-cyan-50/70 mb-8">
+            A software developer crafting elegant interfaces, robust backend APIs, and immersive digital experiences. Based in Rwanda.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 items-center">
+            <a href="#portfolio" className="group flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-white hover:text-cyan-300 transition-colors">
+              <span className="w-8 h-[1px] bg-white group-hover:bg-cyan-300 transition-colors"></span>
+              View Work
+            </a>
+
+            <div className="flex shrink-0 gap-4">
               {socials.map((social) => (
                 <a
                   key={social.label}
@@ -133,9 +81,9 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-muted-foreground transition hover:border-cyan-300/35 hover:text-cyan-300"
+                  className="text-muted-foreground hover:text-white transition-colors"
                 >
-                  <social.icon size={17} />
+                  <social.icon size={20} />
                 </a>
               ))}
             </div>

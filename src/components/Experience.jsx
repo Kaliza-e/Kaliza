@@ -10,7 +10,7 @@ const items = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="site-section border-y border-white/5">
+    <section id="experience" className="site-section">
       <div className="section-container">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <motion.div
@@ -31,9 +31,9 @@ export default function Experience() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="bg-[#111827] border border-white/10 rounded-2xl p-7 shadow-sm"
+            className="p-4 sm:p-6"
           >
-            <div className="flex flex-col gap-2 border-b border-white/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex flex-col gap-2 pb-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <h3 className="font-display text-2xl font-bold">
                   Software Development Projects

@@ -53,7 +53,7 @@ export default function Projects() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="portfolio" className="site-section border-y border-white/5">
+    <section id="portfolio" className="site-section">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -75,7 +75,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.05 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl project-card group overflow-hidden shadow-sm hover:shadow-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
+              className="project-card group overflow-hidden rounded-2xl"
             >
               <div className="relative h-56 overflow-hidden bg-white/[0.035]">
                 {project.image ? (
@@ -106,13 +106,13 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md border border-cyan-500/20 bg-cyan-950/30 px-3 py-1.5 text-xs font-semibold text-cyan-100 transition group-hover:border-cyan-400/40"
+                      className="px-3 py-1.5 text-xs font-semibold text-cyan-100"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="mt-6 flex gap-4 border-t border-white/10 pt-5 text-sm font-semibold">
+                <div className="mt-6 flex gap-4 pt-5 text-sm font-semibold">
                   <a href="#" className="flex items-center gap-2 text-cyan-300 transition hover:text-cyan-100">
                     <ExternalLink size={16} /> Demo
                   </a>
