@@ -56,7 +56,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             onSubmit={handleSubmit}
-            className="surface-card space-y-5 p-6 sm:p-7"
+            className="bg-[#111827] border border-white/10 rounded-2xl space-y-5 p-6 sm:p-7 shadow-sm"
           >
             <div>
               <label htmlFor="name" className="mb-2 block text-xs font-bold uppercase tracking-widest text-muted-foreground">
@@ -119,7 +119,7 @@ const Contact = () => {
               <a
                 key={info.label}
                 href={info.href}
-                className="surface-card flex items-center gap-4 p-5"
+                className="bg-[#111827] border border-white/10 rounded-2xl flex items-center gap-4 p-5 shadow-sm"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/15 text-purple-300">
                   <info.icon size={20} />
@@ -134,7 +134,7 @@ const Contact = () => {
               </a>
             ))}
 
-            <div className="surface-card p-5">
+            <div className="bg-[#111827] border border-white/10 rounded-2xl p-5 shadow-sm">
               <p className="mb-3 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                 Follow
               </p>

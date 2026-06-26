@@ -65,7 +65,7 @@ const Skills = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.06 }}
-              className="surface-card p-7"
+              className="bg-[#111827] border border-white/10 rounded-2xl p-6 sm:p-7 shadow-sm hover:border-cyan-500/30 transition-colors duration-300"
             >
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">

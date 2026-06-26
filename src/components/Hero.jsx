@@ -65,7 +65,7 @@ const Hero = () => {
             {metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="surface-card p-6 flex flex-col items-center sm:items-start"
+                className="bg-[#111827] border border-white/10 rounded-2xl p-6 flex flex-col items-center sm:items-start shadow-lg"
               >
                 <p className="font-display text-3xl font-black gradient-text">
                   {metric.value}
@@ -95,7 +95,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="surface-card min-w-0 overflow-hidden p-6 sm:p-8 mt-16 sm:mt-20"
+          className="bg-[#111827] border border-white/10 rounded-2xl shadow-lg min-w-0 overflow-hidden p-6 sm:p-8 mt-16 sm:mt-20"
         >
           <div className="mb-4 flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-4 py-3">
             <span className="inline-flex items-center gap-2 text-sm font-bold text-cyan-100">

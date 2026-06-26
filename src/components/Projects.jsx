@@ -75,7 +75,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.05 }}
-              className="surface-card project-card group overflow-hidden"
+              className="bg-[#111827] border border-white/10 rounded-2xl project-card group overflow-hidden shadow-sm hover:shadow-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
             >
               <div className="relative h-56 overflow-hidden bg-white/[0.035]">
                 {project.image ? (

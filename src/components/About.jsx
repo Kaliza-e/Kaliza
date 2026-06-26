@@ -83,7 +83,7 @@ const About = () => {
             className="flex flex-col gap-4"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="surface-card flex items-center gap-5 p-6">
+              <div key={stat.label} className="bg-[#111827] border border-white/10 rounded-2xl flex items-center gap-5 p-6 shadow-sm">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
                   <stat.icon size={20} />
                 </div>
@@ -119,7 +119,7 @@ const About = () => {
           </h3>
           <div className="grid gap-5 md:grid-cols-3">
             {education.map((item) => (
-              <article key={item.school} className="surface-card p-10">
+              <article key={item.school} className="bg-[#111827] border border-white/10 rounded-2xl p-8 sm:p-10 shadow-sm hover:border-cyan-500/30 transition-colors duration-300">
                 <p className="text-xs font-bold uppercase tracking-widest text-cyan-400">
                   {item.period}
                 </p>

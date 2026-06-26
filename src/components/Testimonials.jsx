@@ -49,7 +49,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.06 }}
-              className="surface-card p-6"
+              className="bg-[#111827] border border-white/10 rounded-2xl p-6 shadow-sm"
             >
               <Quote className="mb-5 h-8 w-8 text-cyan-300" />
               <p className="text-sm leading-7 text-muted-foreground">

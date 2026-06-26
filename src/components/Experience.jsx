@@ -31,7 +31,7 @@ export default function Experience() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="surface-card p-7"
+            className="bg-[#111827] border border-white/10 rounded-2xl p-7 shadow-sm"
           >
             <div className="flex flex-col gap-2 border-b border-white/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
               <div>

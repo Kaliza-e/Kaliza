@@ -196,54 +196,7 @@ h1, h2, h3, h4, h5, h6 {
   color: transparent;
 }
 
-.glass,
-.glass-card,
-.glass-dark,
-.surface-card,
-.interactive-card {
-  border: var(--border-glass);
-  background: #111827; /* Solid dark gray for better contrast */
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
 
-.glass,
-.glass-dark {
-  border-radius: var(--radius-md);
-}
-
-.glass-card,
-.surface-card,
-.interactive-card {
-  min-width: 0;
-  border-radius: var(--radius-sm);
-}
-
-.surface-card,
-.interactive-card {
-  position: relative;
-  transition: transform var(--transition-med), border-color var(--transition-med), box-shadow var(--transition-med), background var(--transition-med);
-}
-
-.surface-card:hover,
-.interactive-card:hover,
-.glass:hover {
-  border: var(--border-glass-hover);
-  background: #1e293b;
-  box-shadow: var(--shadow-medium);
-}
-
-.hero-panel {
-  min-width: 0;
-  border: var(--border-glass);
-  border-radius: var(--radius-sm);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.028));
-  padding: 2rem;
-  box-shadow: var(--shadow-medium);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-}
 
 .primary-link,
 .secondary-link,
