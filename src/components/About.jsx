@@ -63,8 +63,8 @@ const About = () => {
               and backend systems that support real-world use.
             </p>
 
-            <div className="mt-6 rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-5">
-              <div className="mb-2 flex items-center gap-3 text-cyan-100">
+            <div className="mt-6 rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-6">
+              <div className="mb-3 flex items-center gap-3 text-cyan-100">
                 <HeartHandshake size={18} className="text-cyan-300" />
                 <span className="font-display text-base font-bold">How I work</span>
               </div>
@@ -83,8 +83,8 @@ const About = () => {
             className="flex flex-col gap-4"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="surface-card flex items-center gap-4 p-5">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
+              <div key={stat.label} className="surface-card flex items-center gap-5 p-6">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
                   <stat.icon size={20} />
                 </div>
                 <div>
@@ -117,13 +117,13 @@ const About = () => {
           <h3 className="mb-6 font-display text-2xl font-bold">
             Education Journey
           </h3>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3">
             {education.map((item) => (
-              <article key={item.school} className="surface-card p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-cyan-300">
+              <article key={item.school} className="surface-card p-10">
+                <p className="text-xs font-bold uppercase tracking-widest text-cyan-400">
                   {item.period}
                 </p>
-                <h4 className="mt-3 text-lg font-bold">{item.school}</h4>
+                <h4 className="mt-3 text-xl font-bold text-white">{item.school}</h4>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {item.description}
                 </p>

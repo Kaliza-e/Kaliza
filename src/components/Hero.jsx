@@ -61,16 +61,16 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-3">
             {metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="rounded-lg border border-white/10 bg-white/[0.035] p-4"
+                className="surface-card p-6 flex flex-col items-center sm:items-start"
               >
-                <p className="font-display text-2xl font-black gradient-text">
+                <p className="font-display text-3xl font-black gradient-text">
                   {metric.value}
                 </p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                <p className="mt-1.5 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                   {metric.label}
                 </p>
               </div>
@@ -81,7 +81,7 @@ const Hero = () => {
             {highlights.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.035] px-3 py-2 text-sm font-semibold text-muted-foreground"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-muted-foreground"
               >
                 <CheckCircle2 size={15} className="text-cyan-300" />
                 {item}
@@ -95,9 +95,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="surface-card min-w-0 overflow-hidden p-4 sm:p-5 mt-16 sm:mt-20"
+          className="surface-card min-w-0 overflow-hidden p-6 sm:p-8 mt-16 sm:mt-20"
         >
-          <div className="mb-4 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.035] px-4 py-3">
+          <div className="mb-4 flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-4 py-3">
             <span className="inline-flex items-center gap-2 text-sm font-bold text-cyan-100">
               <Sparkles size={16} className="text-cyan-300" /> Portfolio Snapshot
             </span>
@@ -106,7 +106,7 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.035]">
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
             <img
               src="/esther.png"
               alt="KALIZA Esther"

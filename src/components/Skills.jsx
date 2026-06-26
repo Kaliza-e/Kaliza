@@ -65,23 +65,25 @@ const Skills = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.06 }}
-              className="surface-card p-6"
+              className="surface-card p-7"
             >
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
-                  <category.icon size={22} />
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-400">
+                    <category.icon size={20} />
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-white">{category.title}</h3>
                 </div>
                 <span className="text-sm font-black text-cyan-200">{category.level}%</span>
               </div>
-              <h3 className="mt-5 font-display text-xl font-bold">{category.title}</h3>
-              <div className="mt-4 skill-meter">
+              <div className="skill-meter">
                 <span style={{ width: `${category.level}%` }} />
               </div>
               <div className="mt-5 flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground"
+                    className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-muted-foreground"
                   >
                     {skill}
                   </span>

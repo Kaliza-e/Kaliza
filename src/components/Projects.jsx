@@ -92,7 +92,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-[#05070d]/10 to-transparent" />
               </div>
 
-              <div className="p-6">
+              <div className="p-8">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="font-display text-xl font-bold">
                     {project.title}
@@ -106,7 +106,7 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                    className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-semibold text-muted-foreground transition group-hover:border-cyan-300/25"
+                      className="rounded-md border border-cyan-500/20 bg-cyan-950/30 px-3 py-1.5 text-xs font-semibold text-cyan-100 transition group-hover:border-cyan-400/40"
                     >
                       {tech}
                     </span>

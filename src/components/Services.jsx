@@ -68,7 +68,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.05 }}
-              className="surface-card p-6"
+              className="surface-card p-8"
             >
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
                 <service.icon size={22} />
