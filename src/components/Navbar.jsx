@@ -28,7 +28,7 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
     >
       <nav
-        className={`mx-auto flex w-full max-w-[1200px] items-center justify-between py-4 transition-all ${scrolled ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"
+        className={`mx-auto flex w-full max-w-[1200px] items-center justify-between py-4 transition-all duration-300 ${scrolled ? "bg-black/40 backdrop-blur-xl" : "bg-transparent py-6"
           }`}
         style={{ paddingInline: "clamp(1rem, 5vw, 2rem)" }}
       >
@@ -41,14 +41,14 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-10 text-white/60 text-xs font-bold uppercase tracking-[0.2em]">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className="hover:text-white transition-colors">
+              <a href={item.href} className="hover:text-cyan-400 transition-colors duration-300">
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
         <div className="hidden md:block">
-          <a href="#contact" className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">
+          <a href="#contact" className="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] bg-white/5 text-white hover:bg-cyan-400/10 hover:text-cyan-300 transition-all duration-300">
             Hire me
           </a>
         </div>

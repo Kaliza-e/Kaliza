@@ -68,16 +68,16 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 mt-12">
           {projects.map((project, index) => (
             <motion.article
               key={project.title}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.05 }}
-              className="project-card group overflow-hidden rounded-2xl"
+              className="project-card glass-card group overflow-hidden flex flex-col h-full"
             >
-              <div className="relative h-56 overflow-hidden bg-white/[0.035]">
+              <div className="relative h-60 overflow-hidden bg-white/[0.02] shrink-0">
                 {project.image ? (
                   <img
                     src={project.image}
@@ -92,31 +92,31 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/80 via-[#05070d]/10 to-transparent" />
               </div>
 
-              <div className="p-8">
+              <div className="p-8 flex flex-col flex-grow">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-display text-xl font-bold">
+                  <h3 className="font-display text-xl font-bold text-white">
                     {project.title}
                   </h3>
-                  <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-cyan-300 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-cyan-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
-                <p className="mt-3 min-h-20 text-sm leading-7 text-muted-foreground">
+                <p className="mt-4 min-h-[5rem] text-sm leading-relaxed text-muted-foreground flex-grow">
                   {project.description}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 text-xs font-semibold text-cyan-100"
+                      className="px-3 py-1.5 text-[0.7rem] uppercase tracking-wider font-bold bg-cyan-400/10 text-cyan-300 rounded-md"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="mt-6 flex gap-4 pt-5 text-sm font-semibold">
-                  <a href="#" className="flex items-center gap-2 text-cyan-300 transition hover:text-cyan-100">
+                <div className="mt-8 flex gap-5 pt-5 text-sm font-semibold">
+                  <a href="#" className="flex items-center gap-2 text-cyan-400 transition hover:text-cyan-200">
                     <ExternalLink size={16} /> Demo
                   </a>
-                  <a href="#" className="flex items-center gap-2 text-muted-foreground transition hover:text-foreground">
+                  <a href="#" className="flex items-center gap-2 text-white/70 transition hover:text-white">
                     <FaGithub size={16} /> Code
                   </a>
                 </div>

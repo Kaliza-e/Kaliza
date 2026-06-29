@@ -162,19 +162,13 @@ const Contact = () => {
                 style={{ textDecoration: "none" }}
               >
                 <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors"
-                  style={{
-                    background: "rgba(34,211,238,0.08)",
-                    border: "1px solid rgba(34,211,238,0.15)",
-                    color: "#22d3ee",
-                  }}
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors bg-cyan-400/10 text-cyan-400 group-hover:bg-cyan-400/20"
                 >
                   <info.icon size={18} />
                 </div>
                 <div>
                   <p
-                    className="text-xs font-bold uppercase tracking-widest mb-1"
-                    style={{ color: "rgba(255,255,255,0.35)" }}
+                    className="text-xs font-bold uppercase tracking-widest mb-1 text-white/40"
                   >
                     {info.label}
                   </p>
@@ -189,21 +183,15 @@ const Contact = () => {
 
             {/* Availability note */}
             <div
-              className="rounded-xl p-5 mt-2"
-              style={{
-                background: "rgba(34,211,238,0.04)",
-                border: "1px solid rgba(34,211,238,0.12)",
-              }}
+              className="rounded-xl p-6 mt-2 bg-cyan-400/5"
             >
               <p
-                className="text-xs font-bold uppercase tracking-widest mb-2"
-                style={{ color: "#22d3ee" }}
+                className="text-xs font-bold uppercase tracking-widest mb-2 text-cyan-400"
               >
                 Availability
               </p>
               <p
-                className="text-sm leading-6"
-                style={{ color: "rgba(255,255,255,0.5)" }}
+                className="text-sm leading-6 text-white/50"
               >
                 Currently open to freelance projects, internship opportunities,
                 and junior developer roles. Response time: within 24 hours.

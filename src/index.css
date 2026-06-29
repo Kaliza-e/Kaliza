@@ -393,3 +393,42 @@ h6 {
     width: min(100% - 28px, 1200px);
   }
 }
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-med);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.form-field {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.form-field:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.3);
+}
+
+.form-field::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}

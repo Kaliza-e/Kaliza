@@ -58,14 +58,14 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
           {skillCategories.map((category, index) => (
             <motion.article
               key={category.title}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.06 }}
-              className="p-4 sm:p-6"
+              className="glass-card p-6 sm:p-7 flex flex-col h-full"
             >
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">
@@ -79,11 +79,11 @@ const Skills = () => {
               <div className="skill-meter">
                 <span style={{ width: `${category.level}%` }} />
               </div>
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2 pt-2 flex-grow content-start">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-xs font-semibold text-muted-foreground"
+                    className="px-3 py-1.5 text-xs font-medium bg-white/5 rounded-md text-white/80"
                   >
                     {skill}
                   </span>
