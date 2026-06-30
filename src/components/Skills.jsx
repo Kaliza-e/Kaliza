@@ -65,7 +65,7 @@ const Skills = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.06 }}
-              className="glass-card p-6 sm:p-7 flex flex-col h-full"
+              className="glass-card p-6 sm:p-8 flex flex-col h-full"
             >
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">
@@ -79,11 +79,11 @@ const Skills = () => {
               <div className="skill-meter">
                 <span style={{ width: `${category.level}%` }} />
               </div>
-              <div className="mt-6 flex flex-wrap gap-2 pt-2 flex-grow content-start">
+              <div className="mt-6 flex flex-wrap gap-4 pt-2 flex-grow content-start">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-xs font-medium bg-white/5 rounded-md text-white/80"
+                    className="px-4 py-2 text-xs font-medium bg-white/5 rounded-md text-white/80"
                   >
                     {skill}
                   </span>
@@ -93,7 +93,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-5">
           {softSkills.map((skill) => (
             <span
               key={skill}
