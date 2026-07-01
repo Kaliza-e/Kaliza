@@ -99,14 +99,14 @@ export default function Projects() {
                   </h3>
                   <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-cyan-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
-                <p className="mt-4 min-h-[5rem] text-sm leading-relaxed text-muted-foreground flex-grow">
+                <p className="mt-4 min-h-[5rem] text-sm leading-relaxed text-white flex-grow">
                   {project.description}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 text-[0.7rem] uppercase tracking-wider font-bold bg-cyan-400/10 text-cyan-300 rounded-md"
+                      className="px-3 py-2 text-[0.7rem] uppercase tracking-wider font-bold bg-cyan-400/10 text-cyan-300 rounded-md"
                     >
                       {tech}
                     </span>
