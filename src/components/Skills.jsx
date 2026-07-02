@@ -1,41 +1,28 @@
 import { motion, useInView } from "framer-motion";
-import { Brush, Code2, Database, Server } from "lucide-react";
+import { Code, Server, Database, Palette } from "lucide-react";
 import { useRef } from "react";
 
 const skillCategories = [
   {
-    icon: Code2,
+    icon: Code,
     title: "Frontend",
-    level: 88,
     skills: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
   },
   {
     icon: Server,
     title: "Backend",
-    level: 76,
     skills: ["Node.js", "Express.js", "Python", "REST APIs"],
   },
   {
     icon: Database,
     title: "Databases",
-    level: 72,
     skills: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
-    icon: Brush,
+    icon: Palette,
     title: "Design",
-    level: 80,
-    skills: ["Figma", "Adobe XD", "Canva", "Responsive UI"],
+    skills: ["Figma", "Adobe XD", "Responsive UI"],
   },
-];
-
-const softSkills = [
-  "Communication",
-  "Teamwork",
-  "Problem solving",
-  "Time management",
-  "Adaptability",
-  "Creativity",
 ];
 
 const Skills = () => {
@@ -50,57 +37,39 @@ const Skills = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="section-header center"
         >
-          <p className="eyebrow">Skills</p>
-          <h2 className="section-heading">Tools I use to build products.</h2>
+          <span className="eyebrow">Skills</span>
+          <h2 className="section-heading">Technologies & Tools</h2>
           <p className="section-copy">
-            A practical stack for creating responsive interfaces, server logic,
-            databases, and design systems that feel consistent.
+            The tools and technologies I use to bring ideas to life.
           </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {skillCategories.map((category, index) => (
             <motion.article
               key={category.title}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.06 }}
-              className="glass-card p-6 sm:p-8 flex flex-col h-full"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="glass-card p-6"
             >
-              <div className="flex items-center justify-between gap-4 mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-400">
-                    <category.icon size={20} />
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-white">{category.title}</h3>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#818cf8]/10 text-[#818cf8]">
+                  <category.icon size={20} />
                 </div>
-                <span className="text-sm font-black text-cyan-200">{category.level}%</span>
+                <h3 className="text-lg font-semibold">{category.title}</h3>
               </div>
-              <div className="skill-meter">
-                <span style={{ width: `${category.level}%` }} />
-              </div>
-              <div className="mt-6 flex flex-wrap gap-4 pt-2 flex-grow content-start">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 text-xs font-medium bg-white/5 rounded-md text-white/80"
+                    className="px-3 py-1.5 text-sm text-white/80 bg-white/5 border border-white/10 rounded-lg"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
             </motion.article>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap justify-center gap-5">
-          {softSkills.map((skill) => (
-            <span
-              key={skill}
-              className="tech-badge"
-            >
-              {skill}
-            </span>
           ))}
         </div>
       </div>

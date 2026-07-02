@@ -6,38 +6,32 @@ const services = [
   {
     icon: Code,
     title: "Frontend Development",
-    description:
-      "Responsive React interfaces with clean component structure and accessible UI patterns.",
+    description: "Building responsive, accessible interfaces with modern frameworks and clean code.",
   },
   {
     icon: Server,
     title: "Backend Development",
-    description:
-      "APIs, server-side logic, and database connections for practical web products.",
+    description: "Creating robust APIs and server-side logic for scalable applications.",
   },
   {
     icon: Palette,
     title: "UI Design",
-    description:
-      "Polished pages with strong spacing, hierarchy, typography, and visual consistency.",
+    description: "Designing elegant, user-friendly interfaces with attention to detail.",
   },
   {
     icon: Layout,
     title: "UX Design",
-    description:
-      "Simple user flows, wireframes, and screens that make products easier to understand.",
+    description: "Crafting intuitive user experiences and thoughtful product flows.",
   },
   {
     icon: Smartphone,
     title: "Responsive Layouts",
-    description:
-      "Mobile-ready pages that stay readable and well-spaced across screen sizes.",
+    description: "Ensuring perfect experience across all devices and screen sizes.",
   },
   {
     icon: Globe,
     title: "Web Delivery",
-    description:
-      "Project setup, integration, testing, and deployment-minded implementation.",
+    description: "End-to-end implementation from concept to deployment.",
   },
 ];
 
@@ -53,28 +47,27 @@ const Services = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="section-header center"
         >
-          <p className="eyebrow">Services</p>
-          <h2 className="section-heading">Ways I can help.</h2>
+          <span className="eyebrow">Services</span>
+          <h2 className="section-heading">What I Can Do</h2>
           <p className="section-copy">
-            From interface design to backend implementation, I focus on building
-            pages and apps that feel clear, stable, and useful.
+            A comprehensive set of services to help you build great products.
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service, index) => (
             <motion.article
               key={service.title}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.05 }}
-              className="p-4 sm:p-6"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="glass-card p-7"
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-300/12 text-cyan-300">
-                <service.icon size={22} />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#818cf8]/10 text-[#818cf8] mb-5">
+                <service.icon size={24} />
               </div>
-              <h3 className="font-display text-xl font-bold">{service.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-[#a0a0b0] leading-relaxed text-sm">
                 {service.description}
               </p>
             </motion.article>
