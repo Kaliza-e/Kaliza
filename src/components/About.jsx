@@ -111,7 +111,7 @@ const About = () => {
         </div>
 
         {/* ── Bottom: education cards ── */}
-        <motion.div
+        {/* <motion.div 
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.14, duration: 0.5 }}
@@ -138,7 +138,7 @@ const About = () => {
               </article>
             ))}
           </div>
-        </motion.div>
+        </motion.div>*/}
 
       </div>
     </section>
